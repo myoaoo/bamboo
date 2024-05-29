@@ -1,0 +1,39 @@
+@media (min-width: 552px) {
+  .dark {
+    bottom: 90px !important;
+  }
+  .dark,
+  .goTop,
+  .godown {
+    bottom: 60px;
+    transform: scale(0.6) !important;
+  }
+}
+@media (max-width: 992px) {
+  .posts .post .post-main {
+    flex: none;
+    padding: 0px !important;
+  }
+  .posts .post .post-img-mobile {
+    display: block;
+    height: 150px !important;
+  }
+  .posts .post-info {
+    padding: 10px;
+  }
+}
+.posts .post-img-mobile {
+  margin: 0px !important;
+  border-radius: 0px !important;
+}
+@media (max-width: 551px) {
+  #l_side #toc-mobile-btn,
+  .goTop,
+  .godown,
+  .dark {
+    right: 10px !important;
+  }
+}
+.top-btn-color {
+  background-color: rgba(66,185,133,0.8) !important;
+}
