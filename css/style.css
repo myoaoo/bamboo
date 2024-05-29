@@ -886,7 +886,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   transition: background-color 0.3s;
 }
 .header .header-content .navbar .menu .menu-item a {
-  color: #fff;
+  color: #292d3e;
   display: block;
   overflow: hidden;
   text-align: center;
@@ -1026,6 +1026,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 }
 .header-bg-color {
   backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.333);
 }
 .header-bg-color .header-content .navbar .menu .menu-item a,
 .header-bg-color .blog-title a {
@@ -1366,7 +1367,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   justify-content: space-between;
 }
 .main-content {
-  width: calc(100% - 255px);
+  width: calc(100% - 295px);
   margin-top: 15px;
   transition: width 0.3s;
 }
@@ -3978,7 +3979,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   background: transparent;
 }
 .search {
-  color: #fff;
+  color: #292d3e;
   padding: 0 15px;
   height: 100%;
   line-height: 60px;
