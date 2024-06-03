@@ -6,7 +6,7 @@
   <link href="https://oaoo.com/atom.xml" rel="self"/>
   
   <link href="https://oaoo.com/"/>
-  <updated>2024-05-27T09:59:39.053Z</updated>
+  <updated>2024-06-03T01:44:08.701Z</updated>
   <id>https://oaoo.com/</id>
   
   <author>
@@ -17,11 +17,108 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TinyFileManager一款强大的单文件目录程序</title>
+    <link href="https://oaoo.com/5.html"/>
+    <id>https://oaoo.com/5.html</id>
+    <published>2025-06-03T01:17:00.000Z</published>
+    <updated>2024-06-03T01:44:08.701Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="TinyFileManager-介绍"><a href="#TinyFileManager-介绍" class="headerlink" title="TinyFileManager 介绍"></a>TinyFileManager 介绍</h3><p>TinyFileManager是一个出色的单文件目录程序，其优势在于极其简单的部署方式。只需将文件上传至网站，即可立即使用。除此之外，该程序功能丰富，几乎覆盖了所有可能需要的功能，包括但不限于文件管理、搜索、排序和预览等，此外，它还支持数十种语言，包括中文繁体和简体字体。</p><p><img src="/images/5-1.png"></p><p><img src="/images/5-2.gif"></p><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>1.支持上传下载<br>2.支持URL上传<br>3.支持多用户，账号&#x2F;密码<br>4.支持用户权限设置<br>5.支持多国语言<br>6.支持在线预览<br>7.支持在线压缩&#x2F;解压，使用zip<br>8.支持在线创建&#x2F;编辑&#x2F;粘贴&#x2F;复制&#x2F;移动&#x2F;删除<br>9.支持在线搜索&#x2F;筛选<br>10.支持隐藏指定文件及文件夹</p><h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><p>官网：<a href="https://tinyfilemanager.github.io/">https://tinyfilemanager.github.io</a><br>说明：<a href="https://tinyfilemanager.github.io/docs">https://tinyfilemanager.github.io/docs</a><br>演示：<a href="https://tinyfilemanager.github.io/demo">https://tinyfilemanager.github.io/demo</a><br>GitHub：<a href="https://github.com/prasathmani/tinyfilemanager">https://github.com/prasathmani/tinyfilemanager</a><br>密码生成：<a href="http://www.passwordtool.hu/php5-password-hash-generator">http://www.passwordtool.hu/php5-password-hash-generator</a></p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>下载得到的压缩包解压后将其中的<code>tinyfilemanager.php</code>文件上传至网站目录并重命名为<code>index.php</code>即可<br>然后打开网站即可看到登录页面，默认有两个用户<code>用户名：admin密码：admin@123</code>和<code>用户名：user密码：12345</code></p><h3 id="账户密码"><a href="#账户密码" class="headerlink" title="账户密码"></a>账户密码</h3><p>修改用户及密码只需修改<code>index.php</code>中以下代码<br>前面的是用户名，密码部分采用的是PHP哈希密码值，从上面给出的密码生成网站生成即可；</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;// Users: array(&#x27;Username&#x27; =&amp;gt; &#x27;Password&#x27;, &#x27;Username2&#x27; =&amp;gt; &#x27;Password2&#x27;, ...)&lt;/span&gt;</span><br><span class="line">$auth_users = &lt;span&gt;array&lt;/span&gt;(</span><br><span class="line">    &lt;span&gt;&#x27;admin&#x27;&lt;/span&gt; =&amp;gt; &lt;span&gt;&#x27;$2y$10$axZWlisI..n9xmULN4gbhectUdOpu0z64xb9ysycHQ5ubKYcEY5sW&#x27;&lt;/span&gt;, &lt;span&gt;//admin&lt;/span&gt;</span><br><span class="line">    &lt;span&gt;&#x27;user&#x27;&lt;/span&gt; =&amp;gt; &lt;span&gt;&#x27;$2y$10$.mwmDmZH2003EjFobn86QuU3kr6NAmUYAaMVWQdLXYkirie7EJxj6&#x27;&lt;/span&gt;, &lt;span&gt;//12345&lt;/span&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p>如果不想使用账户密码，可以修改以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;$&lt;/span&gt;&lt;span&gt;use_auth = &lt;span&gt;true&lt;/span&gt;;&lt;/span&gt;</span><br><span class="line">&lt;span&gt;</span><br><span class="line">#&lt;/span&gt;&lt;span&gt; 要使用账号密码设置为&lt;span&gt;true&lt;/span&gt;，不使用账号密码设置为&lt;span&gt;false&lt;/span&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure><h3 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h3><p><code>index.php</code>这个程序文件是默认英语，不能设置成其它语言<br>修改语言需要将压缩包内的语言文件<code>translation.json</code>一同上传即可<br>然后即可在目录设置中修改语言了</p><h3 id="隐藏文件"><a href="#隐藏文件" class="headerlink" title="隐藏文件"></a>隐藏文件</h3><p>如果需要隐藏指定文件或文件夹，可以修改以下代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$exclude_items = &lt;span&gt;array&lt;/span&gt;();</span><br><span class="line"></span><br><span class="line">&lt;span&gt;# 例：隐藏名为sunpma的文件夹，隐藏名为sunpma.mp4的视频文件，隐藏所有后缀为.zip的文件；&lt;/span&gt;</span><br><span class="line">&lt;span&gt;# 注意最后一个设置项没有,符号；&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">$exclude_items = &lt;span&gt;array&lt;/span&gt;(</span><br><span class="line">    &lt;span&gt;&#x27;sunpma&#x27;&lt;/span&gt;,</span><br><span class="line">    &lt;span&gt;&#x27;sunpma.mp4&#x27;&lt;/span&gt;,</span><br><span class="line">    &lt;span&gt;&#x27;*.zip&#x27;&lt;/span&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;TinyFileManager-介绍&quot;&gt;&lt;a href=&quot;#TinyFileManager-介绍&quot; class=&quot;headerlink&quot; title=&quot;TinyFileManager 介绍&quot;&gt;&lt;/a&gt;TinyFileManager 介绍&lt;/h3&gt;&lt;p&gt;TinyFi</summary>
+      
+    
+    
+    
+    <category term="开源" scheme="https://oaoo.com/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+    <category term="免费" scheme="https://oaoo.com/tags/%E5%85%8D%E8%B4%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Upscayl 跨平台AI图像放大工具</title>
+    <link href="https://oaoo.com/4.html"/>
+    <id>https://oaoo.com/4.html</id>
+    <published>2025-06-01T06:17:00.000Z</published>
+    <updated>2024-06-01T09:39:24.041Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Upscayl-介绍"><a href="#Upscayl-介绍" class="headerlink" title="Upscayl 介绍"></a>Upscayl 介绍</h3><p>Upscayl 是一个跨平台的 AI 图像放大工具，它通过AI模型进行图片放大并补全像素大小，免费、开源，下载后本地安装使用，不需要联网。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>Upscayl的操作方法非常符合直觉，主要分为4个步骤，虽然只提供英文界面，但是相信小白兔也可以轻松上手<br><img src="/images/4-1Upscayl.jpg"></p><p><strong>步骤1：</strong><br>点击<code>SELECT IMAGE</code>，选择待放大的图片（即原图）。</p><p><strong>步骤2：</strong><br>在<code>Select Upscaling Type</code>选择图片放大类型。</p><p>Real-Esrgan：提高图片的清晰度；<br>RemaCRI：增强图片效果；<br>UltraMix Balanced：提高图片色彩饱和度；<br>UltraSharp：提高图片清晰度和锐化边缘；<br>Digital Art：提高颜色和纹理细节；<br>Sharpen Image：只锐化处理；<br>在这里，用户只需选择预设的放大类型，大大简化了操作难度，但是相应的，无法进行更加专业、细化的手动调节。</p><p><strong>步骤3：</strong><br>点击<code>SET OUTPUT FOLDER</code>选择导出文件夹。可不选择，默认保存在与原图相同的路径下。</p><p><strong>步骤4：</strong><br>点击<code>UPSCAYL</code>执行放大。</p><h3 id="对比效果"><a href="#对比效果" class="headerlink" title="对比效果"></a>对比效果</h3><p><img src="/images/4-2Upscayl.jpg"></p><p>图片放大效果显著，尤其是，支持锐化图片，据说效果甚至优于Photoshop；<br>跨平台，支持windows&#x2F;macOS和Linux三大操作系统，即将推出在线网页版<br>支持图像批处理，妥妥生产力工具。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Upscayl-介绍&quot;&gt;&lt;a href=&quot;#Upscayl-介绍&quot; class=&quot;headerlink&quot; title=&quot;Upscayl 介绍&quot;&gt;&lt;/a&gt;Upscayl 介绍&lt;/h3&gt;&lt;p&gt;Upscayl 是一个跨平台的 AI 图像放大工具，它通过AI模型进行图片放</summary>
+      
+    
+    
+    
+    <category term="开源" scheme="https://oaoo.com/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+    <category term="免费" scheme="https://oaoo.com/tags/%E5%85%8D%E8%B4%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>files-gallery 单文件目录系统</title>
+    <link href="https://oaoo.com/3.html"/>
+    <id>https://oaoo.com/3.html</id>
+    <published>2025-05-31T02:21:00.000Z</published>
+    <updated>2024-06-01T09:44:56.627Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="files-gallery-介绍"><a href="#files-gallery-介绍" class="headerlink" title="files-gallery 介绍"></a>files-gallery 介绍</h3><p><img src="/images/3-1.png"></p><p>Files 是一个单文件 PHP 应用程序，可以放入服务器上的任何目录，立即创建文件和文件夹库。它支持所有文件类型，并允许您预览图像、视频、音频和代码。</p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>官网：<a href="https://files.photo.gallery/">https://files.photo.gallery</a><br>演示：<a href="https://files.photo.gallery/demo">https://files.photo.gallery/demo</a><br>文档：<a href="https://forum.photo.gallery/viewtopic.php?f=66&t=9964">https://forum.photo.gallery/viewtopic.php?f=66&t=9964</a><br>源码：<a href="https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php">https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php</a></p><h3 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h3><ul><li>单个文件只需将其放入服务器上的任何目录即可。</li><li>实时搜索和排序文件。</li><li>高级列表和库布局，可以实时切换。</li><li>预览 IPTC、EXIF 和 GPS 地图以查看您的照片。</li><li>使用缓存机制和 CDN 快速加载。</li><li>高级树菜单导航显示整个目录结构。</li><li>美丽的代码荧光笔来查看和编辑代码格式。</li><li>可选登录以保护访问。</li></ul><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>将下载得到的<code>index.php</code>文件放置到需要的网站目录，打开目录即可；<br>PHP版本需要5.5以上，PHP扩展程序安装需求：<code>GD</code> <code>mbstring</code> <code>fileinfo</code> <code>exif</code><br>宝塔面板安装PHP时已经默认安装了<code>GD</code>和<code>mbstring</code>扩展程序，所以无需额外安装<br><code>fileinfo</code> - 用于生成图片预览<br><code>exif</code> - 用于读取图片EXIF信息</p><h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><p><code>Files Photo Gallery</code>是完全开源的，免费版和授权版一致，没有任何区别<br>只是免费版每次会弹出授权窗口，点击一下<code>No thanks!</code>即可关闭<br><img src="/images/3-2.png"></p><p>files.photo.gallery破解，支持任意版本<br>复制下方代码在它加载的外部js文件之前找个地方直接粘贴就行了(搜索var CodeMirror &#x3D; {};，放其后面即可)<br>语言包会自动修改成最新版本的，无需担心</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">!function()&#123;</span><br><span class="line">    const originalXHR = window.XMLHttpRequest;</span><br><span class="line">    window.XMLHttpRequest = function()&#123;</span><br><span class="line">        const xhr = new originalXHR;</span><br><span class="line">        xhr.open = function(method, url, async, user, password)&#123;</span><br><span class="line">            if (method === &quot;GET&quot; &amp;&amp; url.startsWith(&quot;&lt;?php echo config::$assets ?&gt;files.photo.gallery@&quot;) &amp;&amp; url.endsWith(&quot;/lang/zh.json&quot;)) &#123;</span><br><span class="line">                arguments[1] = arguments[1].replace(/@[0-9\.]+\/lang/, &quot;@latest/lang&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            if (method === &quot;POST&quot; &amp;&amp; url.includes(&quot;auth.photo.gallery&quot;)) &#123;</span><br><span class="line">                xhr.send = function(data)&#123;</span><br><span class="line">                    originalXHR.prototype.send.apply(this, [&quot;app=2&amp;host=demo.files.gallery&quot;]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            originalXHR.prototype.open.apply(this, arguments);</span><br><span class="line">        &#125;</span><br><span class="line">        return xhr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="files-gallery-下载"><a href="#files-gallery-下载" class="headerlink" title="files-gallery 下载"></a>files-gallery 下载</h3><p><strong>破译下载</strong><br>下载源码压缩包后放置在需要的位置解压即可使用；（源码本地化处理，无需授权）<br><a href="/images/3-3.zip">files-gallery</a></p><span class='btn large round solid info'><a class="button" href='/images/index.zip' title='官方本地下载'><i class='fa fa-download'></i>官方本地下载</a></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;files-gallery-介绍&quot;&gt;&lt;a href=&quot;#files-gallery-介绍&quot; class=&quot;headerlink&quot; title=&quot;files-gallery 介绍&quot;&gt;&lt;/a&gt;files-gallery 介绍&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/ima</summary>
+      
+    
+    
+    
+    <category term="开源" scheme="https://oaoo.com/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+    <category term="目录" scheme="https://oaoo.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oblivion 网络工具</title>
+    <link href="https://oaoo.com/2.html"/>
+    <id>https://oaoo.com/2.html</id>
+    <published>2025-05-30T02:21:00.000Z</published>
+    <updated>2024-06-01T09:41:36.435Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Oblivion-介绍"><a href="#Oblivion-介绍" class="headerlink" title="Oblivion 介绍"></a>Oblivion 介绍</h3><p><img src="/images/2-1.png"></p><p>Oblivion Desktop 是一个由 BePass 团队开发的开源桌面应用，旨在为用户提供更高的网络隐私和安全性。随着互联网的普及，用户的数据隐私和安全面临越来越多的挑战。Oblivion Desktop 通过强大的加密技术和用户友好的界面，帮助用户保护他们的在线隐私。</p><p>Oblivion 基于cloudflare wrap技术构建，实现ip优选，还可以选择对应国家的ip地址，省去优选ip的各种操作，实现界面化操作。</p><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p><strong>安装</strong><br>1.下载：首先，前往 Oblivion Desktop 的 GitHub 页面 下载最新版本的安装包。<br>2.安装：根据操作系统（Windows、macOS 或 Linux）的不同，选择相应的安装包并进行安装。</p><p>日常使用<br>1.连接网络：启动应用后，选择您要连接的网络。Oblivion Desktop 支持多种网络连接方式，包括 VPN 和 Tor。<br>2.数据加密：在传输数据之前，Oblivion Desktop 会自动对您的数据进行加密，以确保数据在传输过程中不被截获。<br>3.隐私浏览：使用内置的隐私浏览器，您可以在不留下任何痕迹的情况下访问互联网。</p><p>高级功能<br>1.多重身份验证：Oblivion Desktop 支持多重身份验证，进一步提高您的账户安全性。<br>2.日志记录：所有操作日志均采用加密存储，只有用户本人可以访问。<br>3.插件支持：应用支持第三方插件，用户可以根据自己的需求扩展功能。</p><div class="tag-plugin post-swiper-container" width="fill"><div class="swiper-wrapper"><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-2.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-3.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-4.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-5.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-6.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-7.png"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">Oblivion</p><img no-lazy class="swiper-slide-img" src="/images/2-8.png"></a></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Oblivion Desktop 是一个功能强大且易于使用的网络隐私工具，适合所有希望提升自己网络安全和隐私保护的用户。无论您是普通用户，还是对网络安全有更高要求的专业人士，Oblivion Desktop 都能为您提供全面的保护。通过强大的加密技术、多种连接方式和丰富的功能设置，Oblivion Desktop 确保您的在线活动安全可靠。</p><p><strong>最大的优点可以概括为以下几点：</strong></p><p>1.免费<br>2.无需注册<br>3.即开即用</p><h3 id="Oblivion-github-下载"><a href="#Oblivion-github-下载" class="headerlink" title="Oblivion github 下载"></a>Oblivion github 下载</h3><span class='btn large round solid info'><a class="button" href='https://github.com/bepass-org/oblivion-desktop' title='电脑端'><i class='fa fa-download'></i>电脑端</a></span><span class='btn large round solid info'><a class="button" href='https://github.com/bepass-org/oblivion/releases/tag/v2' title='移动端'><i class='fa fa-download'></i>移动端</a></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Oblivion-介绍&quot;&gt;&lt;a href=&quot;#Oblivion-介绍&quot; class=&quot;headerlink&quot; title=&quot;Oblivion 介绍&quot;&gt;&lt;/a&gt;Oblivion 介绍&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/2-1.png&quot;&gt;&lt;/p&gt;
+&lt;p</summary>
+      
+    
+    
+    
+    <category term="开源" scheme="https://oaoo.com/categories/%E5%BC%80%E6%BA%90/"/>
+    
+    
+    <category term="免费" scheme="https://oaoo.com/tags/%E5%85%8D%E8%B4%B9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Billfish 素材管理软件</title>
     <link href="https://oaoo.com/1.html"/>
     <id>https://oaoo.com/1.html</id>
     <published>2025-05-20T00:21:00.000Z</published>
-    <updated>2024-05-27T09:59:39.053Z</updated>
+    <updated>2024-05-31T07:49:25.194Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Billfish-介绍"><a href="#Billfish-介绍" class="headerlink" title="Billfish 介绍"></a>Billfish 介绍</h3><p><img src="/images/1-1.png"></p><p><strong>billfish</strong>是专为针对设计人员所打造的一款功能强大的免费图片素材管理软件，该软件不仅拥有着上万张海量的素材库，而且素材的类型也是极为的丰富、全面、详细，能够最大程度的满足的用户的日常所需。</p><p>同时，billfish作为一款素材管理工具，那么其功能也是相当的强大，该软件不仅可以批量，甚至是一次性的将用户的电脑中图片全部导入至软件内进行管理，更可以为自己的图片的增添专属于自己的标签，这样既便于管理，也方便自己在需要时快速的使用，其功能相当的不错。</p><p>当然，billfish还支持11种常用的格式，比如jpg、png、gif、psd、ai、eps、svg等其他的图片格式，也支持拖拽等快速导入的方式，还可以批量进行注释、素材颜色筛选，最强大的便是它的检索内容毫秒级响应。感兴趣或有需要的用户欢迎下载体验。</p><p><strong>支持黑白模式</strong><br><img src="/images/1-2.png"></p><p><strong>支持超多素材格式</strong><br><img src="/images/1-3.png"></p><h3 id="软件特色"><a href="#软件特色" class="headerlink" title="软件特色"></a>软件特色</h3><p><strong>1、支持大量素材</strong><br>轻松管理大量素材；<br>支持11种常用格式；<br>支持拖拽、导入等方式。</p><p><strong>2、快速高效整理</strong><br>支持批量添加标签&#x2F;注释；<br>可按文件属性分类整理；<br>支持智能文件夹快速分类。</p><p><strong>3、瞬间找到灵感</strong><br>检索内容毫秒级响应；<br>支持按素材颜色筛选；<br>支持多重筛选方式。</p><a class="button" href='https://www.billfish.cn/help' title='查看文档'><i class='fa fa-book'></i>查看文档</a><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><p>免费版本的云帐号空间太小，只有1G</p><p><img src="/images/1-4.png"><br><img src="/images/1-5.png"></p><h3 id="其它相关"><a href="#其它相关" class="headerlink" title="其它相关"></a>其它相关</h3><h4 id="1-eagle"><a href="#1-eagle" class="headerlink" title="1.eagle"></a>1.eagle</h4><p><a href="https://eagle.cool/">eagle</a> 是老牌的素材管理软件了，是付费软件，试用期到了后要花 199 元购买，支持2台设备授权。<br><img src="/images/1-6.webp"></p><h4 id="2-MuseDAM"><a href="#2-MuseDAM" class="headerlink" title="2.MuseDAM"></a>2.MuseDAM</h4><p><a href="https://dam.musetransfer.com/">MuseDAM</a> 是没有桌面客户端的，只有网页版，提供了 100 G 永久免费空间。<br><img src="/images/1-7.png"></p><h4 id="3-Pixcall"><a href="#3-Pixcall" class="headerlink" title="3.Pixcall"></a>3.Pixcall</h4><p><a href="https://pixcall.com/">Pixcall</a>既支持桌面客户端又支持 web 版的素材管理产品（多个桌面设备间的同步肯定也是支持的），不足之处就是没有提供永久免费的同步空间。<br><img src="/images/1-8.png"></p><h3 id="Billfish3-0下载"><a href="#Billfish3-0下载" class="headerlink" title="Billfish3.0下载"></a>Billfish3.0下载</h3><span class='btn large round solid info'><a class="button" href='https://www.123pan.com/s/zIvRjv-vXAxh.html' title='123云盘下载'><i class='fa fa-download'></i>123云盘下载</a></span><span class='btn large round solid info'><a class="button" href='https://www.billfish.cn/' title='官方下载'><i class='fa fa-download'></i>官方下载</a></span>]]></content>
     

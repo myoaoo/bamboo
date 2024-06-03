@@ -14,3 +14,16 @@ fetch('https://api.vvhan.com/api/visitor.info')
 		const visitorInfo = document.getElementById('visitorInfo');
 		visitorInfo.innerHTML = `<p>发生错误：${error}</p>`;
 	});
+	
+	
+var progressBar = document.createElement('div');
+progressBar.id = 'progress-baraabb';
+document.body.appendChild(progressBar);
+
+// Update progress bar on scroll
+window.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+  var progressPercentage = (scrollPosition / pageHeight) * 100;
+  progressBar.style.width = progressPercentage + '%';
+});

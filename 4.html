@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档: 2025/5 | </title>
+  <title>Upscayl 跨平台AI图像放大工具 | </title>
 
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -522,196 +522,667 @@
     
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+<!-- prismjs 代码高亮 -->
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/images/4-3.png')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Upscayl 跨平台AI图像放大工具
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2025-06-01 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%BC%80%E6%BA%90/" class="post-detail-header_category">
+              开源
+            </a>
+          
+        </span>
+      
+
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h3 id="Upscayl-介绍"><a href="#Upscayl-介绍" class="headerlink" title="Upscayl 介绍"></a>Upscayl 介绍</h3><p>Upscayl 是一个跨平台的 AI 图像放大工具，它通过AI模型进行图片放大并补全像素大小，免费、开源，下载后本地安装使用，不需要联网。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>Upscayl的操作方法非常符合直觉，主要分为4个步骤，虽然只提供英文界面，但是相信小白兔也可以轻松上手<br><img src="/images/4-1Upscayl.jpg"></p>
+<p><strong>步骤1：</strong><br>点击<code>SELECT IMAGE</code>，选择待放大的图片（即原图）。</p>
+<p><strong>步骤2：</strong><br>在<code>Select Upscaling Type</code>选择图片放大类型。</p>
+<p>Real-Esrgan：提高图片的清晰度；<br>RemaCRI：增强图片效果；<br>UltraMix Balanced：提高图片色彩饱和度；<br>UltraSharp：提高图片清晰度和锐化边缘；<br>Digital Art：提高颜色和纹理细节；<br>Sharpen Image：只锐化处理；<br>在这里，用户只需选择预设的放大类型，大大简化了操作难度，但是相应的，无法进行更加专业、细化的手动调节。</p>
+<p><strong>步骤3：</strong><br>点击<code>SET OUTPUT FOLDER</code>选择导出文件夹。可不选择，默认保存在与原图相同的路径下。</p>
+<p><strong>步骤4：</strong><br>点击<code>UPSCAYL</code>执行放大。</p>
+<h3 id="对比效果"><a href="#对比效果" class="headerlink" title="对比效果"></a>对比效果</h3><p><img src="/images/4-2Upscayl.jpg"></p>
+<p>图片放大效果显著，尤其是，支持锐化图片，据说效果甚至优于Photoshop；<br>跨平台，支持windows&#x2F;macOS和Linux三大操作系统，即将推出在线网页版<br>支持图像批处理，妥妥生产力工具。</p>
+
+      </div>
+      <div class="post-tags-categories">
         
+        <div class="tags">
+          
+            <a href="/tags/%E5%85%8D%E8%B4%B9/" class="">
+              免费
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>梦想魔豆</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/4.html" target="_blank" title="Upscayl 跨平台AI图像放大工具">https://oaoo.com/4.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload" src="/images/5-1.png" alt="">
+    </div>
+    <a href="/5.html" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">TinyFileManager一款强大的单文件目录程序</div>
+      </div>
+      
+      <!-- <div class="content">
+        TinyFileManager 介绍TinyFileManager是一个出色的单文件目录程序，其优势在于极其简单的部署方
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload" src="/images/3-1.png" src="" alt="">
+    </div>
+    <a href="/3.html" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">files-gallery 单文件目录系统</div>
+      </div>
+      <!-- <div class="content">
+        files-gallery 介绍
+Files 是一个单文件 PHP 应用程序，可以放入服务器上的任何目录，立即创建文件和
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" rel="external nofollow noreferrer" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/images/logo/zhifubao.png" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/images/logo/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'WeChatpay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+	
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>梦想魔豆</h2>
+        
+        
+          <p>绽放绚烂的希望之花</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
         
           
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:526740182@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/myoaoo"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=526740182"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Upscayl-%E4%BB%8B%E7%BB%8D"><span class="toc-text">Upscayl 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E6%95%88%E6%9E%9C"><span class="toc-text">对比效果</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+      <!-- Add button for random display -->
+	  <a class="post-title-link" title="随机文章">
+	  <i class="fas fa-undo-alt" aria-hidden="true"  onclick="randomizeItems()" style=" display: flex; justify-content: flex-end; padding: 10px; margin-top: -25px; font-size: 0.875rem;" ><span style="">随机文章</span></i></a>
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list" id="aside-list">
+        
+          <div class="aside-list-item">
             
-            <div class="year" data-aos="zoom-in-up">
-                <a href="/archives/2025">2025</a>
+            
+            
+
+            <div class="post-img-box">
+              <a href="/5.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/5-1.png" alt="">
+              </a>
             </div>
-          
-          <li class="post-item" data-aos="fade-left">
+            <div class="post-date-title">
+              <a class="post-title" href="/5.html">TinyFileManager一款强大的单文件目录程序</a>
+              <div>
+                
+                  <span class="post-date">06-03</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
             
+            
+            
+
+            <div class="post-img-box">
+              <a href="/4.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/4-3.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/4.html">Upscayl 跨平台AI图像放大工具</a>
+              <div>
+                
+                  <span class="post-date">06-01</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
             <div class="post-img-box">
               <a href="/3.html" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload" src="/images/3-1.png" alt="">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/3-1.png" alt="">
               </a>
             </div>
             <div class="post-date-title">
-              
-				<a class="post-title" href="/3.html">files-gallery 单文件目录系统</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
-
-
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9B%AE%E5%BD%95/" rel="tag">目录</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-31</span>
-			  </div>
-			  
+              <a class="post-title" href="/3.html">files-gallery 单文件目录系统</a>
+              <div>
+                
+                  <span class="post-date">05-31</span>
+                
+              </div>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/2.html" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload" src="/images/2-0.png" alt="">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/2-0.png" alt="">
               </a>
             </div>
             <div class="post-date-title">
-              
-				<a class="post-title" href="/2.html">Oblivion 网络工具</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
-
-
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-30</span>
-			  </div>
-			  
+              <a class="post-title" href="/2.html">Oblivion 网络工具</a>
+              <div>
+                
+                  <span class="post-date">05-30</span>
+                
+              </div>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/1.html" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload" src="/images/1-1.png" alt="">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/1-1.png" alt="">
               </a>
             </div>
             <div class="post-date-title">
-              
-				<a class="post-title" href="/1.html">Billfish 素材管理软件</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/">电脑软件</a>
-</div>
-
-
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-20</span>
-			  </div>
-			  
+              <a class="post-title" href="/1.html">Billfish 素材管理软件</a>
+              <div>
+                
+                  <span class="post-date">05-20</span>
+                
+              </div>
             </div>
-          </li>
+          </div>
         
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
+
+
+<script>
+  function randomizeItems() {
+    var items = document.querySelectorAll('.aside-list-item');
+    var parent = document.getElementById('aside-list');
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      parent.insertBefore(items[j], items[i]);
+    }
+  }
+</script>
+
     
   </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>

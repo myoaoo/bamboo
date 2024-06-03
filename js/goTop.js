@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       backBtn.style.display = 'block';
       backBtn.style.transform = 'translateY(0)';
     } else {
-      backBtn.style.transform = 'translateY(120px)';
+      backBtn.style.transform = 'translateY(0px)'; //0px 相始终显示不隐藏
     }
   }
   
