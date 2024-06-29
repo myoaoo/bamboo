@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档: 2025 | </title>
+  <title>我的音乐 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -568,299 +568,497 @@
     
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
-  
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<!-- hash算法 -->
+        <div style="height: 60px;"></div>
+<article class=" pagediy">
+	<div class="overlay" onclick="closeSidebar()"></div>
+	
+</article>
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <a href="/archives/2025">2025</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/6.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/6-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/6.html">以自己喜欢的方式听音乐</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
+
+<link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<style>
+	.aplayer .aplayer-icon-back, .aplayer .aplayer-icon-forward, .aplayer .aplayer-icon-lrc, .aplayer .aplayer-icon-order, .aplayer .aplayer-icon-play {
+		display: block;
+	}
+	.aplayer.aplayer-arrow .aplayer-icon-loop, .aplayer.aplayer-arrow .aplayer-icon-order, .aplayer.aplayer-mobile .aplayer-icon-volume-down {
+		display: block;
+	}
 
 
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
+/*播放列表*/
+	.names{
+		max-width: 200px;
+		height: calc(100vh - 20px);
+		left: -100%;
+		width: 100%;
+		padding: 10px;
+		top: 0;
+		position: fixed;
+		background-color:#fff;	
+		z-index: 1000;
+		transition: all .5s ease;
+	}
+	#musiclist {
+		display: grid;
+		align-content: center;
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		grid-gap: 10px;
+		padding:10px 10px auto 10px;
+	}
+		
+	#musiclist div {
+		max-width:80px;
+		text-align: center;
+		margin: 5px;
+	}
+	#musiclist div img {
+		border-radius: 8px
+	}
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-06-29</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/5.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/5-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/5.html">TinyFileManager一款强大的单文件目录程序</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
-
-
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-06-03</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/4.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/4-3.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/4.html">Upscayl 跨平台AI图像放大工具</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
-
-
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
-
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-06-01</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/3.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/3-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/3.html">files-gallery 单文件目录系统</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
+	/*媒体查询大于768px 时执行*/
+	@media (min-width: 768px)  {
+		.aplayer .aplayer-list ol{
+			max-height: calc(100vh - 120px) !important;
+		}
+		.aplayer.aplayer-withlrc .aplayer-info {
+			height: calc(100vh - 120px) !important;
+		}
+		.aplayer-list.aplayer-list-hide {
+			padding: 0px!important;
+		}
+		/*
+		.aplayer.aplayer-withlist .aplayer-list {
+			background-color: #ffffff50;
+			padding: 10px;
+			border-radius: 8px;
+		}
+		.dark .aplayer.aplayer-withlist .aplayer-list {
+				background-color: #33333350;
+			}
+		*/
+		
+	}
+	/*媒体查询小于767px 时执行*/
+	@media (max-width: 767px) {
+		.aplayer .aplayer-list ol{
+			max-height: 350px!important;
+		}
+		.aplayer.aplayer-withlrc .aplayer-info {
+			height: calc(100vh - 120px) !important;
+		}
+		.aplayer.aplayer-withlist .aplayer-list {
+			width:calc(100% - 20px);
+			position: fixed;
+			left:  calc(-100% - 20px);
+			background-color: #fff;
+			height: 50vh;
+			bottom: 0px;
+			padding: 10px 10px 66px 10px;
+			border-radius: 8px;
+			z-index: 103;
+			padding: 10px;
+			border-radius: 8px;
+		}
+		.dark .aplayer.aplayer-withlist .aplayer-list {
+						background-color: #333;
+					}
+		.aplayer.aplayer-withlrc .aplayer-info {
+			margin-left: 0px;
+		}
+		
+		.aplayer .aplayer-info .aplayer-music {
+			display: none;
+		}
+		.aplayer .aplayer-list.aplayer-list-hide {
+			left:0px; 
+			max-height: 100Vh !important;
+		}
 
 
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
+	}
+	#musiclistButton {
+		right: 25px;
+		bottom: 140px;
+		top: auto;
+		background-color: rgba(66, 185, 133, 0.8) !important;
+		padding-top: 10px;
+		padding: 10px;
+		border-radius: 50%;
+		transform: scale(0.8);
+		color: #fff;
+	}
+	@media (max-width: 551px) {
+		#musiclistButton {
+			right: 8px!important;
+		}
+	}
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9B%AE%E5%BD%95/" rel="tag">目录</a></li></ul>
+/*中间歌单歌词--------------------------------------------------------------------------*/
+	.aplayer {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		box-shadow:none;
+		background: none;
+		margin-top: 30px;
+	}
 
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-31</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/2-0.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/2.html">Oblivion 网络工具</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
+	.aplayer .aplayer-lrc p {
+		font-size: 17px;
+		padding: 3px 15px!important;
+		filter: blur(0px);
+	}
 
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%BC%80%E6%BA%90/">开源</a>
-</div>
+	.aplayer .aplayer-lrc p.aplayer-lrc-current {
+		filter: blur(0px);
+		font-size: 20px;
+		padding: 10px !important;
+		line-height: 25px !important;
+	}
+
+	.aplayer .aplayer-list ol li{
+		font-size: 17px;
+		height: 28px;
+		line-height: 30px;
+		border-radius: 8px;
+		border-top:none;	
+		padding: 5px 15px 0px 15px;
+	}
+	.aplayer .aplayer-list ol li.aplayer-list-light {
+		background: #e9e9e9;
+		padding-bottom: 5px;
+	}
+	.aplayer.aplayer-withlist .aplayer-info {
+		border-bottom: none;
+	}
+
+	.aplayer .aplayer-lrc{
+		height: calc(100vh - 120px) !important;
+	}
+
+	.aplayer .aplayer-lrc{
+		padding-top: 50px;
+	}
+	.aplayer-list {
+		width: 100%;
+		max-width: 500px;
+		max-height: none !important;
+		height: 100%;
+		min-width: 200px;
+	}
+	.aplayer .aplayer-body {
+		position: relative;
+		width: 100%;
+		max-width: 700px;
+	}
+	/*播放小控件*/
+	.aplayer .aplayer-pic .aplayer-play,
+	.aplayer .aplayer-pic .aplayer-button {
+		display: none;
+	}
+	.aplayer.aplayer-withlrc .aplayer-pic {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%!important;
+		height: 100%!important;
+		object-fit: cover!important; /* 图片铺满整个区域 */
+		z-index: -1; /* 确保播放器图片在最底层 */
+		filter: blur(20px); /* 添加模糊效果 */
+		opacity: 0.3; /* 设置透明度 */
+		pointer-events: none; /* 避免图片遮挡其他元素的交互 */
+	}
+	.aplayer .aplayer-lrc:after, .aplayer .aplayer-lrc:before {
+		content: none;
+	}
 
 
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
+/*底部播放控制--------------------------------------------------------------------------*/
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
+	.aplayer .aplayer-info .aplayer-controller {
+		position: fixed!important;
+		flex-direction: column;
+		padding: 10px;
+		padding-bottom: 35px;
+		padding-top: 5px;
+		bottom: 0px;
+		left: 0;
+		width: calc(100% - 20px); 
+		background-color:#ffffff40;
+		backdrop-filter: blur(20px);
+		z-index:999;
+	}
+	.aplayer .aplayer-info .aplayer-music{
+		position: fixed !important;
+		bottom: 7px;
+		left: 10px;
+		z-index:101;
+	}
+	
+	.aplayer .aplayer-info .aplayer-controller .aplayer-time {
+		display: flex;
+		justify-content: center;
+		bottom: -3px;
+	}
+	.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-time-inner {
+		position: absolute;
+		right: 0;
+		bottom: 10px;
+		
+	}
+	/*播放进度条*/
+	.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded,
+	.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played, 
+	.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar {
+		height: 8px!important;
+		border-radius: 8px!important;
 
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-30</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/1.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" src="/images/1-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              
-				<a class="post-title" href="/1.html">Billfish 素材管理软件</a>
-			  <div class="meta1">
-				<div class="post-tags">
-					<div class="post-categories">
-					  <!-- 文章详情页的分类 -->
+	}
 
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/">电脑软件</a>
-</div>
+	.aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb {
+		margin-top: -6px!important;
+		height: 20px!important;
+		width: 20px!important;
+	}
 
 
-					</div>&nbsp&nbsp
-					<!-- 文章详情页的标签 -->
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%8D%E8%B4%B9/" rel="tag">免费</a></li></ul>
+	/*音量大小*/
+	.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar {
+		width: 100%!important;
+		height: 100%!important;
+		left: 0!important;
+	}
+	.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap {
+		width: 20px!important;
+	}
 
-				</div>
-				<span ><i class="fas fa-clock" aria-hidden="true"></i>2025-05-20</span>
-			  </div>
-			  
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
-  <div class="w-70">
+	.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume {
+		width: 100%!important;
+	}
+	.aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-volume-bar-wrap {
+		height: 120px!important;
+		border-radius: 40px;
+	}	
+	/*按钮大小*/
+	.aplayer .aplayer-icon {
+		width: 25px;
+		height: 25px;
+		margin: 5px;
+	}
+	.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+		fill: #666;
+	}
+
+
+
+/*黑暗模式*/
+	.floating-button,
+	.toggle-button {
+		position: fixed;
+		right: 30px;
+		top: 20px;
+		z-index:998;
+		font-size:16px;
+		line-height: 1;
+	}
+	.floating-button {
+		right: 65px;
+	}
+
+	.dark {
+		background-color:#000;
+		color:#666;
+	}
+	.dark .aplayer .aplayer-lrc p{
+		color:#e2e2e2;
+	}
+	.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+		fill: #fff!important;
+	}
+	.dark .toggle-button,
+	.dark .floating-button {
+		color:#fff;
+	}
+
+	
+	.list .names {
+		left: 0 !important;
+	}
+	
+		.click-area {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 20; 
+	}	
+</style>
+
+<div class="names"><div id="musiclist"></div></div>
+<div id="aplayer">加载中...</div>
+<div id="metingContainer">列表加载中...</div>
+
+<script type="text/javascript">
+    const image = "https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80";
     
-  </div>
-</div>
+    let currentPlayer = null;
+
+    const sharedOptions = {
+        fixed: false,
+        autoplay: false,
+        volume: 1,
+        lrcType: 3,
+        mutex: true,
+        order: 'random',
+        preload: 'none',
+        listFolded: false,
+		listMaxHeight:'', //列表最大高度,默认340px
+        theme: '#ee8243',
+        defaultCover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'
+    };
+
+    const playersConfig = {
+        自定义: {
+            container: document.getElementById('aplayer'),
+            audio: [
+                {
+                    name: 'Only Time',
+                    artist: 'Enya',
+                    url: 'http://music.163.com/song/media/outer/url?id=29470947.mp3',
+                    cover: '',
+                    lrc: '',
+                },
+
+            ]
+        },
+
+
+    };
+
+    function loadAplayer(playerName) {
+        if (currentPlayer) {
+            currentPlayer.destroy();
+        }
+
+        // 创建新的包裹容器
+        const container = document.getElementById('aplayer');
+        container.innerHTML = '';  // 清空容器内容
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.className = 'content aplayer aplayer-withlrc aplayer-withlist';
+        container.appendChild(wrapperDiv);
+
+        // 初始化 APlayer 并将其添加到新的包裹容器中
+        currentPlayer = new APlayer(Object.assign({}, sharedOptions, playersConfig[playerName], { container: wrapperDiv }));
+        
+        document.getElementById('aplayer').style.display = 'block';
+        document.getElementById('metingContainer').style.display = 'none';
+    }
+
+    const meting = [
+        {name: '国语', server: 'netease', type: 'playlist', id: '8184817453', cover: 'https://p1.music.126.net/lgV84WlRUcgn-jCiKx-n0w==/109951165592212933.jpg?param=80y80'},
+        {name: '粤语', server: 'netease', type: 'playlist', id: '8185045795', cover: 'https://p1.music.126.net/xe1F96UCN5arTvjBTjtISQ==/100055558139748.jpg?param=80y80'},
+        {name: '英文', server: 'netease', type: 'playlist', id: '5471042889', cover: 'https://p1.music.126.net/FLg-ePGetDLWs58nrBbKtA==/109951164031278533.jpg?param=80y80'},
+        {name: '纯音乐', server: 'netease', type: 'playlist', id: '8725850622', cover: 'https://p1.music.126.net/zTkgNapG5qrxo3AtFBmpWg==/109951163613302296.jpg?param=80y80'},
+        {name: '史诗', server: 'netease', type: 'playlist', id: '8725429117', cover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'},
+		{name: '电音', server: 'netease', type: 'playlist', id: '8173191976', cover: 'https://p1.music.126.net/U10tpIUujpa7EYFvaoEHCA==/109951164459635354.jpg?param=80y80'},
+		{name: '金属', server: 'netease', type: 'playlist', id: '8173838382', cover: 'https://p1.music.126.net/Bq2_Ks_HhkvRyzM24R8IvA==/799344953445636.jpg?param=80y80'},
+		{name: '粤语-女', server: 'netease', type: 'playlist', id: '8855877957', cover: 'https://p1.music.126.net/j1_NTwobAGygKhwdUJ0yZw==/109951168776476914.jpg?param=80y80'},
+    ];
+
+    const metingContainer = document.getElementById('metingContainer');
+
+    function loadMeting(name) {
+        clearMetingContainer();
+        const selectedMeting = meting.find(item => item.name === name);
+        if (!selectedMeting) {
+            console.error(`Meting player with name '${name}' not found.`);
+            return;
+        }
+        metingContainer.innerHTML = `
+            <meting-js
+                server="${selectedMeting.server}"
+                type="${selectedMeting.type}"
+                id="${selectedMeting.id}"
+                cover="${selectedMeting.cover}">
+            </meting-js>
+        `;
+        document.getElementById('aplayer').style.display = 'none';
+        document.getElementById('metingContainer').style.display = 'block';
+    }
+
+    function clearMetingContainer() {
+        metingContainer.innerHTML = '';
+    }
+
+    const musiclistContainer = () => {
+        let htmlContent = '';
+        for (const playerName in playersConfig) {
+            htmlContent += `<div onclick="loadAplayer('${playerName}')"><img src="${playersConfig[playerName].audio[0]?.cover || image}"><div>${playerName}</div></div>`;
+        }
+        meting.forEach((item) => {
+            htmlContent += `<div onclick="loadMeting('${item.name}')"><img src="${item.cover ? item.cover : image}"><div>${item.name}</div></div>`;
+        });
+        document.getElementById('musiclist').innerHTML = htmlContent;
+    };
+
+    musiclistContainer(); // 调用nameAAAContainer函数
+
+    // 默认加载第一个播放器
+    document.addEventListener("DOMContentLoaded", function () {
+        //loadAplayer('自定义'); // 默认加载 APlayer 播放器
+        loadMeting('英文'); // 默认加载 Meting 播放器
+    });
+</script>
+<script>
+// 黑暗模式
+document.write('<div class="toggle-button" onclick="toggleDarkMode()" style=" display: none;">☀</div><div class="floating-button" id="musiclistButton" ><i class="fas fa-music"></i></div>');
+var isDarkMode = 0; 
+if (isDarkMode) {
+    document.body.classList.add('dark');
+    document.querySelector('.toggle-button').textContent = '◐'; // 设置初始状态为 ◗
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    if (isDarkMode) {
+        document.querySelector('.toggle-button').textContent = '☀'; // 切换到非dark模式时显示 ☀
+    } else {
+        document.querySelector('.toggle-button').textContent = '◐'; // 切换到dark模式时显示◗
+    }
+    isDarkMode = !isDarkMode; 
+}
+
+// 侧栏
+  var toggleListButton = document.getElementById('musiclistButton');
+  var body = document.body;
+  toggleListButton.addEventListener('click', function() {
+    body.classList.toggle('list');
+  });
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+    if (!toggleListButton.contains(target)) {
+      body.classList.remove('list');
+    }
+  });
+
+</script>
+    
+<script>
+if (window.innerWidth < 767) {
+document.write('<div class="click-area"></div>');
+	document.querySelector('.click-area').addEventListener('click', function() {
+		const aplayerList = document.querySelector('.aplayer-list');
+		if (aplayerList.classList.contains('aplayer-list-hide')) {
+			aplayerList.classList.remove('aplayer-list-hide');
+		}
+	});
+	}
+</script>
 
       </main>
     </div>
