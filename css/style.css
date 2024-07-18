@@ -367,6 +367,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   margin: 40px auto;
   display: flex;
   box-sizing: border-box;
+  padding-top: 40px;
   justify-content: space-between;
 }
 #l_main .l_content {
