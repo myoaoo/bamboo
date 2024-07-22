@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Media Sync 同步上传的图片到媒体库 | </title>
+  <title>wordpress  Media Sync 同步上传的图片到媒体库 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -65,6 +65,8 @@
             <script src="/scripts/nav.js"></script>
         
             <script src="/scripts/wn.js"></script>
+        
+            <script src="/scripts/beijing.js"></script>
         
     
 
@@ -215,34 +217,45 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="/archives" class="drawer-menu-item-link">
-                  
-                    <i class="fas fa-archive" aria-hidden="true"></i>
-                  
-                  <span class="name">归档</span>
+                <a href="javascript:;" rel="external nofollow noreferrer" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(1)">
+                  <span>
+                    
+                      <i class="fas fa-file-alt"></i>
+                    
+                    <span class="name">文章</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(1)}" aria-hidden="true"></i>
                 </a>
-              
-            </li>
-          
-            <li class="drawer-box-content_item" style="position: relative;">
-              
-                <a href="/tags" class="drawer-menu-item-link">
+                <ul class="drawer-sub-menu" v-if="isOpen(1)">
                   
-                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
                   
-                  <span class="name">标签</span>
-                </a>
-              
-            </li>
-          
-            <li class="drawer-box-content_item" style="position: relative;">
-              
-                <a href="/categories" class="drawer-menu-item-link">
+                  <li>
+                    <a href="/tags">
+                      
+                      <i class="fas fa-tags" style="margin-top: -20px;"></i>
+                      
+                      <span>标签</span>
+                    </a>
+                  </li>
                   
-                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  <li>
+                    <a href="/categories">
+                      
+                      <i class="fas fa-bookmark" style="margin-top: -20px;"></i>
+                      
+                      <span>分类</span>
+                    </a>
+                  </li>
                   
-                  <span class="name">分类</span>
-                </a>
+                </ul>
               
             </li>
           
@@ -297,6 +310,17 @@
                     <i class="fas fa-video" aria-hidden="true"></i>
                   
                   <span class="name">视频</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/page/wordpress/" class="drawer-menu-item-link">
+                  
+                    <i class="fab fa-wordpress" aria-hidden="true"></i>
+                  
+                  <span class="name">wordpress</span>
                 </a>
               
             </li>
@@ -370,34 +394,43 @@
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/archives" class="menu-item-link" title="归档">
+                <a href="javascript:;" rel="external nofollow noreferrer" class="menu-item-link" title="文章">
                   
-                    <i class="fas fa-archive" aria-hidden="true"></i>
+                    <i class="fas fa-file-alt"></i>
                   
-                  <span class="name">归档</span>
+                  <span class="name">文章</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
                 </a>
-              
-            </li>
-          
-            <li class="menu-item" style="position: relative;">
-              
-                <a href="/tags" class="menu-item-link" title="标签">
+                <ul class="sub-menu">
                   
-                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  <li>
+                    <a href="/archives">
+                      
+                      <i class="fas fa-archive" style="margin-top: -20px;"></i>
+                      
+                      <span>归档</span>
+                    </a>
+                  </li>
                   
-                  <span class="name">标签</span>
-                </a>
-              
-            </li>
-          
-            <li class="menu-item" style="position: relative;">
-              
-                <a href="/categories" class="menu-item-link" title="分类">
+                  <li>
+                    <a href="/tags">
+                      
+                      <i class="fas fa-tags" style="margin-top: -20px;"></i>
+                      
+                      <span>标签</span>
+                    </a>
+                  </li>
                   
-                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  <li>
+                    <a href="/categories">
+                      
+                      <i class="fas fa-bookmark" style="margin-top: -20px;"></i>
+                      
+                      <span>分类</span>
+                    </a>
+                  </li>
                   
-                  <span class="name">分类</span>
-                </a>
+                </ul>
               
             </li>
           
@@ -452,6 +485,17 @@
                     <i class="fas fa-video" aria-hidden="true"></i>
                   
                   <span class="name">视频</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/page/wordpress/" class="menu-item-link" title="wordpress">
+                  
+                    <i class="fab fa-wordpress" aria-hidden="true"></i>
+                  
+                  <span class="name">wordpress</span>
                 </a>
               
             </li>
@@ -590,7 +634,7 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        Media Sync 同步上传的图片到媒体库
+        wordpress  Media Sync 同步上传的图片到媒体库
       </span>
     </div>
     
@@ -663,7 +707,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/9.html" target="_blank" title="Media Sync 同步上传的图片到媒体库">https://oaoo.com/9.html</a>
+    <a href="/9.html" target="_blank" title="wordpress  Media Sync 同步上传的图片到媒体库">https://oaoo.com/9.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -988,7 +1032,7 @@
               </a>
             </div>
             <div class="post-date-title">
-              <a class="post-title" href="/9.html">Media Sync 同步上传的图片到媒体库</a>
+              <a class="post-title" href="/9.html">wordpress  Media Sync 同步上传的图片到媒体库</a>
               <div>
                 
                   <span class="post-date">07-10</span>

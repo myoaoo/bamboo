@@ -6,7 +6,7 @@
   <link href="https://oaoo.com/atom.xml" rel="self"/>
   
   <link href="https://oaoo.com/"/>
-  <updated>2024-07-18T08:11:21.830Z</updated>
+  <updated>2024-07-19T01:35:08.030Z</updated>
   <id>https://oaoo.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://oaoo.com/10.html"/>
     <id>https://oaoo.com/10.html</id>
     <published>2024-07-18T07:52:00.000Z</published>
-    <updated>2024-07-18T08:11:21.830Z</updated>
+    <updated>2024-07-19T01:35:08.030Z</updated>
     
     <content type="html"><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>如果您的 WordPress 网站，创建了复杂的导航菜单，那么最好对其进行备份，以防止因意外丢失菜单。Wordpress 默认不提供备份导航菜单的功能，我们需要借助 WPS Menu Exporter 插件备份网站的导航菜单。</p><p>通过 WPS Menu Exporter 插件可以将 WordPress 网站的导航菜单项导出到 XML 文件。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>1.到插件–安装插件页面，然后搜索、安装并激活 WPS Menu Exporter 插件。<br><img src="/images/10-1.png"></p><p>2.依次导航到工具–导出页面，在选择导出的内容时，请选择导航菜单条目。<br><img src="/images/10-2.png"></p><p>3.如果要从备份文件恢复导航菜单，请转到工具 &gt; 导入&gt; 运行导入器。如果您尚未安装 WordPress 导入器，请先选择立即安装，然后运行导入器并导入备份文件，就可以恢复导航菜单了。</p><p><img src="/images/10-3.png"></p>]]></content>
     
@@ -41,11 +41,11 @@
   </entry>
   
   <entry>
-    <title>Media Sync 同步上传的图片到媒体库</title>
+    <title>wordpress  Media Sync 同步上传的图片到媒体库</title>
     <link href="https://oaoo.com/9.html"/>
     <id>https://oaoo.com/9.html</id>
     <published>2024-07-10T07:13:00.000Z</published>
-    <updated>2024-07-18T08:03:02.749Z</updated>
+    <updated>2024-07-22T06:55:17.411Z</updated>
     
     <content type="html"><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>如果要在WordPress后台的【媒体】库插件网站的所有图片，必须通过WordPress媒体上传功能上传才会显示。如果你通过FTP或其他方式上传，你将无法在【媒体】库看到并管理。</p><p>因为：WordPress 后台的【媒体】其实是一种自定义文章类型，也就是说每一张图片都是可以看做的一篇“文章”，是写入数据库信息的。而通过FTP上传的图片，显然不可能去写数据库信息。</p><p>&#x2F;<em>Media Sync 插件它可以去扫描你的上传目录中的图片，是否已经存在媒体库中，如果没有，可以批量自动“上传”到媒体库，其实也就是写入数据库数据。</em>&#x2F;</p><p>需要用到这个插件的情况无非以下两种：</p><p>1.之前有些图片是FTP上传的<br>2.网站搬家以后，图片迁移过来，但是在媒体库没有看到图片数据</p><h3 id="插件使用"><a href="#插件使用" class="headerlink" title="插件使用"></a>插件使用</h3><p><img src="/images/9-3.png"></p><p>安装并激活插件以后，就可以在【媒体】菜单下找到“媒体同步”，点击图中的“扫描文件”按钮：</p><p>进入到下图界面，你可以自己勾选需要扫描的目录，然后可以“尝试运行”一次，看看执行的结果，如果没有问题，就取消勾选“尝试运行”，并点击“导入所选”按钮即可执行。</p><div class="note danger"><p>重要提示：操作前请务必备份你的数据库，以便在出错的时候可以进行恢复！</p></div><p><img src="/images/9-2.png"></p><div class="note info"><p>如果要使用该插件汉化包，<a href="images/media-sync-zh_CN.zip">点击下载</a>简体中文包，解压后，将里面的 .mo 文件上传到 &#x2F;wp-content&#x2F;languages&#x2F;plugins 目录即可生效。</p></div><p><img src="/images/9-4.png"></p>]]></content>
     
