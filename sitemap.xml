@@ -2,9 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://oaoo.com/dh/index.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://oaoo.com/page/docsify.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://oaoo.com/page/fuhao.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://oaoo.com/yzj.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://oaoo.com/page/yzj.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://oaoo.com/page/hexo.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://oaoo.com/page/wordpress.html</loc>
     
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -14,15 +68,6 @@
     <loc>https://oaoo.com/9.html</loc>
     
     <lastmod>2024-07-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://oaoo.com/dh/index.html</loc>
-    
-    <lastmod>2024-07-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,7 +247,7 @@
 
   <url>
     <loc>https://oaoo.com/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -210,21 +255,21 @@
   
   <url>
     <loc>https://oaoo.com/tags/%E5%85%8D%E8%B4%B9/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://oaoo.com/tags/%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://oaoo.com/tags/%E7%9B%AE%E5%BD%95/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -233,28 +278,28 @@
   
   <url>
     <loc>https://oaoo.com/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://oaoo.com/categories/wordpress/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://oaoo.com/categories/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://oaoo.com/categories/%E7%BD%91%E7%9B%98/</loc>
-    <lastmod>2024-07-22</lastmod>
+    <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
