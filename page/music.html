@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>关于我 | </title>
+  <title>music | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -692,790 +692,1002 @@
     
 </header>
         <!-- 内容区域 -->
-        
-<!-- prismjs 代码高亮 -->
+        <style>
+	h3, h4{
+		font-weight: 400;
+	}
+	.abc{
+        background-color: #e7e7e7;
+        border-radius: 5px;
+	}
+	
+    .tab-content {
+        display: none;
+		margin-top: 10px;
+    }
+    .tab {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #e7e7e7;
+        margin: 0 5px 5px 0;
+        border-radius: 20px;
+		font-size: 0.9em;
+    }
+    .active-tab {
+        background-color: #c8c8c8;
+        color: #fff;
+    }
+    .tab-group {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+    }
+    .abc {
+        display: none;
+    }
+    .abc.show {
+        display: block;
+    }
+    .toggle-icon {
+        float: right;
+		width: 30px; 
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+    }
+	#linksContainer {
+		position: fixed;
+		top: 60px;
+		left: -170px;
+		width: 150px;
+		z-index: 99;
+		background-color: #f8f8f8;
+		padding: 8px;
+		transition: left 0.3s ease;
+		overflow-y: auto;
+		height: calc(100vh - 76px);
+	}
+	
+#toggleButton {
+    position: fixed;
+    bottom: 140px;
+    right: 28px;
+    z-index: 100;
+    background-color: rgba(66, 185, 133, 0.8) !important;
+    color: white;
+}
+@media (max-width: 551px) {
+    #toggleButton {
+    right: 12px;
+	bottom: 130px;
+	}
+}
 
+	#searchInput-webnav {
+	width: 75%;
+	  margin: 20px auto 0;
+	  display: block;
+	  padding: 10px; 
+	  border: none; 
+	  outline: none;
+	  background-color: #fff;
+	  border-radius: 20px; 	  
+	}
 
+	.search-result{
+	text-align: center;
+	margin: 20px auto;
+	}
+	.search-result span {
+		color:red;
+	}
+	
+	#linksContainer h4 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#linksContainer h4 i{transform: scale(0.7);}
 
+	
+	#linksContainer .list, 
+	#linksContainer .abc p,
+	#linksContainer h4 {margin: 5px 3px;padding:5px;}
+	
+	#linksContainer .abc p {padding-left:15px;}
+	.aaaB{
+        background-color: #fff0;
+        color: #000;
+		padding: 5px 0px;
+    }
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+	#linksContainer a :hover,
+	#linksContainer .abc a :hover,
+	#linksContainer h4:hover {
+		background-color: #dedede;
+		border-radius: 8px;
+	}
+	#tabContainer {margin-top: 30px;}
+	#tabContainer h3 {    
+	border-bottom: 1px solid #bfbfbf;
+    padding-bottom: 5px;
+	}
+	.tab-group img ,
+	#tabContainer h3 img {
+		height: 20px;
+	    vertical-align: -0.27em;
+		}
+	#tabContainer .tab:hover{
+		background-color: red;
+		color: #fff;
+	}
+a {text-decoration: none;color: #000;}
+.pagediy {
+    width: 75%;
+    margin: 0px auto;
+	padding: 20px;
+    min-height: calc(100vh - 160px);
+}
+@media (max-width: 992px) {
+    .pagediy {
+    width: calc(100% - 50px);
+	padding: 25px;
+}
+}
+h3 {margin: 1.2rem 0;}
 
+.grid-item .grid-item-right p a {color: #000}
+.grid-item div a {color: #bdbdbd}
 
-  <!-- 文章详情页顶部图片和标题 -->
+/*黑暗模式*/
+.darkModel #linksContainer,
+.darkModel .grid-item-left,
+.darkModel .tab,
+.darkModel #searchInput-webnav,
+.darkModel .grid-item {
+	background-color: rgba(240, 246, 252, 0.149);
+}
+.darkModel .active-tab{
+	background-color: rgb(255 255 255 / 40%);;
+}
+.darkModel .grid-item-left{
+	background-color: rgb(255 255 255 / 0%);;
+}
+.darkModel .grid-item-left {border-radius: 20px;}
 
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        关于我
-      </span>
-    </div>
-    
-    
-  </div>
-  
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <div id="readmore-container"><h1 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h1><p>博主: yuang01 | 性别: 男 | 邮箱: <a href="mailto:&#x78;&#120;&#120;&#120;&#x40;&#x61;&#97;&#x2e;&#x63;&#111;&#x6d;" rel="external nofollow noreferrer">&#x78;&#120;&#120;&#120;&#x40;&#x61;&#97;&#x2e;&#x63;&#111;&#x6d;</a></p>
-<h2 id="我的书籍"><a href="#我的书籍" class="headerlink" title="我的书籍"></a>我的书籍</h2><div class="site-card-group"><a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg"/></div><div class="info"><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
-<a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a>
-<a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg"/></div><div class="info"><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
-<a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a>
-<a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg"/></div><div class="info"><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
-<a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a></div>
-
-<h2 id="我的社交账号"><a href="#我的社交账号" class="headerlink" title="我的社交账号"></a>我的社交账号</h2><div style="display: flex;">
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener external nofollow noreferrer" href='https://github.com/yuang01/hexo-theme-bamboo' title='Github'><i class='fa-brands fa-github-alt'></i>Github</a></span>
-<span style="width:5px;"></span>
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener external nofollow noreferrer" href='https://github.com/yuang01/hexo-theme-bamboo' title='知乎'><i class='fa-brands fa-zhihu'></i>知乎</a></span>
-<span style="width:5px;"></span>
-<span class='btn center cool-2'><a class="button" target="_blank" rel="noopener external nofollow noreferrer" href='https://github.com/yuang01/hexo-theme-bamboo' title='微博'><i class='fa-brands fa-weibo'></i>微博</a></span>
-</div>
-
-<h2 id="我的技能"><a href="#我的技能" class="headerlink" title="我的技能"></a>我的技能</h2><div style="display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 30px 30px;
-  grid-column-gap: 20px">
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-danger"  style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-info"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-success"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-warning"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-primary"  style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><p>进度条测试</p></div></div>
-</div>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><div class="link-group"><div class="tagLink"><a class="link-card" title="项目一" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目一</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目二" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目二</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目三" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目三</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目四" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目四</p><p class="url">http://www.baidu.com</p></div></a></div>
-<div class="tagLink"><a class="link-card" title="项目一" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目一</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目二" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目二</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目三" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目三</p><p class="url">http://www.baidu.com</p></div></a></div>
-
-<div class="tagLink"><a class="link-card" title="项目四" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><span class="link-card-backdrop" style="background-image: url(https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp)"></span><div class="left"><img src="https://pica.zhimg.com/80/v2-970dd5538f106dd6be064c4eafc01c36_1440w.webp"/></div><div class="right"><p class="text">项目四</p><p class="url">http://www.baidu.com</p></div></a></div></div>
-
-<h2 id="我的游戏"><a href="#我的游戏" class="headerlink" title="我的游戏"></a>我的游戏</h2><div class="gallery ">
-              <p><img src="https://pic2.zhimg.com/v2-abb2c12e9fbe8dda1993f7cd5d149159_b.jpg" alt="王者荣耀"><br><img src="https://pic2.zhimg.com/80/v2-980e050a09c4157e45bb8fdd419f9847_1440w.webp" alt="和平精英"></p>
-            </div>
-
-<h2 id="我的相册"><a href="#我的相册" class="headerlink" title="我的相册"></a>我的相册</h2><div class="tag-plugin post-swiper-container" width="fill"><div class="swiper-wrapper"><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;" rel="external nofollow noreferrer"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">我的相册1</p><img no-lazy class="swiper-slide-img" src="https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;" rel="external nofollow noreferrer"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">我的相册2</p><img no-lazy class="swiper-slide-img" src="https://pic2.zhimg.com/80/v2-e22aaad20d20634f506f57fff0fcbc17_1440w.webp"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;" rel="external nofollow noreferrer"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">我的相册3</p><img no-lazy class="swiper-slide-img" src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp"></a></div><div class="swiper-slide"><a class="swiper-slide-href_tag" href="javascript:;" rel="external nofollow noreferrer"><p class="ani animated swiper-slide-desc_tag" swiper-animate-effect="fadeInDown">我的相册4</p><img no-lazy class="swiper-slide-img" src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp"></a></div></div><div class="swiper-pagination"></div><div class="swiper-button-prev blur"></div><div class="swiper-button-next blur"></div></div></div>
-				<link rel="stylesheet" type="text/css" href="https://qiniu.techgrow.cn/readmore/dist/hexo.css">
-				<script src="https://qiniu.techgrow.cn/readmore/dist/readmore.js" type="text/javascript"></script>
-				<script>
-				var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
-				var isEncrypt = document.getElementById('hexo-blog-encrypt');
-				var allowMobile = false;
-				if (!isEncrypt && (!isMobile || (isMobile && allowMobile))) {
-					try {
-						var plugin = new ReadmorePlugin();
-						plugin.init({
-							"type": "hexo",
-							"id": "readmore-container",
-							"name": "梦想魔豆",
-							"blogId": "42516-6275863694521-947",
-							"qrcode": "/images/logo/gongzhonghao.jpg",
-							"keyword": "tech",
-							"random": "1",
-							"height": "auto",
-							"expires": "365",
-							"lockToc": "yes",
-							"interval": "60",
-							"baseUrl": "",
-							"tocSelector": ""
-						});
-					} catch(e) {
-						console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
-					}
-				}
-				</script>
-			
-      </div>
-      <div class="post-tags-categories">
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>梦想魔豆</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/about/index.html" target="_blank" title="关于我">https://oaoo.com/about/index.html</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" rel="external nofollow noreferrer" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/images/logo/zhifubao.png" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/images/logo/weixin.png" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'WeChatpay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script defer src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
-  }
+.darkModel #linksContainer a :hover,
+.darkModel #linksContainer .abc a :hover,
+.darkModel #linksContainer h4:hover {
+		background-color: rgba(240, 246, 252, 0.149);
+	}
+.darkModel #searchInput-webnav,
+.darkModel .grid-item .grid-item-right p a,
+.darkModel .grid-item a ,
+.darkModel .grid-item-right a {
+	color: #c9d1d9;
+	}
+	
+	
 </style>
 
 
+
+<div style="height: 60px;"></div>
+<article class=" pagediy">
+	<div class="overlay" onclick="closeSidebar()"></div>
+	<pre><code>&lt;style&gt;
+    .aplayer .aplayer-icon-back, .aplayer .aplayer-icon-forward, .aplayer .aplayer-icon-lrc, .aplayer .aplayer-icon-order, .aplayer .aplayer-icon-play &#123;
+        display: block;
+    &#125;
+    .aplayer.aplayer-arrow .aplayer-icon-loop, .aplayer.aplayer-arrow .aplayer-icon-order, .aplayer.aplayer-mobile .aplayer-icon-volume-down &#123;
+        display: block;
+    &#125;
+
+/*播放列表*/
+    .names&#123;
+        max-width: 200px;
+        height: calc(100vh - 20px);
+        left: -100%;
+        width: 100%;
+        padding: 10px;
+        top: 0;
+        position: fixed;
+        background-color:#fff;	
+        z-index: 1000;
+        transition: all .5s ease;
+    &#125;
+    #musiclist &#123;
+        display: grid;
+        align-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        grid-gap: 10px;
+        padding:10px 10px auto 10px;
+    &#125;
+        
+    #musiclist div &#123;
+        max-width:80px;
+        text-align: center;
+        margin: 5px;
+    &#125;
+    #musiclist div img &#123;
+        border-radius: 8px
+    &#125;
+
+    /*媒体查询大于768px 时执行*/
+    @media (min-width: 768px)  &#123;
+        .aplayer .aplayer-list ol&#123;
+            max-height: calc(100vh - 120px) !important;
+        &#125;
+        .aplayer.aplayer-withlrc .aplayer-info &#123;
+            height: calc(100vh - 120px) !important;
+        &#125;
+        .aplayer-list.aplayer-list-hide &#123;
+            padding: 0px!important;
+        &#125;
+        /*
+        .aplayer.aplayer-withlist .aplayer-list &#123;
+            background-color: #ffffff50;
+            padding: 10px;
+            border-radius: 8px;
+        &#125;
+        .dark .aplayer.aplayer-withlist .aplayer-list &#123;
+                background-color: #33333350;
+            &#125;
+        */
+        
+    &#125;
+    /*媒体查询小于767px 时执行*/
+    @media (max-width: 767px) &#123;
+        .aplayer .aplayer-list ol&#123;
+            max-height: 350px!important;
+        &#125;
+        .aplayer.aplayer-withlrc .aplayer-info &#123;
+            height: calc(100vh - 120px) !important;
+        &#125;
+        .aplayer.aplayer-withlist .aplayer-list &#123;
+            width:calc(100% - 20px);
+            position: fixed;
+            left:  calc(-100% - 20px);
+            background-color: #fff;
+            height: 50vh;
+            bottom: 0px;
+            padding: 10px 10px 66px 10px;
+            border-radius: 8px;
+            z-index: 103;
+            padding: 10px;
+            border-radius: 8px;
+        &#125;
+        .dark .aplayer.aplayer-withlist .aplayer-list &#123;
+                        background-color: #333;
+                    &#125;
+        .aplayer.aplayer-withlrc .aplayer-info &#123;
+            margin-left: 0px;
+        &#125;
+        
+        .aplayer .aplayer-info .aplayer-music &#123;
+            display: none;
+        &#125;
+        .aplayer .aplayer-list.aplayer-list-hide &#123;
+            left:0px; 
+            max-height: 100Vh !important;
+        &#125;
+
+
+    &#125;
+
+/*中间歌单歌词--------------------------------------------------------------------------*/
+    .aplayer &#123;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        box-shadow:none;
+        background: none;
+        margin-top: 30px;
+    &#125;
+
+    .aplayer .aplayer-lrc p &#123;
+        font-size: 17px;
+        padding: 3px 15px!important;
+        filter: blur(0px);
+    &#125;
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current &#123;
+        filter: blur(0px);
+        font-size: 20px;
+        padding: 10px !important;
+        line-height: 25px !important;
+    &#125;
+
+    .aplayer .aplayer-list ol li&#123;
+        font-size: 17px;
+        height: 28px;
+        line-height: 30px;
+        border-radius: 8px;
+        border-top:none;	
+        padding: 5px 15px 0px 15px;
+    &#125;
+    .aplayer .aplayer-list ol li.aplayer-list-light &#123;
+        background: #e9e9e9;
+        padding-bottom: 5px;
+    &#125;
+    .aplayer.aplayer-withlist .aplayer-info &#123;
+        border-bottom: none;
+    &#125;
+
+    .aplayer .aplayer-lrc&#123;
+        height: calc(100vh - 120px) !important;
+    &#125;
+
+    .aplayer .aplayer-lrc&#123;
+        padding-top: 50px;
+    &#125;
+    .aplayer-list &#123;
+        width: 100%;
+        max-width: 500px;
+        max-height: none !important;
+        height: 100%;
+        min-width: 200px;
+    &#125;
+    .aplayer .aplayer-body &#123;
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+    &#125;
+    /*播放小控件*/
+    .aplayer .aplayer-pic .aplayer-play,
+    .aplayer .aplayer-pic .aplayer-button &#123;
+        display: none;
+    &#125;
+    .aplayer.aplayer-withlrc .aplayer-pic &#123;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%!important;
+        height: 100%!important;
+        object-fit: cover!important; /* 图片铺满整个区域 */
+        z-index: -1; /* 确保播放器图片在最底层 */
+        filter: blur(20px); /* 添加模糊效果 */
+        opacity: 0.3; /* 设置透明度 */
+        pointer-events: none; /* 避免图片遮挡其他元素的交互 */
+    &#125;
+    .aplayer .aplayer-lrc:after, .aplayer .aplayer-lrc:before &#123;
+        content: none;
+    &#125;
+
+
+/*底部播放控制--------------------------------------------------------------------------*/
+
+    .aplayer .aplayer-info .aplayer-controller &#123;
+        position: fixed!important;
+        flex-direction: column;
+        padding: 10px;
+        padding-bottom: 35px;
+        padding-top: 5px;
+        bottom: 0px;
+        left: 0;
+        width: calc(100% - 20px); 
+        background-color:#ffffff40;
+        backdrop-filter: blur(20px);
+        z-index:999;
+    &#125;
+    .aplayer .aplayer-info .aplayer-music&#123;
+        position: fixed !important;
+        bottom: 7px;
+        left: 10px;
+        z-index:101;
+    &#125;
     
+    .aplayer .aplayer-info .aplayer-controller .aplayer-time &#123;
+        display: flex;
+        justify-content: center;
+        bottom: -3px;
+    &#125;
+    .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-time-inner &#123;
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        
+    &#125;
+    /*播放进度条*/
+    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded,
+    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played, 
+    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar &#123;
+        height: 8px!important;
+        border-radius: 8px!important;
+
+    &#125;
+
+    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb &#123;
+        margin-top: -6px!important;
+        height: 20px!important;
+        width: 20px!important;
+    &#125;
+
+
+
+    /*音量大小*/
+    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar &#123;
+        width: 100%!important;
+        height: 100%!important;
+        left: 0!important;
+    &#125;
+    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap &#123;
+        width: 20px!important;
+    &#125;
+
+    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume &#123;
+        width: 100%!important;
+    &#125;
+    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-volume-bar-wrap &#123;
+        height: 120px!important;
+        border-radius: 40px;
+    &#125;	
+    /*按钮大小*/
+    .aplayer .aplayer-icon &#123;
+        width: 25px;
+        height: 25px;
+        margin: 5px;
+    &#125;
+    .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path &#123;
+        fill: #666;
+    &#125;
+
+
+
+/*黑暗模式*/
+    .floating-button,
+    .toggle-button &#123;
+        position: fixed;
+        right: 30px;
+        top: 20px;
+        z-index:998;
+        font-size:16px;
+        line-height: 1;
+    &#125;
+    .floating-button &#123;
+        right: 65px;
+    &#125;
+
+    .dark &#123;
+        background-color:#000;
+        color:#666;
+    &#125;
+    .dark .aplayer .aplayer-lrc p&#123;
+        color:#e2e2e2;
+    &#125;
+    .dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path &#123;
+        fill: #fff!important;
+    &#125;
+    .dark .toggle-button,
+    .dark .floating-button &#123;
+        color:#fff;
+    &#125;
+
     
-    <!-- 评论 -->
+    .list .names &#123;
+        left: 0 !important;
+    &#125;
+    
+        .click-area &#123;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 20; 
+    &#125;	
+&lt;/style&gt;
+</code></pre>
+</head>
+<body >
+<div class="names"><div id="musiclist"></div></div>
+<div id="aplayer">加载中...</div>
+<div id="metingContainer">列表加载中...</div>
+
+<script type="text/javascript">
+    const image = "https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80";
+    
+    let currentPlayer = null;
+
+    const sharedOptions = {
+        fixed: false,
+        autoplay: false,
+        volume: 1,
+        lrcType: 3,
+        mutex: true,
+        order: 'random',
+        preload: 'none',
+        listFolded: false,
+        listMaxHeight:'', //列表最大高度,默认340px
+        theme: '#ee8243',
+        defaultCover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'
+    };
+
+    const playersConfig = {
+        自定义: {
+            container: document.getElementById('aplayer'),
+            audio: [
+                {
+                    name: 'Only Time',
+                    artist: 'Enya',
+                    url: 'http://music.163.com/song/media/outer/url?id=29470947.mp3',
+                    cover: '',
+                    lrc: 'May It Be-Enya.lrc',
+                },
+
+            ]
+        },
+
+
+    };
+
+    function loadAplayer(playerName) {
+        if (currentPlayer) {
+            currentPlayer.destroy();
+        }
+
+        // 创建新的包裹容器
+        const container = document.getElementById('aplayer');
+        container.innerHTML = '';  // 清空容器内容
+        const wrapperDiv = document.createElement('div');
+        wrapperDiv.className = 'content aplayer aplayer-withlrc aplayer-withlist';
+        container.appendChild(wrapperDiv);
+
+        // 初始化 APlayer 并将其添加到新的包裹容器中
+        currentPlayer = new APlayer(Object.assign({}, sharedOptions, playersConfig[playerName], { container: wrapperDiv }));
+        
+        document.getElementById('aplayer').style.display = 'block';
+        document.getElementById('metingContainer').style.display = 'none';
+    }
+
+    const meting = [
+        {name: '国语', server: 'netease', type: 'playlist', id: '8184817453', cover: 'https://p1.music.126.net/lgV84WlRUcgn-jCiKx-n0w==/109951165592212933.jpg?param=80y80'},
+        {name: '粤语', server: 'netease', type: 'playlist', id: '8185045795', cover: 'https://p1.music.126.net/xe1F96UCN5arTvjBTjtISQ==/100055558139748.jpg?param=80y80'},
+        {name: '英文', server: 'netease', type: 'playlist', id: '5471042889', cover: 'https://p1.music.126.net/FLg-ePGetDLWs58nrBbKtA==/109951164031278533.jpg?param=80y80'},
+        {name: '纯音乐', server: 'netease', type: 'playlist', id: '8725850622', cover: 'https://p1.music.126.net/zTkgNapG5qrxo3AtFBmpWg==/109951163613302296.jpg?param=80y80'},
+        {name: '史诗', server: 'netease', type: 'playlist', id: '8725429117', cover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'},
+        {name: '电音', server: 'netease', type: 'playlist', id: '8173191976', cover: 'https://p1.music.126.net/U10tpIUujpa7EYFvaoEHCA==/109951164459635354.jpg?param=80y80'},
+        {name: '金属', server: 'netease', type: 'playlist', id: '8173838382', cover: 'https://p1.music.126.net/Bq2_Ks_HhkvRyzM24R8IvA==/799344953445636.jpg?param=80y80'},
+        {name: '粤语-女', server: 'netease', type: 'playlist', id: '8855877957', cover: 'https://p1.music.126.net/j1_NTwobAGygKhwdUJ0yZw==/109951168776476914.jpg?param=80y80'},
+    ];
+
+    const metingContainer = document.getElementById('metingContainer');
+
+    function loadMeting(name) {
+        clearMetingContainer();
+        const selectedMeting = meting.find(item => item.name === name);
+        if (!selectedMeting) {
+            console.error(`Meting player with name '${name}' not found.`);
+            return;
+        }
+        metingContainer.innerHTML = `
+            <meting-js
+                server="${selectedMeting.server}"
+                type="${selectedMeting.type}"
+                id="${selectedMeting.id}"
+                cover="${selectedMeting.cover}">
+            </meting-js>
+        `;
+        document.getElementById('aplayer').style.display = 'none';
+        document.getElementById('metingContainer').style.display = 'block';
+    }
+
+    function clearMetingContainer() {
+        metingContainer.innerHTML = '';
+    }
+
+    const musiclistContainer = () => {
+        let htmlContent = '';
+        for (const playerName in playersConfig) {
+            htmlContent += `<div onclick="loadAplayer('${playerName}')"><img src="${playersConfig[playerName].audio[0]?.cover || image}"><div>${playerName}</div></div>`;
+        }
+        meting.forEach((item) => {
+            htmlContent += `<div onclick="loadMeting('${item.name}')"><img src="${item.cover ? item.cover : image}"><div>${item.name}</div></div>`;
+        });
+        document.getElementById('musiclist').innerHTML = htmlContent;
+    };
+
+    musiclistContainer(); // 调用nameAAAContainer函数
+
+    // 默认加载第一个播放器
+    document.addEventListener("DOMContentLoaded", function () {
+        //loadAplayer('自定义'); // 默认加载 APlayer 播放器
+        loadMeting('英文'); // 默认加载 Meting 播放器
+    });
+</script>
+<script>
+// 黑暗模式
+document.write('<div class="toggle-button" onclick="toggleDarkMode()">☀</div><div class="floating-button" id="musiclistButton">♫</div>');
+var isDarkMode = 0; 
+if (isDarkMode) {
+    document.body.classList.add('dark');
+    document.querySelector('.toggle-button').textContent = '◐'; // 设置初始状态为 ◗
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    if (isDarkMode) {
+        document.querySelector('.toggle-button').textContent = '☀'; // 切换到非dark模式时显示 ☀
+    } else {
+        document.querySelector('.toggle-button').textContent = '◐'; // 切换到dark模式时显示◗
+    }
+    isDarkMode = !isDarkMode; 
+}
+
+// 侧栏
+  var toggleListButton = document.getElementById('musiclistButton');
+  var body = document.body;
+  toggleListButton.addEventListener('click', function() {
+    body.classList.toggle('list');
+  });
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+    if (!toggleListButton.contains(target)) {
+      body.classList.remove('list');
+    }
+  });
+
+</script>
+<script>
+if (window.innerWidth < 767) {
+document.write('<div class="click-area"></div>');
+    document.querySelector('.click-area').addEventListener('click', function() {
+        const aplayerList = document.querySelector('.aplayer-list');
+        if (aplayerList.classList.contains('aplayer-list-hide')) {
+            aplayerList.classList.remove('aplayer-list-hide');
+        }
+    });
+    }
+</script>
+</article>
+
+
+<script>
+ function createTabs(tabData) {
+  let html = '';
+  for (let i = 0; i < tabData.length; i += 2) {
+    const groupName = tabData[i];
+    const groupTabs = tabData[i + 1];
+    const groupClass = groupName ? groupName : `group-${i}`;
+    html += `<div id="${groupClass}-1" class="${groupClass}">`;
+	if (groupName === '') {
+	} 
+	else {
+	html += `<h3><img src="/medias/tag.svg">  ${groupName}</h3>`;
+	}
+
+if (tabs_a) {
+  let tabGroupHtml = ""; // 创建一个变量来存储标签内容
+
+  groupTabs.forEach((tab, index) => {
+    const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+    if (groupTabs.length === 1 && tab[0]) {
+      html += `
+        <div data-tab="${tabId}">
+          <h3><img src="/medias/tag.svg">  ${tab[0]}</h3>
+        </div>
+      `;
+    } else {
+      tabGroupHtml += `
+          <div class="tab${index === 0 ? ' active-tab' : ''}" data-tab="${tabId}" onclick="openTab(event, '${tabId}', '${groupClass}')">
+            ${tab[0]}
+          </div>
+      `;
+    }
+  });
+
+  // 将整个标签组的 HTML 内容放在单独的标签组 div 中
+  if (groupTabs.length > 1) {
+    html += `<div class="tab-group">${tabGroupHtml}</div>`;
+  }
+}
+
+
+    groupTabs.forEach((tab, index) => {
+      const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+	  if (tabs_a) {
+      html += `
+        <div id="${tabId}" class="tab-content" style="display: ${index === 0 ? 'block' : 'none'};">
+      `;
+	  } else {
+      html += `
+			  <div id="${tabId}" class="aaa" data-tab="${tabId}"  style=" margin-top: 20px;">
+				${tab[0]}
+			  </div>
+			  <div  class="tab-content" style="display: block">
+      `;
+	  }
+	  
+html += '<div class="grid-container">';
+tab.forEach((content, contentIndex) => {
+  if (contentIndex > 0) {
+    html += `
+      <div class="grid-item">
+        <div class="grid-item-left">
+          ${
+            content[4] ?
+            `<img src="${content[4]}" class="medium-zoom-image">` :
+            (content[2] ?
+              `<img src="https://api.iowen.cn/favicon/${content[2].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
+              `<img src="/medias/logo.png" class="medium-zoom-image">`
+            )
+          }
+        </div>
+        <div class="grid-item-right" >
+          <p><a href="${content[2]}" title="${content[0]}" target="_blank">${content[0]}</a></p>
+          <p><a href="${content[2]}" title="${content[1]}" target="_blank">${content[1]}</a></p>
+        </div>
+        ${content[3] ? `<div title="详情"><a href="${content[3]}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
+      </div>
+    `;
+  }
+});
+html += '</div>';
+
+
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+  return html;
+}
+
+
+function createLinks(tabData) {
+    let linksHtml = '';
+    for (let i = 0; i < tabData.length; i += 2) {
+        const groupName = tabData[i];
+        const groupTabs = tabData[i + 1];
+        const groupClass = groupName ? groupName : `group-${i}`;
+
+        if (!groupName) {
+            groupTabs.forEach(tab => {
+                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+                if (tab[0]) {
+                    linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p class="list">${tab[0]}</p></a> `;
+                }
+            });
+        } else {
+            // 在<i>标签上添加toggle-icon类
+            linksHtml += `<h4 onclick="toggleGroup('${groupClass}')">${groupName}<i class="fa fa-angle-right toggle-icon"></i></h4>`;
+            linksHtml += `<div class="abc" id="${groupClass}">`;
+            groupTabs.forEach((tab, index) => {
+                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+                linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p>${tab[0]}</p></a>`;
+                if (index < groupTabs.length - 1) {
+                    linksHtml += ' ';
+                }
+            });
+            linksHtml += `</div>`;
+        }
+    }
+    return linksHtml;
+}
+
+
+
+    function openTab(evt, tabName, tabGroup, anchor) {
+        var tabContents = document.querySelectorAll(`.${tabGroup} .tab-content`);
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].style.display = "none";
+        }
+
+        var tabs = document.querySelectorAll(`.${tabGroup} .tab`);
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active-tab");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active-tab");
+
+        if (anchor) {
+            var anchorElement = document.getElementById(anchor);
+            if (anchorElement) {
+                anchorElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+
+    function showTab(tabGroup, tabName) {
+        var tab = document.querySelector(`.${tabGroup} [data-tab='${tabName}']`);
+        if (tab) {
+            tab.click();
+        }
+    }
+
+function toggleGroup(groupName) {
+    const group = document.getElementById(groupName);
+    if (group) {
+        group.classList.toggle('show');
+        const icon = group.previousElementSibling.querySelector('.toggle-icon');
+        if (icon) {
+            icon.classList.toggle('fa-angle-right');
+            icon.classList.toggle('fa-angle-down');
+        }
+    }
+}
+
+    // Insert the containers into the body 
+    document.querySelector('article').innerHTML += `
+		<div class="webnav-content">
+		<input type="text" id="searchInput-webnav" placeholder="Search...">
+		<div id="tabs-search-content"></div>
+        <div id="tabContainer">${createTabs(tabData)}</div>
+        <div id="linksContainer">${createLinks(tabData)}</div>
+		<div ><i id="toggleButton" class="toggle-icon fas fa-bars"></i></div>
+		</div>	    
+    `;
 	
 
-  </div>
+        var linksContainer = document.getElementById('linksContainer');
+        var toggleButton = document.getElementById('toggleButton');
+        var isHidden = true;
 
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>梦想魔豆</h2>
-        
-        
-          <p>绽放绚烂的希望之花</p>
+        toggleButton.addEventListener('click', function() {
+            if (isHidden) {
+                linksContainer.style.left = '0'; // 显示 linksContainer
+                isHidden = false;
+            } else {
+                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
+                isHidden = true;
+            }
+        });
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:526740182@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/myoaoo"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=526740182"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+        // 点击页面其他位置关闭 linksContainer
+        document.addEventListener('click', function(event) {
+            if (event.target !== toggleButton && !linksContainer.contains(event.target) && !isHidden) {
+                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
+                isHidden = true;
+            }
+        });
 
-    
-  
-  
-  
-    
-  
-
-  <div class="layout_sticky">    
-    
-      
-        
-    <section class="widget side_category">
-      
-  <header>
-    
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
+/*以下是搜索*/		
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/wordpress/" href="/categories/wordpress/"
-              id="categorieswordpress"
-              ><div class='name'>wordpress</div><div class='badge'>(2)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E5%BC%80%E6%BA%90/" href="/categories/%E5%BC%80%E6%BA%90/"
-              id="categoriesE5BC80E6BA90"
-              ><div class='name'>开源</div><div class='badge'>(4)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"
-              id="categoriesE794B5E88491E8BDAFE4BBB6"
-              ><div class='name'>电脑软件</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E7%BD%91%E7%9B%98/" href="/categories/%E7%BD%91%E7%9B%98/"
-              id="categoriesE7BD91E79B98"
-              ><div class='name'>网盘</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
-      </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-    <a href="/tags/%E5%85%8D%E8%B4%B9/" style="font-size: 24px; color: #555">免费</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 19px; color: #777">插件</a> <a href="/tags/%E7%9B%AE%E5%BD%95/" style="font-size: 14px; color: #999">目录</a>
-    </div>
-</section>
+document.getElementById('searchInput-webnav').addEventListener('input', function(event) {
+    const searchQuery = this.value.trim().toLowerCase();
+    const tabsContainer = document.getElementById('tabs-search-content');
+    let searchCount = 0; // 初始化搜索数量计数器
 
-  
-      
-      
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
+    tabsContainer.innerHTML = ''; // 清空容器
 
+    if (searchQuery === '') {
+        // 如果搜索查询为空，则显示隐藏的容器
 
-      <!-- Add button for random display -->
-	  <a class="post-title-link" title="随机文章">
-	  <i class="fas fa-undo-alt" aria-hidden="true"  onclick="randomizeItems()" style=" display: flex; justify-content: flex-end; padding: 10px; margin-top: -25px; font-size: 0.875rem;" ><span style="">随机文章</span></i></a>
+        document.getElementById('tabContainer').style.display = 'block';
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list" id="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
+        return;
+    } else {
+        // 如果搜索查询不为空，则隐藏容器
 
-            <div class="post-img-box">
-              <a href="/10.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/10-0.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/10.html">wordpress 菜单输出插件WPS Menu Exporter</a>
-              <div>
-                
-                  <span class="post-date">07-18</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/9.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/9-0.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/9.html">wordpress  Media Sync 同步上传的图片到媒体库</a>
-              <div>
-                
-                  <span class="post-date">07-10</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/8.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/8-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/8.html">OneManager  0成本搭建不限速网盘</a>
-              <div>
-                
-                  <span class="post-date">07-08</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/7.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/7-2.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/7.html">一个适用于个人的在线网盘程序</a>
-              <div>
-                
-                  <span class="post-date">07-05</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/6.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/6-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/6.html">以自己喜欢的方式听音乐</a>
-              <div>
-                
-                  <span class="post-date">06-29</span>
-                
-              </div>
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-
-
-<script>
-  function randomizeItems() {
-    var items = document.querySelectorAll('.aside-list-item');
-    var parent = document.getElementById('aside-list');
-    for (var i = items.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      parent.insertBefore(items[j], items[i]);
+        document.getElementById('tabContainer').style.display = 'none';
     }
-  }
-</script>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">3</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>10 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2024/05/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-    </div>
-  </div>
-</section>
-      
-  
-    <div class="widget welcome" id="welcome" style="order: -2;background: #fff">
-      <header>
-        
-          <a style="color: red" target="_blank" rel="noopener external nofollow noreferrer" href='https://www.msn.cn/zh-cn/weather/forecast/'><i class="fa-solid fa-door-open fa-fw" aria-hidden="true"></i><span class='name'>欢迎光临 (点击查看天气)</span></a>
-        
-      </header>
-      <div class="content">
-        <style>p {font-size: 14px;padding: 5px 8px;}</style><div id="visitorInfo"></div><script defer src="/jscss/tianqi.js"></script>
-      </div>
-  </div>
-  
-    <div class="widget test_a" id="test_a" style="order: -1;background: #fff">
-      <header>
-        
-          <i style="color: #d63130" class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i><span class='name'>人生倒计时</span>
-        
-      </header>
-      <div class="content">
-        <div class="aside aside-count"> <div class="content"> <div class="item" id="dayProgress"> <div class="title">今日已经过去<span></span>小时</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-1"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="weekProgress"> <div class="title">这周已经过去<span></span>天</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-2"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="monthProgress"> <div class="title">本月已经过去<span></span>天</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-3"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="yearProgress"> <div class="title">今年已经过去<span></span>个月</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-4"></div> </div> <div class="progress-percentage"></div> </div> </div> </div> </div> <script defer src="/jscss/daojishi.js"></script> <link href="/jscss/daojishi.css" rel="stylesheet"> 
-      </div>
-  </div>
-  
-    <div class="widget weixin" id="weixin" style="order: -3;background: #fff">
-      <header>
-        
-          <i style="color: red" class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>公众号</span>
-        
-      </header>
-      <div class="content">
-        <div"> <img src="/images/logo/weixingongzonghao.png" style="width: 100%;"> </div> 
-      </div>
-  </div>
-  
-
-    
-  </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script defer src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = 'https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
+let html = '<div class="grid-container">'; 
+tabData.forEach(tabGroup => {
+    if (Array.isArray(tabGroup)) {
+        tabGroup.forEach(tab => {
+            if (Array.isArray(tab)) {
+                tab.forEach(tabItem => {
+                    if (Array.isArray(tabItem)) {
+                        const [title, content, url, goout,logo] = tabItem;
+                        if (title.toLowerCase().includes(searchQuery) || content.toLowerCase().includes(searchQuery)) {
+                            html += `
+                                <div class="grid-item">
+									<div class="grid-item-left">
+									
+          ${
+            logo ?
+            `<img src="${logo}" class="medium-zoom-image">` :
+            (url ?
+              `<img src="https://api.iowen.cn/favicon/${url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
+              `<img src="/medias/logo.png" class="medium-zoom-image">`
+            )
           }
-        })
-      }
+									</div>
+									<div class="grid-item-right" >
+										<p><a href="${url}" title="${title}" target="_blank">${title}</a></p>
+										<p><a href="${url}" title="${content}" target="_blank">${content}</a></p>
+									</div>
+									${goout ? `<div title="详情"><a href="${goout}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
+                                </div>
+								
+                            `;
+                            searchCount++;
+                        }
+                    }
+                });
+            }
+        });
     }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
+});
+html += '</div>';
+tabsContainer.innerHTML += html;
 
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+
+
+
+    // 创建一个新元素来显示搜索结果数量
+	const searchResultElement = document.createElement('div');
+	searchResultElement.classList.add('search-result');
+	if (searchCount > 0) {
+		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>`;
+	} else {
+		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>，没有符合的结果`;
+	}
+
+
+    // 将搜索结果数量元素插入到tabsContainer的第一个子元素之前
+    const firstChild = tabsContainer.firstChild;
+    tabsContainer.insertBefore(searchResultElement, firstChild);
+});
+
+
+document.getElementById('searchInput-webnav').addEventListener('keydown', function(event) {
+    // 按下 ESC 键时取消清空输入框内容
+    if (event.key === 'Escape') {
+        this.value = ''; // 清空输入框内容
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block';
+    }
+});
+
+		
+document.addEventListener('DOMContentLoaded', function() {
+  var listElements = document.querySelectorAll('.list');
+  var abcLinks = document.querySelectorAll('.abc a');
+  var searchInput = document.getElementById('searchInput-webnav');
+
+  listElements.forEach(function(element) {
+    element.addEventListener('click', function() {
+      searchInput.value = '';
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block'; 
+    });
+  });
+
+  abcLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      searchInput.value = '';
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block';
+    });
+  });
+});
+
+
+var styleElement = document.createElement('style');
+document.head.appendChild(styleElement);
+
+if (tabs_a === 1) {
+    styleElement.textContent = '#tabContainer div{scroll-margin-top: 115px;}';
+} else {
+    styleElement.textContent = `
+        *:target {
+            background-color: #ededed;
+            color: red;
+            padding: 5px 5px 5px 10px;
+            border-radius: 5px;
+        }
+        #tabContainer div {
+            scroll-margin-top: 75px;
+        }
+    `;
+}
+
+  
   
 </script>
-
 
       </main>
     </div>

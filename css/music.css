@@ -4,7 +4,7 @@
 .footer {
 	display:none!important;
 }
-:root {
+
 
        .aplayer .aplayer-icon-back, .aplayer .aplayer-icon-forward, .aplayer .aplayer-icon-lrc, .aplayer .aplayer-icon-order, .aplayer .aplayer-icon-play {
             display: block;
@@ -270,4 +270,3 @@
 			fill: #666;
 		}
 
-}
