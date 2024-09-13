@@ -274,12 +274,36 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="/dh/" class="drawer-menu-item-link">
-                  
-                    <i class="fa-fw fas fa-globe-africa" aria-hidden="true"></i>
-                  
-                  <span class="name">网址导航</span>
+                <a href="javascript:;" rel="external nofollow noreferrer" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(2)">
+                  <span>
+                    
+                      <i class="fa-fw fas fa-globe-africa"></i>
+                    
+                    <span class="name">网址导航</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(2)}" aria-hidden="true"></i>
                 </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(2)">
+                  
+                  <li>
+                    <a href="/dh/">
+                      
+                      <i class="fas fa-laptop-code" style="margin-top: -20px;"></i>
+                      
+                      <span>常用导航</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/dh/xiaoxue.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>学生导航</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           
@@ -500,12 +524,34 @@
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/dh/" class="menu-item-link" title="网址导航">
+                <a href="javascript:;" rel="external nofollow noreferrer" class="menu-item-link" title="网址导航">
                   
-                    <i class="fa-fw fas fa-globe-africa" aria-hidden="true"></i>
+                    <i class="fa-fw fas fa-globe-africa"></i>
                   
                   <span class="name">网址导航</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
                 </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/dh/">
+                      
+                      <i class="fas fa-laptop-code" style="margin-top: -20px;"></i>
+                      
+                      <span>常用导航</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/dh/xiaoxue.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>学生导航</span>
+                    </a>
+                  </li>
+                  
+                </ul>
               
             </li>
           

@@ -1,3 +1,7 @@
+::selection {
+  background: #42b983 !important;
+  color: #fff !important;
+}
 .read-more:hover {
   background-color: rgba(255,255,255,0.439) !important;
   color: #fff !important;
