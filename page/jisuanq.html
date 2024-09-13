@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>files-gallery 单文件目录系统 | </title>
+  <title>计算器 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -710,677 +710,657 @@
     
 </header>
         <!-- 内容区域 -->
-        
-<!-- prismjs 代码高亮 -->
+        <style>
+	h3, h4{
+		font-weight: 400;
+	}
+	.abc{
+        background-color: #e7e7e7;
+        border-radius: 5px;
+	}
+	
+    .tab-content {
+        display: none;
+		margin-top: 10px;
+    }
+    .tab {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #e7e7e7;
+        margin: 0 5px 5px 0;
+        border-radius: 20px;
+		font-size: 0.9em;
+    }
+    .active-tab {
+        background-color: #c8c8c8;
+        color: #fff;
+    }
+    .tab-group {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+    }
+    .abc {
+        display: none;
+    }
+    .abc.show {
+        display: block;
+    }
+    .toggle-icon {
+        float: right;
+		width: 30px; 
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+    }
+	#linksContainer {
+		position: fixed;
+		top: 60px;
+		left: -170px;
+		width: 150px;
+		z-index: 99;
+		background-color: #f8f8f8;
+		padding: 8px;
+		transition: left 0.3s ease;
+		overflow-y: auto;
+		height: calc(100vh - 76px);
+	}
+	
+#toggleButton {
+    position: fixed;
+    bottom: 140px;
+    right: 28px;
+    z-index: 100;
+    background-color: rgba(66, 185, 133, 0.8) !important;
+    color: white;
+}
+@media (max-width: 551px) {
+    #toggleButton {
+    right: 12px;
+	bottom: 130px;
+	}
+}
 
+	#searchInput-webnav {
+	width: 75%;
+	  margin: 20px auto 0;
+	  display: block;
+	  padding: 10px; 
+	  border: none; 
+	  outline: none;
+	  background-color: #fff;
+	  border-radius: 20px; 	  
+	}
 
+	.search-result{
+	text-align: center;
+	margin: 20px auto;
+	}
+	.search-result span {
+		color:red;
+	}
+	
+	#linksContainer h4 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	#linksContainer h4 i{transform: scale(0.7);}
 
+	
+	#linksContainer .list, 
+	#linksContainer .abc p,
+	#linksContainer h4 {margin: 5px 3px;padding:5px;}
+	
+	#linksContainer .abc p {padding-left:15px;}
+	.aaaB{
+        background-color: #fff0;
+        color: #000;
+		padding: 5px 0px;
+    }
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+	#linksContainer a :hover,
+	#linksContainer .abc a :hover,
+	#linksContainer h4:hover {
+		background-color: #dedede;
+		border-radius: 8px;
+	}
+	#tabContainer {margin-top: 30px;}
+	#tabContainer h3 {    
+	border-bottom: 1px solid #bfbfbf;
+    padding-bottom: 5px;
+	}
+	.tab-group img ,
+	#tabContainer h3 img {
+		height: 20px;
+	    vertical-align: -0.27em;
+		}
+	#tabContainer .tab:hover{
+		background-color: red;
+		color: #fff;
+	}
+a {text-decoration: none;color: #000;}
+.pagediy {
+    width: 75%;
+    margin: 0px auto;
+	padding: 20px;
+    min-height: calc(100vh - 160px);
+}
+@media (max-width: 992px) {
+    .pagediy {
+    width: calc(100% - 50px);
+	padding: 25px;
+}
+}
+h3 {margin: 1.2rem 0;}
 
+.grid-item .grid-item-right p a {color: #000}
+.grid-item div a {color: #bdbdbd}
 
-  <!-- 文章详情页顶部图片和标题 -->
+/*黑暗模式*/
+.darkModel #linksContainer,
+.darkModel .grid-item-left,
+.darkModel .tab,
+.darkModel #searchInput-webnav,
+.darkModel .grid-item {
+	background-color: rgba(240, 246, 252, 0.149);
+}
+.darkModel .active-tab{
+	background-color: rgb(255 255 255 / 40%);;
+}
+.darkModel .grid-item-left{
+	background-color: rgb(255 255 255 / 0%);;
+}
+.darkModel .grid-item-left {border-radius: 20px;}
 
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/images/3-1.png')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        files-gallery 单文件目录系统
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2024-05-31 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E5%BC%80%E6%BA%90/" class="post-detail-header_category">
-              开源
-            </a>
-          
-        </span>
-      
-
-      
-    
-  </div>
-  
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h3 id="files-gallery-介绍"><a href="#files-gallery-介绍" class="headerlink" title="files-gallery 介绍"></a>files-gallery 介绍</h3><p><img src="/images/3-1.png"></p>
-<p>Files 是一个单文件 PHP 应用程序，可以放入服务器上的任何目录，立即创建文件和文件夹库。它支持所有文件类型，并允许您预览图像、视频、音频和代码。</p>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>官网：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://files.photo.gallery/">https://files.photo.gallery</a><br>演示：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://files.photo.gallery/demo">https://files.photo.gallery/demo</a><br>文档：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://forum.photo.gallery/viewtopic.php?f=66&t=9964">https://forum.photo.gallery/viewtopic.php?f=66&t=9964</a><br>源码：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php">https://cdn.jsdelivr.net/npm/files.photo.gallery/index.php</a></p>
-<h3 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h3><ul>
-<li>单个文件只需将其放入服务器上的任何目录即可。</li>
-<li>实时搜索和排序文件。</li>
-<li>高级列表和库布局，可以实时切换。</li>
-<li>预览 IPTC、EXIF 和 GPS 地图以查看您的照片。</li>
-<li>使用缓存机制和 CDN 快速加载。</li>
-<li>高级树菜单导航显示整个目录结构。</li>
-<li>美丽的代码荧光笔来查看和编辑代码格式。</li>
-<li>可选登录以保护访问。</li>
-</ul>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>将下载得到的<code>index.php</code>文件放置到需要的网站目录，打开目录即可；<br>PHP版本需要5.5以上，PHP扩展程序安装需求：<code>GD</code> <code>mbstring</code> <code>fileinfo</code> <code>exif</code><br>宝塔面板安装PHP时已经默认安装了<code>GD</code>和<code>mbstring</code>扩展程序，所以无需额外安装<br><code>fileinfo</code> - 用于生成图片预览<br><code>exif</code> - 用于读取图片EXIF信息</p>
-<h3 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h3><p><code>Files Photo Gallery</code>是完全开源的，免费版和授权版一致，没有任何区别<br>只是免费版每次会弹出授权窗口，点击一下<code>No thanks!</code>即可关闭<br><img src="/images/3-2.png"></p>
-<p>files.photo.gallery破解，支持任意版本<br>复制下方代码在它加载的外部js文件之前找个地方直接粘贴就行了(搜索var CodeMirror &#x3D; {};，放其后面即可)<br>语言包会自动修改成最新版本的，无需担心</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">!function()&#123;</span><br><span class="line">    const originalXHR = window.XMLHttpRequest;</span><br><span class="line">    window.XMLHttpRequest = function()&#123;</span><br><span class="line">        const xhr = new originalXHR;</span><br><span class="line">        xhr.open = function(method, url, async, user, password)&#123;</span><br><span class="line">            if (method === &quot;GET&quot; &amp;&amp; url.startsWith(&quot;&lt;?php echo config::$assets ?&gt;files.photo.gallery@&quot;) &amp;&amp; url.endsWith(&quot;/lang/zh.json&quot;)) &#123;</span><br><span class="line">                arguments[1] = arguments[1].replace(/@[0-9\.]+\/lang/, &quot;@latest/lang&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            if (method === &quot;POST&quot; &amp;&amp; url.includes(&quot;auth.photo.gallery&quot;)) &#123;</span><br><span class="line">                xhr.send = function(data)&#123;</span><br><span class="line">                    originalXHR.prototype.send.apply(this, [&quot;app=2&amp;host=demo.files.gallery&quot;]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            originalXHR.prototype.open.apply(this, arguments);</span><br><span class="line">        &#125;</span><br><span class="line">        return xhr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="files-gallery-下载"><a href="#files-gallery-下载" class="headerlink" title="files-gallery 下载"></a>files-gallery 下载</h3><p><strong>破译下载</strong><br>下载源码压缩包后放置在需要的位置解压即可使用；（源码本地化处理，无需授权）<br><a href="/images/3-3.zip">files-gallery</a></p>
-<span class='btn large round solid info'><a class="button" href='/images/index.zip' title='官方本地下载'><i class='fa fa-download'></i>官方本地下载</a></span>
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E7%9B%AE%E5%BD%95/" class="">
-              目录
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>梦想魔豆</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/3.html" target="_blank" title="files-gallery 单文件目录系统">https://oaoo.com/3.html</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
-    
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload" src="/images/4-3.png" alt="">
-    </div>
-    <a href="/4.html" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Upscayl 跨平台AI图像放大工具</div>
-      </div>
-      
-      <!-- <div class="content">
-        Upscayl 介绍Upscayl 是一个跨平台的 AI 图像放大工具，它通过AI模型进行图片放大并补全像素大小，免费、
-      </div> -->
-    </a>
-  </div>
-
-
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload" src="/images/2-0.png" src="" alt="">
-    </div>
-    <a href="/2.html" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">Oblivion 网络工具</div>
-      </div>
-      <!-- <div class="content">
-        Oblivion 介绍
-Oblivion Desktop 是一个由 BePass 团队开发的开源桌面应用，旨在为用户提供
-      </div> -->
-    </a>
-  </div>
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" rel="external nofollow noreferrer" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          你的赏识是我前进的动力
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/images/logo/zhifubao.png" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/images/logo/weixin.png" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'WeChatpay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script defer src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
-  }
+.darkModel #linksContainer a :hover,
+.darkModel #linksContainer .abc a :hover,
+.darkModel #linksContainer h4:hover {
+		background-color: rgba(240, 246, 252, 0.149);
+	}
+.darkModel #searchInput-webnav,
+.darkModel .grid-item .grid-item-right p a,
+.darkModel .grid-item a ,
+.darkModel .grid-item-right a {
+	color: #c9d1d9;
+	}
+	
+	
 </style>
 
 
-    
-    
-    <!-- 评论 -->
+
+<div style="height: 60px;"></div>
+<article class=" pagediy">
+	<div class="overlay" onclick="closeSidebar()"></div>
+	<style>
+.mainjsq {
+position: absolute;
+width: 400px;
+height: 500px;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.window{
+display: flex;
+flex-direction: column;
+background-color: #fff;
+margin-bottom: 10px;
+border-radius: 6px; 
+}
+.window input {
+height: 30px;
+font-size: 20px;
+padding: 5px 10px ;
+border: none;
+outline: none; 
+border-radius: 6px; 
+
+}
+.btn {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 2px; 
+}
+.btn input {
+height: 50px;
+font-size: 20px;
+border: none;
+outline: none; 
+border-radius: 6px; 
+background-color: #fff;
+}
+</style>
+<script>
+let isNewCalculation = false; // Flag to check if a new calculation is starting
+
+function Solve(val) {
+var v = document.getElementById('expression');
+if (isNewCalculation) {
+v.value = ''; // Clear the expression for a new calculation
+isNewCalculation = false; // Reset the flag
+}
+v.value += val;
+}
+
+function Result() {
+var expr = document.getElementById('expression').value;
+var res = eval(expr);
+document.getElementById('result').value = res;
+document.getElementById('expression').value = expr + " = " + res; // Show the expression and result
+isNewCalculation = true; // Set flag to true for new calculation
+}
+
+function Clear() {
+document.getElementById('expression').value = '';
+document.getElementById('result').value = '';
+isNewCalculation = false; // Reset flag when clearing
+}
+
+function Back() {
+var ev = document.getElementById('expression');
+ev.value = ev.value.slice(0, -1);
+}
+
+
+document.addEventListener('keydown', function(event) {
+if (event.key >= '0' && event.key <= '9') {
+Solve(event.key);
+} else if (event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
+Solve(event.key);
+} else if (event.key === 'Enter') {
+Result();
+} else if (event.key === 'Backspace') {
+Back();
+} else if (event.key === 'Escape') {
+Clear();
+}
+});
+
+</script>
+
+<div class="mainjsq">
+<div class="window">
+<input type="text" id="expression" readonly>
+<input type="text" id="result" readonly>
+</div>
+<div class="btn">
+<input type="button" value='C' onclick="Clear()">
+<input type="button" value='%' onclick="Solve('%')">
+<input type="button" value='←' onclick="Back()">
+<input type="button" value='/' onclick="Solve('/')">
+
+<input type="button" value='7' onclick="Solve('7')">
+<input type="button" value='8' onclick="Solve('8')">
+<input type="button" value='9' onclick="Solve('9')">
+<input type="button" value='x' onclick="Solve('*')">
+
+<input type="button" value='4' onclick="Solve('4')">
+<input type="button" value='5' onclick="Solve('5')">
+<input type="button" value='6' onclick="Solve('6')">
+<input type="button" value='-' onclick="Solve('-')">
+
+<input type="button" value='1' onclick="Solve('1')">
+<input type="button" value='2' onclick="Solve('2')">
+<input type="button" value='3' onclick="Solve('3')">
+<input type="button" value='+' onclick="Solve('+')">
+
+<input type="button" value='00' onclick="Solve('00')">
+<input type="button" value='0' onclick="Solve('0')">
+<input type="button" value='.' onclick="Solve('.')">
+<input type="button" value='=' onclick="Result()">
+</div>
+</div>
+</article>
+
+
+<script>
+ function createTabs(tabData) {
+  let html = '';
+  for (let i = 0; i < tabData.length; i += 2) {
+    const groupName = tabData[i];
+    const groupTabs = tabData[i + 1];
+    const groupClass = groupName ? groupName : `group-${i}`;
+    html += `<div id="${groupClass}-1" class="${groupClass}">`;
+	if (groupName === '') {
+	} 
+	else {
+	html += `<h3><img src="/medias/tag.svg">  ${groupName}</h3>`;
+	}
+
+if (tabs_a) {
+  let tabGroupHtml = ""; // 创建一个变量来存储标签内容
+
+  groupTabs.forEach((tab, index) => {
+    const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+    if (groupTabs.length === 1 && tab[0]) {
+      html += `
+        <div data-tab="${tabId}">
+          <h3><img src="/medias/tag.svg">  ${tab[0]}</h3>
+        </div>
+      `;
+    } else {
+      tabGroupHtml += `
+          <div class="tab${index === 0 ? ' active-tab' : ''}" data-tab="${tabId}" onclick="openTab(event, '${tabId}', '${groupClass}')">
+            ${tab[0]}
+          </div>
+      `;
+    }
+  });
+
+  // 将整个标签组的 HTML 内容放在单独的标签组 div 中
+  if (groupTabs.length > 1) {
+    html += `<div class="tab-group">${tabGroupHtml}</div>`;
+  }
+}
+
+
+    groupTabs.forEach((tab, index) => {
+      const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+	  if (tabs_a) {
+      html += `
+        <div id="${tabId}" class="tab-content" style="display: ${index === 0 ? 'block' : 'none'};">
+      `;
+	  } else {
+      html += `
+			  <div id="${tabId}" class="aaa" data-tab="${tabId}"  style=" margin-top: 20px;">
+				${tab[0]}
+			  </div>
+			  <div  class="tab-content" style="display: block">
+      `;
+	  }
+	  
+html += '<div class="grid-container">';
+tab.forEach((content, contentIndex) => {
+  if (contentIndex > 0) {
+    html += `
+      <div class="grid-item">
+        <div class="grid-item-left">
+          ${
+            content[4] ?
+            `<img src="${content[4]}" class="medium-zoom-image">` :
+            (content[2] ?
+              `<img src="https://api.iowen.cn/favicon/${content[2].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
+              `<img src="/medias/logo.png" class="medium-zoom-image">`
+            )
+          }
+        </div>
+        <div class="grid-item-right" >
+          <p><a href="${content[2]}" title="${content[0]}" target="_blank">${content[0]}</a></p>
+          <p><a href="${content[2]}" title="${content[1]}" target="_blank">${content[1]}</a></p>
+        </div>
+        ${content[3] ? `<div title="详情"><a href="${content[3]}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
+      </div>
+    `;
+  }
+});
+html += '</div>';
+
+
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+  return html;
+}
+
+
+function createLinks(tabData) {
+    let linksHtml = '';
+    for (let i = 0; i < tabData.length; i += 2) {
+        const groupName = tabData[i];
+        const groupTabs = tabData[i + 1];
+        const groupClass = groupName ? groupName : `group-${i}`;
+
+        if (!groupName) {
+            groupTabs.forEach(tab => {
+                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+                if (tab[0]) {
+                    linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p class="list">${tab[0]}</p></a> `;
+                }
+            });
+        } else {
+            // 在<i>标签上添加toggle-icon类
+            linksHtml += `<h4 onclick="toggleGroup('${groupClass}')">${groupName}<i class="fa fa-angle-right toggle-icon"></i></h4>`;
+            linksHtml += `<div class="abc" id="${groupClass}">`;
+            groupTabs.forEach((tab, index) => {
+                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
+                linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p>${tab[0]}</p></a>`;
+                if (index < groupTabs.length - 1) {
+                    linksHtml += ' ';
+                }
+            });
+            linksHtml += `</div>`;
+        }
+    }
+    return linksHtml;
+}
+
+
+
+    function openTab(evt, tabName, tabGroup, anchor) {
+        var tabContents = document.querySelectorAll(`.${tabGroup} .tab-content`);
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].style.display = "none";
+        }
+
+        var tabs = document.querySelectorAll(`.${tabGroup} .tab`);
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active-tab");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.classList.add("active-tab");
+
+        if (anchor) {
+            var anchorElement = document.getElementById(anchor);
+            if (anchorElement) {
+                anchorElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+
+    function showTab(tabGroup, tabName) {
+        var tab = document.querySelector(`.${tabGroup} [data-tab='${tabName}']`);
+        if (tab) {
+            tab.click();
+        }
+    }
+
+function toggleGroup(groupName) {
+    const group = document.getElementById(groupName);
+    if (group) {
+        group.classList.toggle('show');
+        const icon = group.previousElementSibling.querySelector('.toggle-icon');
+        if (icon) {
+            icon.classList.toggle('fa-angle-right');
+            icon.classList.toggle('fa-angle-down');
+        }
+    }
+}
+
+    // Insert the containers into the body 
+    document.querySelector('article').innerHTML += `
+		<div class="webnav-content">
+		<input type="text" id="searchInput-webnav" placeholder="Search...">
+		<div id="tabs-search-content"></div>
+        <div id="tabContainer">${createTabs(tabData)}</div>
+        <div id="linksContainer">${createLinks(tabData)}</div>
+		<div ><i id="toggleButton" class="toggle-icon fas fa-bars"></i></div>
+		</div>	    
+    `;
 	
 
-  </div>
+        var linksContainer = document.getElementById('linksContainer');
+        var toggleButton = document.getElementById('toggleButton');
+        var isHidden = true;
 
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>梦想魔豆</h2>
-        
-        
-          <p>绽放绚烂的希望之花</p>
+        toggleButton.addEventListener('click', function() {
+            if (isHidden) {
+                linksContainer.style.left = '0'; // 显示 linksContainer
+                isHidden = false;
+            } else {
+                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
+                isHidden = true;
+            }
+        });
 
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:526740182@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/myoaoo"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=526740182"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
+        // 点击页面其他位置关闭 linksContainer
+        document.addEventListener('click', function(event) {
+            if (event.target !== toggleButton && !linksContainer.contains(event.target) && !isHidden) {
+                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
+                isHidden = true;
+            }
+        });
 
-    
-  
-  
-  
-    
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
+/*以下是搜索*/		
 
 
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#files-gallery-%E4%BB%8B%E7%BB%8D"><span class="toc-text">files-gallery 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81"><span class="toc-text">支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC"><span class="toc-text">版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#files-gallery-%E4%B8%8B%E8%BD%BD"><span class="toc-text">files-gallery 下载</span></a></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
-</div>
-
-      
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
 
 
-      <!-- Add button for random display -->
-	  <a class="post-title-link" title="随机文章">
-	  <i class="fas fa-undo-alt" aria-hidden="true"  onclick="randomizeItems()" style=" display: flex; justify-content: flex-end; padding: 10px; margin-top: -25px; font-size: 0.875rem;" ><span style="">随机文章</span></i></a>
+document.getElementById('searchInput-webnav').addEventListener('input', function(event) {
+    const searchQuery = this.value.trim().toLowerCase();
+    const tabsContainer = document.getElementById('tabs-search-content');
+    let searchCount = 0; // 初始化搜索数量计数器
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list" id="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
+    tabsContainer.innerHTML = ''; // 清空容器
 
-            <div class="post-img-box">
-              <a href="/10.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/10-0.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/10.html">wordpress 菜单输出插件WPS Menu Exporter</a>
-              <div>
-                
-                  <span class="post-date">07-18</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
+    if (searchQuery === '') {
+        // 如果搜索查询为空，则显示隐藏的容器
 
-            <div class="post-img-box">
-              <a href="/9.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/9-0.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/9.html">wordpress  Media Sync 同步上传的图片到媒体库</a>
-              <div>
-                
-                  <span class="post-date">07-10</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
+        document.getElementById('tabContainer').style.display = 'block';
 
-            <div class="post-img-box">
-              <a href="/8.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/8-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/8.html">OneManager  0成本搭建不限速网盘</a>
-              <div>
-                
-                  <span class="post-date">07-08</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
+        return;
+    } else {
+        // 如果搜索查询不为空，则隐藏容器
 
-            <div class="post-img-box">
-              <a href="/7.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/7-2.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/7.html">一个适用于个人的在线网盘程序</a>
-              <div>
-                
-                  <span class="post-date">07-05</span>
-                
-              </div>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/6.html" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/6-1.png" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <a class="post-title" href="/6.html">以自己喜欢的方式听音乐</a>
-              <div>
-                
-                  <span class="post-date">06-29</span>
-                
-              </div>
-            </div>
-          </div>
-        
-      </div>
-    </div>
-  </section>
-
-
-<script>
-  function randomizeItems() {
-    var items = document.querySelectorAll('.aside-list-item');
-    var parent = document.getElementById('aside-list');
-    for (var i = items.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      parent.insertBefore(items[j], items[i]);
+        document.getElementById('tabContainer').style.display = 'none';
     }
-  }
-</script>
 
-    
-  </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script defer src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
+let html = '<div class="grid-container">'; 
+tabData.forEach(tabGroup => {
+    if (Array.isArray(tabGroup)) {
+        tabGroup.forEach(tab => {
+            if (Array.isArray(tab)) {
+                tab.forEach(tabItem => {
+                    if (Array.isArray(tabItem)) {
+                        const [title, content, url, goout,logo] = tabItem;
+                        if (title.toLowerCase().includes(searchQuery) || content.toLowerCase().includes(searchQuery)) {
+                            html += `
+                                <div class="grid-item">
+									<div class="grid-item-left">
+									
+          ${
+            logo ?
+            `<img src="${logo}" class="medium-zoom-image">` :
+            (url ?
+              `<img src="https://api.iowen.cn/favicon/${url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
+              `<img src="/medias/logo.png" class="medium-zoom-image">`
+            )
           }
-        })
-      }
+									</div>
+									<div class="grid-item-right" >
+										<p><a href="${url}" title="${title}" target="_blank">${title}</a></p>
+										<p><a href="${url}" title="${content}" target="_blank">${content}</a></p>
+									</div>
+									${goout ? `<div title="详情"><a href="${goout}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
+                                </div>
+								
+                            `;
+                            searchCount++;
+                        }
+                    }
+                });
+            }
+        });
     }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
+});
+html += '</div>';
+tabsContainer.innerHTML += html;
 
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+
+
+
+    // 创建一个新元素来显示搜索结果数量
+	const searchResultElement = document.createElement('div');
+	searchResultElement.classList.add('search-result');
+	if (searchCount > 0) {
+		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>`;
+	} else {
+		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>，没有符合的结果`;
+	}
+
+
+    // 将搜索结果数量元素插入到tabsContainer的第一个子元素之前
+    const firstChild = tabsContainer.firstChild;
+    tabsContainer.insertBefore(searchResultElement, firstChild);
+});
+
+
+document.getElementById('searchInput-webnav').addEventListener('keydown', function(event) {
+    // 按下 ESC 键时取消清空输入框内容
+    if (event.key === 'Escape') {
+        this.value = ''; // 清空输入框内容
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block';
+    }
+});
+
+		
+document.addEventListener('DOMContentLoaded', function() {
+  var listElements = document.querySelectorAll('.list');
+  var abcLinks = document.querySelectorAll('.abc a');
+  var searchInput = document.getElementById('searchInput-webnav');
+
+  listElements.forEach(function(element) {
+    element.addEventListener('click', function() {
+      searchInput.value = '';
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block'; 
+    });
+  });
+
+  abcLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      searchInput.value = '';
+        const tabsContainer = document.getElementById('tabs-search-content');
+        tabsContainer.innerHTML = ''; // 清空容器
+        // 显示隐藏的容器
+        document.getElementById('tabContainer').style.display = 'block';
+    });
+  });
+});
+
+
+var styleElement = document.createElement('style');
+document.head.appendChild(styleElement);
+
+if (tabs_a === 1) {
+    styleElement.textContent = '#tabContainer div{scroll-margin-top: 115px;}';
+} else {
+    styleElement.textContent = `
+        *:target {
+            background-color: #ededed;
+            color: red;
+            padding: 5px 5px 5px 10px;
+            border-radius: 5px;
+        }
+        #tabContainer div {
+            scroll-margin-top: 75px;
+        }
+    `;
+}
+
+  
   
 </script>
-
 
       </main>
     </div>

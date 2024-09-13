@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>music | </title>
+  <title>学生导航 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -355,11 +355,20 @@
                   </li>
                   
                   <li>
-                    <a href="/yinyue/">
+                    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://met.oaoo.top/">
                       
                       <i class="fas fa-headphones" style="margin-top: -20px;"></i>
                       
                       <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/jisuanq.html">
+                      
+                      <i class="fab fa-nutritionix" style="margin-top: -20px;"></i>
+                      
+                      <span>计算器</span>
                     </a>
                   </li>
                   
@@ -568,11 +577,20 @@
                   </li>
                   
                   <li>
-                    <a href="/yinyue/">
+                    <a target="_blank" rel="noopener external nofollow noreferrer" href="https://met.oaoo.top/">
                       
                       <i class="fas fa-headphones" style="margin-top: -20px;"></i>
                       
                       <span>音乐</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/jisuanq.html">
+                      
+                      <i class="fab fa-nutritionix" style="margin-top: -20px;"></i>
+                      
+                      <span>计算器</span>
                     </a>
                   </li>
                   
@@ -877,470 +895,51 @@ h3 {margin: 1.2rem 0;}
 <div style="height: 60px;"></div>
 <article class=" pagediy">
 	<div class="overlay" onclick="closeSidebar()"></div>
-	<pre><code>&lt;style&gt;
-    .aplayer .aplayer-icon-back, .aplayer .aplayer-icon-forward, .aplayer .aplayer-icon-lrc, .aplayer .aplayer-icon-order, .aplayer .aplayer-icon-play &#123;
-        display: block;
-    &#125;
-    .aplayer.aplayer-arrow .aplayer-icon-loop, .aplayer.aplayer-arrow .aplayer-icon-order, .aplayer.aplayer-mobile .aplayer-icon-volume-down &#123;
-        display: block;
-    &#125;
-
-/*播放列表*/
-    .names&#123;
-        max-width: 200px;
-        height: calc(100vh - 20px);
-        left: -100%;
-        width: 100%;
-        padding: 10px;
-        top: 0;
-        position: fixed;
-        background-color:#fff;	
-        z-index: 1000;
-        transition: all .5s ease;
-    &#125;
-    #musiclist &#123;
-        display: grid;
-        align-content: center;
-        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-        grid-gap: 10px;
-        padding:10px 10px auto 10px;
-    &#125;
+	<script>
+var tabs_a = 0;
+const tabData = [
+'语文学习', 
+[
+    ['拼音', 
+        ['汉语拼音', '一个汉语拼音学习网 ', 'http://www.hanyupinyin.cn/'],
+        ['汉语拼音网', '针对幼儿小中大班和一年级的儿童', 'http://www.hanyupinyin.org/'],
+        ['儿童学拼音', '多功能语言学习网', 'https://www.zdic.net/ts/fulu/rtpy/'],
         
-    #musiclist div &#123;
-        max-width:80px;
-        text-align: center;
-        margin: 5px;
-    &#125;
-    #musiclist div img &#123;
-        border-radius: 8px
-    &#125;
-
-    /*媒体查询大于768px 时执行*/
-    @media (min-width: 768px)  &#123;
-        .aplayer .aplayer-list ol&#123;
-            max-height: calc(100vh - 120px) !important;
-        &#125;
-        .aplayer.aplayer-withlrc .aplayer-info &#123;
-            height: calc(100vh - 120px) !important;
-        &#125;
-        .aplayer-list.aplayer-list-hide &#123;
-            padding: 0px!important;
-        &#125;
-        /*
-        .aplayer.aplayer-withlist .aplayer-list &#123;
-            background-color: #ffffff50;
-            padding: 10px;
-            border-radius: 8px;
-        &#125;
-        .dark .aplayer.aplayer-withlist .aplayer-list &#123;
-                background-color: #33333350;
-            &#125;
-        */
+    ],
+    ['笔顺', 
+        ['笔顺网', '汉字笔顺查询 ', 'https://bishun.net/'],
+        ['汉字屋', '一个汉字在线查询网站，提供书写汉字正确的笔画顺序动画演示', 'https://www.hanziwu.com/'],
+        ['汉查查', '汉字笔顺在线查询 ', 'https://hanchacha.com/bishun/'],
+        ['汉字皮', '一提供书写汉字正确的笔画顺序动画演示', 'https://www.hanzipi.com/'],
+        ['学笔画', '输入汉字查看笔画顺序', 'https://edui123.com/xuebihua/'],
+        ['搜狗汉语', '汉语学习好帮手', 'https://hanyu.sogou.com/'],
+        ['百度汉语', '提供全面、权威的汉语数据', 'https://hanyu.baidu.com/'],	
         
-    &#125;
-    /*媒体查询小于767px 时执行*/
-    @media (max-width: 767px) &#123;
-        .aplayer .aplayer-list ol&#123;
-            max-height: 350px!important;
-        &#125;
-        .aplayer.aplayer-withlrc .aplayer-info &#123;
-            height: calc(100vh - 120px) !important;
-        &#125;
-        .aplayer.aplayer-withlist .aplayer-list &#123;
-            width:calc(100% - 20px);
-            position: fixed;
-            left:  calc(-100% - 20px);
-            background-color: #fff;
-            height: 50vh;
-            bottom: 0px;
-            padding: 10px 10px 66px 10px;
-            border-radius: 8px;
-            z-index: 103;
-            padding: 10px;
-            border-radius: 8px;
-        &#125;
-        .dark .aplayer.aplayer-withlist .aplayer-list &#123;
-                        background-color: #333;
-                    &#125;
-        .aplayer.aplayer-withlrc .aplayer-info &#123;
-            margin-left: 0px;
-        &#125;
+    ],
+    ['练习', 
+        ['在线工具', '提供字帖工具,田字格,米字格等格式的生成 ', 'https://tool.lu/copybook/index.html'],
+        ['猜成语', '成语组合猜谜语 ', 'https://edui123.com/chengyu/'],
+        ['田字格字帖生成器', '支持笔顺田字格字帖生成器', 'https://www.an2.net/zi/'],
+    ],
+
+],
+
+'数学学习', 
+[
+    ['练习', 
+        ['口算练习', '基础加减乘除的练习工具', 'https://edui123.com/ks/'],
+        ['口算题卡', '口算题自动生成器', 'http://www.kebendashi.com/'],
+
         
-        .aplayer .aplayer-info .aplayer-music &#123;
-            display: none;
-        &#125;
-        .aplayer .aplayer-list.aplayer-list-hide &#123;
-            left:0px; 
-            max-height: 100Vh !important;
-        &#125;
+    ],
 
+],
 
-    &#125;
-
-/*中间歌单歌词--------------------------------------------------------------------------*/
-    .aplayer &#123;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        box-shadow:none;
-        background: none;
-        margin-top: 30px;
-    &#125;
-
-    .aplayer .aplayer-lrc p &#123;
-        font-size: 17px;
-        padding: 3px 15px!important;
-        filter: blur(0px);
-    &#125;
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current &#123;
-        filter: blur(0px);
-        font-size: 20px;
-        padding: 10px !important;
-        line-height: 25px !important;
-    &#125;
-
-    .aplayer .aplayer-list ol li&#123;
-        font-size: 17px;
-        height: 28px;
-        line-height: 30px;
-        border-radius: 8px;
-        border-top:none;	
-        padding: 5px 15px 0px 15px;
-    &#125;
-    .aplayer .aplayer-list ol li.aplayer-list-light &#123;
-        background: #e9e9e9;
-        padding-bottom: 5px;
-    &#125;
-    .aplayer.aplayer-withlist .aplayer-info &#123;
-        border-bottom: none;
-    &#125;
-
-    .aplayer .aplayer-lrc&#123;
-        height: calc(100vh - 120px) !important;
-    &#125;
-
-    .aplayer .aplayer-lrc&#123;
-        padding-top: 50px;
-    &#125;
-    .aplayer-list &#123;
-        width: 100%;
-        max-width: 500px;
-        max-height: none !important;
-        height: 100%;
-        min-width: 200px;
-    &#125;
-    .aplayer .aplayer-body &#123;
-        position: relative;
-        width: 100%;
-        max-width: 700px;
-    &#125;
-    /*播放小控件*/
-    .aplayer .aplayer-pic .aplayer-play,
-    .aplayer .aplayer-pic .aplayer-button &#123;
-        display: none;
-    &#125;
-    .aplayer.aplayer-withlrc .aplayer-pic &#123;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%!important;
-        height: 100%!important;
-        object-fit: cover!important; /* 图片铺满整个区域 */
-        z-index: -1; /* 确保播放器图片在最底层 */
-        filter: blur(20px); /* 添加模糊效果 */
-        opacity: 0.3; /* 设置透明度 */
-        pointer-events: none; /* 避免图片遮挡其他元素的交互 */
-    &#125;
-    .aplayer .aplayer-lrc:after, .aplayer .aplayer-lrc:before &#123;
-        content: none;
-    &#125;
-
-
-/*底部播放控制--------------------------------------------------------------------------*/
-
-    .aplayer .aplayer-info .aplayer-controller &#123;
-        position: fixed!important;
-        flex-direction: column;
-        padding: 10px;
-        padding-bottom: 35px;
-        padding-top: 5px;
-        bottom: 0px;
-        left: 0;
-        width: calc(100% - 20px); 
-        background-color:#ffffff40;
-        backdrop-filter: blur(20px);
-        z-index:999;
-    &#125;
-    .aplayer .aplayer-info .aplayer-music&#123;
-        position: fixed !important;
-        bottom: 7px;
-        left: 10px;
-        z-index:101;
-    &#125;
-    
-    .aplayer .aplayer-info .aplayer-controller .aplayer-time &#123;
-        display: flex;
-        justify-content: center;
-        bottom: -3px;
-    &#125;
-    .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-time-inner &#123;
-        position: absolute;
-        right: 0;
-        bottom: 10px;
-        
-    &#125;
-    /*播放进度条*/
-    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-loaded,
-    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played, 
-    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar &#123;
-        height: 8px!important;
-        border-radius: 8px!important;
-
-    &#125;
-
-    .aplayer .aplayer-info .aplayer-controller .aplayer-bar-wrap .aplayer-bar .aplayer-played .aplayer-thumb &#123;
-        margin-top: -6px!important;
-        height: 20px!important;
-        width: 20px!important;
-    &#125;
-
-
-
-    /*音量大小*/
-    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar &#123;
-        width: 100%!important;
-        height: 100%!important;
-        left: 0!important;
-    &#125;
-    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap &#123;
-        width: 20px!important;
-    &#125;
-
-    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap .aplayer-volume-bar-wrap .aplayer-volume-bar .aplayer-volume &#123;
-        width: 100%!important;
-    &#125;
-    .aplayer .aplayer-info .aplayer-controller .aplayer-volume-wrap:hover .aplayer-volume-bar-wrap &#123;
-        height: 120px!important;
-        border-radius: 40px;
-    &#125;	
-    /*按钮大小*/
-    .aplayer .aplayer-icon &#123;
-        width: 25px;
-        height: 25px;
-        margin: 5px;
-    &#125;
-    .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path &#123;
-        fill: #666;
-    &#125;
-
-
-
-/*黑暗模式*/
-    .floating-button,
-    .toggle-button &#123;
-        position: fixed;
-        right: 30px;
-        top: 20px;
-        z-index:998;
-        font-size:16px;
-        line-height: 1;
-    &#125;
-    .floating-button &#123;
-        right: 65px;
-    &#125;
-
-    .dark &#123;
-        background-color:#000;
-        color:#666;
-    &#125;
-    .dark .aplayer .aplayer-lrc p&#123;
-        color:#e2e2e2;
-    &#125;
-    .dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path &#123;
-        fill: #fff!important;
-    &#125;
-    .dark .toggle-button,
-    .dark .floating-button &#123;
-        color:#fff;
-    &#125;
-
-    
-    .list .names &#123;
-        left: 0 !important;
-    &#125;
-    
-        .click-area &#123;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: 20; 
-    &#125;	
-&lt;/style&gt;
-</code></pre>
-</head>
-<body >
-<div class="names"><div id="musiclist"></div></div>
-<div id="aplayer">加载中...</div>
-<div id="metingContainer">列表加载中...</div>
-
-<script type="text/javascript">
-    const image = "https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80";
-    
-    let currentPlayer = null;
-
-    const sharedOptions = {
-        fixed: false,
-        autoplay: false,
-        volume: 1,
-        lrcType: 3,
-        mutex: true,
-        order: 'random',
-        preload: 'none',
-        listFolded: false,
-        listMaxHeight:'', //列表最大高度,默认340px
-        theme: '#ee8243',
-        defaultCover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'
-    };
-
-    const playersConfig = {
-        自定义: {
-            container: document.getElementById('aplayer'),
-            audio: [
-                {
-                    name: 'Only Time',
-                    artist: 'Enya',
-                    url: 'http://music.163.com/song/media/outer/url?id=29470947.mp3',
-                    cover: '',
-                    lrc: 'May It Be-Enya.lrc',
-                },
-
-            ]
-        },
-
-
-    };
-
-    function loadAplayer(playerName) {
-        if (currentPlayer) {
-            currentPlayer.destroy();
-        }
-
-        // 创建新的包裹容器
-        const container = document.getElementById('aplayer');
-        container.innerHTML = '';  // 清空容器内容
-        const wrapperDiv = document.createElement('div');
-        wrapperDiv.className = 'content aplayer aplayer-withlrc aplayer-withlist';
-        container.appendChild(wrapperDiv);
-
-        // 初始化 APlayer 并将其添加到新的包裹容器中
-        currentPlayer = new APlayer(Object.assign({}, sharedOptions, playersConfig[playerName], { container: wrapperDiv }));
-        
-        document.getElementById('aplayer').style.display = 'block';
-        document.getElementById('metingContainer').style.display = 'none';
-    }
-
-    const meting = [
-        {name: '国语', server: 'netease', type: 'playlist', id: '8184817453', cover: 'https://p1.music.126.net/lgV84WlRUcgn-jCiKx-n0w==/109951165592212933.jpg?param=80y80'},
-        {name: '粤语', server: 'netease', type: 'playlist', id: '8185045795', cover: 'https://p1.music.126.net/xe1F96UCN5arTvjBTjtISQ==/100055558139748.jpg?param=80y80'},
-        {name: '英文', server: 'netease', type: 'playlist', id: '5471042889', cover: 'https://p1.music.126.net/FLg-ePGetDLWs58nrBbKtA==/109951164031278533.jpg?param=80y80'},
-        {name: '纯音乐', server: 'netease', type: 'playlist', id: '8725850622', cover: 'https://p1.music.126.net/zTkgNapG5qrxo3AtFBmpWg==/109951163613302296.jpg?param=80y80'},
-        {name: '史诗', server: 'netease', type: 'playlist', id: '8725429117', cover: 'https://p1.music.126.net/g423Jr5ifWV3BLBj3U8njQ==/109951164985317990.jpg?param=80y80'},
-        {name: '电音', server: 'netease', type: 'playlist', id: '8173191976', cover: 'https://p1.music.126.net/U10tpIUujpa7EYFvaoEHCA==/109951164459635354.jpg?param=80y80'},
-        {name: '金属', server: 'netease', type: 'playlist', id: '8173838382', cover: 'https://p1.music.126.net/Bq2_Ks_HhkvRyzM24R8IvA==/799344953445636.jpg?param=80y80'},
-        {name: '粤语-女', server: 'netease', type: 'playlist', id: '8855877957', cover: 'https://p1.music.126.net/j1_NTwobAGygKhwdUJ0yZw==/109951168776476914.jpg?param=80y80'},
-    ];
-
-    const metingContainer = document.getElementById('metingContainer');
-
-    function loadMeting(name) {
-        clearMetingContainer();
-        const selectedMeting = meting.find(item => item.name === name);
-        if (!selectedMeting) {
-            console.error(`Meting player with name '${name}' not found.`);
-            return;
-        }
-        metingContainer.innerHTML = `
-            <meting-js
-                server="${selectedMeting.server}"
-                type="${selectedMeting.type}"
-                id="${selectedMeting.id}"
-                cover="${selectedMeting.cover}">
-            </meting-js>
-        `;
-        document.getElementById('aplayer').style.display = 'none';
-        document.getElementById('metingContainer').style.display = 'block';
-    }
-
-    function clearMetingContainer() {
-        metingContainer.innerHTML = '';
-    }
-
-    const musiclistContainer = () => {
-        let htmlContent = '';
-        for (const playerName in playersConfig) {
-            htmlContent += `<div onclick="loadAplayer('${playerName}')"><img src="${playersConfig[playerName].audio[0]?.cover || image}"><div>${playerName}</div></div>`;
-        }
-        meting.forEach((item) => {
-            htmlContent += `<div onclick="loadMeting('${item.name}')"><img src="${item.cover ? item.cover : image}"><div>${item.name}</div></div>`;
-        });
-        document.getElementById('musiclist').innerHTML = htmlContent;
-    };
-
-    musiclistContainer(); // 调用nameAAAContainer函数
-
-    // 默认加载第一个播放器
-    document.addEventListener("DOMContentLoaded", function () {
-        //loadAplayer('自定义'); // 默认加载 APlayer 播放器
-        loadMeting('英文'); // 默认加载 Meting 播放器
-    });
+];
 </script>
-<script>
-// 黑暗模式
-document.write('<div class="toggle-button" onclick="toggleDarkMode()">☀</div><div class="floating-button" id="musiclistButton">♫</div>');
-var isDarkMode = 0; 
-if (isDarkMode) {
-    document.body.classList.add('dark');
-    document.querySelector('.toggle-button').textContent = '◐'; // 设置初始状态为 ◗
-}
-
-function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-    if (isDarkMode) {
-        document.querySelector('.toggle-button').textContent = '☀'; // 切换到非dark模式时显示 ☀
-    } else {
-        document.querySelector('.toggle-button').textContent = '◐'; // 切换到dark模式时显示◗
-    }
-    isDarkMode = !isDarkMode; 
-}
-
-// 侧栏
-  var toggleListButton = document.getElementById('musiclistButton');
-  var body = document.body;
-  toggleListButton.addEventListener('click', function() {
-    body.classList.toggle('list');
-  });
-  document.addEventListener('click', function(event) {
-    var target = event.target;
-    if (!toggleListButton.contains(target)) {
-      body.classList.remove('list');
-    }
-  });
-
-</script>
-<script>
-if (window.innerWidth < 767) {
-document.write('<div class="click-area"></div>');
-    document.querySelector('.click-area').addEventListener('click', function() {
-        const aplayerList = document.querySelector('.aplayer-list');
-        if (aplayerList.classList.contains('aplayer-list-hide')) {
-            aplayerList.classList.remove('aplayer-list-hide');
-        }
-    });
-    }
-</script>
+<!--WEB&nav-no  标题增加&nav-no 可折叠标题
+['','', ''],
+-->
 </article>
 
 
