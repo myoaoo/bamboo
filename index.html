@@ -256,11 +256,11 @@
                   </li>
                   
                   <li>
-                    <a href="/page/fuhao.html">
+                    <a href="/page/shuoshuo.html">
                       
-                      <i class="fas fa-feather" style="margin-top: -20px;"></i>
+                      <i class="fas fa-comment-dots" style="margin-top: -20px;"></i>
                       
-                      <span>符号</span>
+                      <span>说说</span>
                     </a>
                   </li>
                   
@@ -388,11 +388,20 @@
                   </li>
                   
                   <li>
-                    <a href="/page/jisuanq.html">
+                    <a href="/page/fuhao.html">
+                      
+                      <i class="fas fa-feather" style="margin-top: -20px;"></i>
+                      
+                      <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/daima.html">
                       
                       <i class="fab fa-nutritionix" style="margin-top: -20px;"></i>
                       
-                      <span>计算器</span>
+                      <span>代码</span>
                     </a>
                   </li>
                   
@@ -506,11 +515,11 @@
                   </li>
                   
                   <li>
-                    <a href="/page/fuhao.html">
+                    <a href="/page/shuoshuo.html">
                       
-                      <i class="fas fa-feather" style="margin-top: -20px;"></i>
+                      <i class="fas fa-comment-dots" style="margin-top: -20px;"></i>
                       
-                      <span>符号</span>
+                      <span>说说</span>
                     </a>
                   </li>
                   
@@ -632,11 +641,20 @@
                   </li>
                   
                   <li>
-                    <a href="/page/jisuanq.html">
+                    <a href="/page/fuhao.html">
+                      
+                      <i class="fas fa-feather" style="margin-top: -20px;"></i>
+                      
+                      <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/daima.html">
                       
                       <i class="fab fa-nutritionix" style="margin-top: -20px;"></i>
                       
-                      <span>计算器</span>
+                      <span>代码</span>
                     </a>
                   </li>
                   
@@ -838,9 +856,11 @@
 <script>
 const data = `
 &ensp;
-  - docsify图片管理,https://docsify.js.org/
-  - idoc,https://wangchujiang.com/idoc/index.html
-  - Piwigo,https://cn.piwigo.org
+  - 共享账号,https://chat.sharedchat.cn/
+  - AIchatOS,https://chat18.aichatos8.com/
+  - 重量单位转换,https://www.qvdv.net/tools/qvdv-kilogram.html
+  - 文本差异对比<br>汉语转拼音<br>简繁在线转换,https://www.converts.cn/contrast.html
+  - MyFreeMP3音乐,https://tools.liumingye.cn/music/
 `;
 
 const outputDiv = document.getElementById("output");
@@ -858,7 +878,7 @@ lines.forEach((line) => {
           <img src="https://api.iowen.cn/favicon/${link.replace(/^https?:\/\//, "")}.png">
         </div>
         <div class="grid-item-right">
-          <a href="${link}" target="_blank">${name}</a>
+          <a href="${link}" target="_blank" title="${name}">${name}</a>
         </div>
       </div>
     `;
@@ -907,6 +927,25 @@ outputDiv.innerHTML = htmlContent;
 
 
 <section class="posts">
+  
+    
+	
+
+    <article class="post reveal" style="flex-direction: column-reverse;height: 220px;">
+
+
+		
+      <div style="display: flex; justify-content: center; align-items: center;height: 40px;">
+        <a class="post-title-link" href="/11.html" >使用ffmpeg获取音乐中封面和歌词</a>
+      </div>
+
+      <div class="post-img">
+        <a href="/11.html" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload" src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" alt="">
+        </a>
+      </div>
+    </article>
   
     
 	

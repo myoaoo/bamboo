@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>网址导航 | </title>
+  <title>使用ffmpeg获取音乐中封面和歌词 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -774,799 +774,677 @@
     
 </header>
         <!-- 内容区域 -->
-        <style>
-	h3, h4{
-		font-weight: 400;
-	}
-	.abc{
-        background-color: #e7e7e7;
-        border-radius: 5px;
-	}
-	
-    .tab-content {
-        display: none;
-		margin-top: 10px;
-    }
-    .tab {
-        cursor: pointer;
-        padding: 5px 10px;
-        background-color: #e7e7e7;
-        margin: 0 5px 5px 0;
-        border-radius: 20px;
-		font-size: 0.9em;
-    }
-    .active-tab {
-        background-color: #c8c8c8;
-        color: #fff;
-    }
-    .tab-group {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-    }
-    .abc {
-        display: none;
-    }
-    .abc.show {
-        display: block;
-    }
-    .toggle-icon {
-        float: right;
-		width: 30px; 
-		height: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 50%;
-    }
-	#linksContainer {
-		position: fixed;
-		top: 60px;
-		left: -170px;
-		width: 150px;
-		z-index: 99;
-		background-color: #f8f8f8;
-		padding: 8px;
-		transition: left 0.3s ease;
-		overflow-y: auto;
-		height: calc(100vh - 76px);
-	}
-	
-#toggleButton {
-    position: fixed;
-    bottom: 140px;
-    right: 28px;
-    z-index: 100;
-    background-color: rgba(66, 185, 133, 0.8) !important;
-    color: white;
-}
-@media (max-width: 551px) {
-    #toggleButton {
-    right: 12px;
-	bottom: 130px;
-	}
-}
+        
+<!-- prismjs 代码高亮 -->
 
-	#searchInput-webnav {
-	width: 75%;
-	  margin: 20px auto 0;
-	  display: block;
-	  padding: 10px; 
-	  border: none; 
-	  outline: none;
-	  background-color: #fff;
-	  border-radius: 20px; 	  
-	}
 
-	.search-result{
-	text-align: center;
-	margin: 20px auto;
-	}
-	.search-result span {
-		color:red;
-	}
-	
-	#linksContainer h4 {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	#linksContainer h4 i{transform: scale(0.7);}
 
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        使用ffmpeg获取音乐中封面和歌词
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2024-09-18 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/wordpress/" class="post-detail-header_category">
+              wordpress
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>确保你的系统上已经安装了 ffmpeg。如果没有请自动安装</p>
+<p>在 Windows 上：可以从 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://ffmpeg.org/download.html">ffmpeg</a> 官方网站 下载并配置环境变量。</p>
+<p>在 macOS 上：可以通过 Homebrew 安装，运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
+
+<p>在 Linux 上：大多数发行版可以通过包管理器安装，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ffmpeg  # 对于 Ubuntu/Debian</span><br></pre></td></tr></table></figure>
+
+<h3 id="步骤-1：查看-MP3-文件的元数据"><a href="#步骤-1：查看-MP3-文件的元数据" class="headerlink" title="步骤 1：查看 MP3 文件的元数据"></a>步骤 1：查看 MP3 文件的元数据</h3><p>首先，你可能想查看 MP3 文件中是否包含封面图片。可以使用以下命令查看文件的元数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp3</span><br></pre></td></tr></table></figure>
+
+<p>这将输出文件的详细信息，其中如果文件中包含封面图片，你会看到类似以下的信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stream #0:2: Video: mjpeg, yuvj420p(pc, bt470bg/unknown/unknown), 600x600, 90k tbr, 90k tbn, 90k tbc</span><br></pre></td></tr></table></figure>
+
+<p>注意上面提到的 Stream #0:2，它表示封面图片在 MP3 文件的第 2 条流中。</p>
+<h3 id="步骤-2：提取封面图片"><a href="#步骤-2：提取封面图片" class="headerlink" title="步骤 2：提取封面图片"></a>步骤 2：提取封面图片</h3><p>你可以使用 ffmpeg 提取封面图片。假设你的文件名为 input.mp3，你可以运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp3 -an -vcodec copy cover.jpg</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数解释："><a href="#参数解释：" class="headerlink" title="参数解释："></a>参数解释：</h4><p>-i input.mp3：指定输入的 MP3 文件。<br>-an：忽略音频流，只处理非音频部分（即封面图片）。<br>-vcodec copy：将封面图片复制出来，而不进行重新编码。<br>cover.jpg：这是输出文件的名称，你可以选择保存为 cover.png 或其他格式。</p>
+<h3 id="步骤-3：检查提取的封面图片"><a href="#步骤-3：检查提取的封面图片" class="headerlink" title="步骤 3：检查提取的封面图片"></a>步骤 3：检查提取的封面图片</h3><p>运行命令后，cover.jpg 文件会出现在你当前的目录中。你可以打开该图片文件来查看是否正确提取了封面。</p>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><p>假设你有一个名为 song.mp3 的文件，并且想提取封面图片并保存为 album_art.jpg，你可以运行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i song.mp3 -an -vcodec copy album_art.jpg</span><br></pre></td></tr></table></figure>
+
+<h3 id="可能的错误及解决方案"><a href="#可能的错误及解决方案" class="headerlink" title="可能的错误及解决方案"></a>可能的错误及解决方案</h3><h4 id="没有提取到图片："><a href="#没有提取到图片：" class="headerlink" title="没有提取到图片："></a>没有提取到图片：</h4><ol>
+<li>确认 MP3 文件中确实包含封面图片（通过元数据查看）。</li>
+<li>尝试使用其他扩展名保存图片，如 cover.png，某些 MP3 文件可能使用 PNG 格式的封面。</li>
+</ol>
+<h4 id="封面图片没有正确显示："><a href="#封面图片没有正确显示：" class="headerlink" title="封面图片没有正确显示："></a>封面图片没有正确显示：</h4><p>确保封面图片的流格式是 jpeg 或 png，如果你提取的图片格式不正确，可以尝试将输出格式更改为相应的扩展名。</p>
+<h3 id="借助脚本可以批量提取歌词和封面"><a href="#借助脚本可以批量提取歌词和封面" class="headerlink" title="借助脚本可以批量提取歌词和封面"></a>借助脚本可以批量提取歌词和封面</h3><p>打开文本编辑器（如记事本），将以下代码粘贴进去：</p>
+<h4 id="获取歌词"><a href="#获取歌词" class="headerlink" title="获取歌词"></a>获取歌词</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"></span><br><span class="line">:: 确保输出目录存在</span><br><span class="line">if not exist &quot;Lyrics&quot; mkdir &quot;Lyrics&quot;</span><br><span class="line"></span><br><span class="line">:: 遍历当前目录中的所有 MP3 文件</span><br><span class="line">for %%f in (*.mp3) do (</span><br><span class="line">    :: 获取文件名（不包括扩展名）</span><br><span class="line">    set &quot;filename=%%~nf&quot;</span><br><span class="line"></span><br><span class="line">    :: 提取歌词并保存为文本文件</span><br><span class="line">    ffprobe -v error -show_entries format_tags=lyrics-zho -of default=noprint_wrappers=1:nokey=1 &quot;%%f&quot; &gt; &quot;Lyrics\!filename!.txt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">echo Finished extracting lyrics!</span><br><span class="line">pause</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="获取封面"><a href="#获取封面" class="headerlink" title="获取封面"></a>获取封面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"></span><br><span class="line">:: 确保输出目录存在</span><br><span class="line">if not exist &quot;Covers&quot; mkdir &quot;Covers&quot;</span><br><span class="line"></span><br><span class="line">:: 遍历当前目录中的所有 MP3 文件</span><br><span class="line">for %%f in (*.mp3) do (</span><br><span class="line">    :: 获取文件名（不包括扩展名）</span><br><span class="line">    set &quot;filename=%%~nf&quot;</span><br><span class="line">    </span><br><span class="line">    :: 提取封面图片</span><br><span class="line">    ffmpeg -i &quot;%%f&quot; -an -vcodec copy &quot;Covers\!filename!.jpg&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">echo Finished extracting covers!</span><br><span class="line">pause</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="获取歌词和封面"><a href="#获取歌词和封面" class="headerlink" title="获取歌词和封面"></a>获取歌词和封面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">setlocal enabledelayedexpansion</span><br><span class="line"></span><br><span class="line">:: 确保输出目录存在</span><br><span class="line">if not exist &quot;Covers&quot; mkdir &quot;Covers&quot;</span><br><span class="line">if not exist &quot;Lyrics&quot; mkdir &quot;Lyrics&quot;</span><br><span class="line"></span><br><span class="line">:: 遍历当前目录中的所有 MP3 文件</span><br><span class="line">for %%f in (*.mp3) do (</span><br><span class="line">    :: 获取文件名（不包括扩展名）</span><br><span class="line">    set &quot;filename=%%~nf&quot;</span><br><span class="line">    </span><br><span class="line">    :: 提取封面图片</span><br><span class="line">    ffmpeg -i &quot;%%f&quot; -an -vcodec copy &quot;Covers\!filename!.jpg&quot;</span><br><span class="line">    </span><br><span class="line">    :: 提取歌词并保存为文本文件</span><br><span class="line">    ffprobe -v error -show_entries format_tags=lyrics-zho -of default=noprint_wrappers=1:nokey=1 &quot;%%f&quot; &gt; &quot;Lyrics\!filename!.txt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">echo Finished extracting covers and lyrics!</span><br><span class="line">pause</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>1.保存文件，例如命名为 your.bat (或者你想要的名字)确保文件类型选择为 “所有文件”。</p>
+<p>2.将 your.bat文件和 MP3 文件放在同一目录下。</p>
+<p>3.双击运行 your.bat 批处理脚本：</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E6%8F%92%E4%BB%B6/" class="">
+              插件
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>梦想魔豆</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/11.html" target="_blank" title="使用ffmpeg获取音乐中封面和歌词">https://oaoo.com/11.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload" src="/images/10-0.png" src="" alt="">
+    </div>
+    <a href="/10.html" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">wordpress 菜单输出插件WPS Menu Exporter</div>
+      </div>
+      <!-- <div class="content">
+        说明如果您的 WordPress 网站，创建了复杂的导航菜单，那么最好对其进行备份，以防止因意外丢失菜单。Wordpre
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" rel="external nofollow noreferrer" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/images/logo/zhifubao.png" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/images/logo/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'WeChatpay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
 	
-	#linksContainer .list, 
-	#linksContainer .abc p,
-	#linksContainer h4 {margin: 5px 3px;padding:5px;}
-	
-	#linksContainer .abc p {padding-left:15px;}
-	.aaaB{
-        background-color: #fff0;
-        color: #000;
-		padding: 5px 0px;
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>梦想魔豆</h2>
+        
+        
+          <p>绽放绚烂的希望之花</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:526740182@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/myoaoo"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=526740182"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-1%EF%BC%9A%E6%9F%A5%E7%9C%8B-MP3-%E6%96%87%E4%BB%B6%E7%9A%84%E5%85%83%E6%95%B0%E6%8D%AE"><span class="toc-text">步骤 1：查看 MP3 文件的元数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-2%EF%BC%9A%E6%8F%90%E5%8F%96%E5%B0%81%E9%9D%A2%E5%9B%BE%E7%89%87"><span class="toc-text">步骤 2：提取封面图片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="toc-text">参数解释：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4-3%EF%BC%9A%E6%A3%80%E6%9F%A5%E6%8F%90%E5%8F%96%E7%9A%84%E5%B0%81%E9%9D%A2%E5%9B%BE%E7%89%87"><span class="toc-text">步骤 3：检查提取的封面图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B"><span class="toc-text">完整示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">可能的错误及解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E6%8F%90%E5%8F%96%E5%88%B0%E5%9B%BE%E7%89%87%EF%BC%9A"><span class="toc-text">没有提取到图片：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E9%9D%A2%E5%9B%BE%E7%89%87%E6%B2%A1%E6%9C%89%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%EF%BC%9A"><span class="toc-text">封面图片没有正确显示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%80%9F%E5%8A%A9%E8%84%9A%E6%9C%AC%E5%8F%AF%E4%BB%A5%E6%89%B9%E9%87%8F%E6%8F%90%E5%8F%96%E6%AD%8C%E8%AF%8D%E5%92%8C%E5%B0%81%E9%9D%A2"><span class="toc-text">借助脚本可以批量提取歌词和封面</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%AD%8C%E8%AF%8D"><span class="toc-text">获取歌词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B0%81%E9%9D%A2"><span class="toc-text">获取封面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%AD%8C%E8%AF%8D%E5%92%8C%E5%B0%81%E9%9D%A2"><span class="toc-text">获取歌词和封面</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+      <!-- Add button for random display -->
+	  <a class="post-title-link" title="随机文章">
+	  <i class="fas fa-undo-alt" aria-hidden="true"  onclick="randomizeItems()" style=" display: flex; justify-content: flex-end; padding: 10px; margin-top: -25px; font-size: 0.875rem;" ><span style="">随机文章</span></i></a>
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list" id="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/11.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/11.html">使用ffmpeg获取音乐中封面和歌词</a>
+              <div>
+                
+                  <span class="post-date">09-18</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/10.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/10-0.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/10.html">wordpress 菜单输出插件WPS Menu Exporter</a>
+              <div>
+                
+                  <span class="post-date">07-18</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/9.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/9-0.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/9.html">wordpress  Media Sync 同步上传的图片到媒体库</a>
+              <div>
+                
+                  <span class="post-date">07-10</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/8.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/8-1.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/8.html">OneManager  0成本搭建不限速网盘</a>
+              <div>
+                
+                  <span class="post-date">07-08</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/7.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/7-2.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/7.html">一个适用于个人的在线网盘程序</a>
+              <div>
+                
+                  <span class="post-date">07-05</span>
+                
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  function randomizeItems() {
+    var items = document.querySelectorAll('.aside-list-item');
+    var parent = document.getElementById('aside-list');
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      parent.insertBefore(items[j], items[i]);
     }
+  }
+</script>
 
-	#linksContainer a :hover,
-	#linksContainer .abc a :hover,
-	#linksContainer h4:hover {
-		background-color: #dedede;
-		border-radius: 8px;
-	}
-	#tabContainer {margin-top: 30px;}
-	#tabContainer h3 {    
-	border-bottom: 1px solid #bfbfbf;
-    padding-bottom: 5px;
-	}
-	.tab-group img ,
-	#tabContainer h3 img {
-		height: 20px;
-	    vertical-align: -0.27em;
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
 		}
-	#tabContainer .tab:hover{
-		background-color: red;
-		color: #fff;
-	}
-a {text-decoration: none;color: #000;}
-.pagediy {
-    width: 75%;
-    margin: 0px auto;
-	padding: 20px;
-    min-height: calc(100vh - 160px);
-}
-@media (max-width: 992px) {
-    .pagediy {
-    width: calc(100% - 50px);
-	padding: 25px;
-}
-}
-h3 {margin: 1.2rem 0;}
+	})
+</script>
 
-.grid-item .grid-item-right p a {color: #000}
-.grid-item div a {color: #bdbdbd}
-
-/*黑暗模式*/
-.darkModel #linksContainer,
-.darkModel .grid-item-left,
-.darkModel .tab,
-.darkModel #searchInput-webnav,
-.darkModel .grid-item {
-	background-color: rgba(240, 246, 252, 0.149);
-}
-.darkModel .active-tab{
-	background-color: rgb(255 255 255 / 40%);;
-}
-.darkModel .grid-item-left{
-	background-color: rgb(255 255 255 / 0%);;
-}
-.darkModel .grid-item-left {border-radius: 20px;}
-
-.darkModel #linksContainer a :hover,
-.darkModel #linksContainer .abc a :hover,
-.darkModel #linksContainer h4:hover {
-		background-color: rgba(240, 246, 252, 0.149);
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
-.darkModel #searchInput-webnav,
-.darkModel .grid-item .grid-item-right p a,
-.darkModel .grid-item a ,
-.darkModel .grid-item-right a {
-	color: #c9d1d9;
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
-	
-	
 </style>
 
 
 
-<div style="height: 60px;"></div>
-<article class=" pagediy">
-	<div class="overlay" onclick="closeSidebar()"></div>
-	<script>
-var tabs_a = 0;
-const tabData = [
-'开源', 
-[
-    ['文档系统', 
-        ['docsift', '一个动态生成文档网站的工具 ', 'https://docsify.js.org/'],
-        ['idoc', '没有搜索功能的快速、简洁且高效的文档生成工具', 'https://wangchujiang.com/idoc/index.html','https://github.com/jaywcjlove/idoc','https://wangchujiang.com/idoc/logo.png'],
-        ['Docusaurus', '创建、维护和部署静态网站的工具', 'https://docusaurus.io/'],
-        ['GitBook', '一个专注文档管理的平台', 'https://docs.gitbook.com/'],
-    ],
-    ['图片管理', 
-        ['Piwigo', 'Piwigo是一款基于Web网页的开源图片管理系统', 'https://cn.piwigo.org/'],
-    ],
-    ['工具', 
-        ['HandBrake', '一款开源的视频转码器', 'https://handbrake.fr/'],
-        ['洋芋田图像工具箱', '一个适用于创意行业从业者的图像工具箱', 'https://www.potatofield.cn/imagetoolkit/', '','https://www.potatofield.cn/favicon.ico'],
-        ['Upscayl', '一款开源的AI图片放大工具', 'https://www.upscayl.org/', '/4.html'],
-        ['Rubick', '开源桌面端效率工具', 'https://rubickcenter.github.io/rubick/', '','https://rubickcenter.github.io/rubick/images/logo.png'],
-        ['stranslate', '即开即用、即用即走的翻译(OCR)工具', 'https://stranslate.zggsong.com/'],
-        ['API For Docker', '免费不限制提供生活常用等公益大数据的平台', 'https://api.isoyu.com/'],
-    ],
-    ['网盘程序', 
-        ['z-file',  '一个支持多种格式在线文件管理和分享平台', 'https://www.zfile.vip/','/7.html'],
-        ['Alist',  '多种网盘目录程序', 'https://alist.nn.ci/zh/'],
-        ['TinyFileManager', '单文件PHP开源文档目录列表 ', 'https://tinyfilemanager.github.io/','/5.html','/medias/logo.png'],
-        ['files-gallery', '单文件PHP开源文档目录列表', 'https://www.files.gallery/','/3.html'],
-        ['onemanager','部署在vercel上的网盘，可惜我这小白了', 'https://scfonedrive.github.io/Vercel/Deploy.html','','/medias/logo.png'],
-        ['cloudreve','快速搭建起公私兼备的网盘系统,实现灵活的文件管理体验。', 'https://cloudreve.org/'],
-        ['showta','类似Alist的网盘', 'https://www.showta.cc/','','https://www.showta.cc/logo.png'],
-    ],
-    ['在线笔记', 
-        ['Minimalist Web Notepad', '一款带API的开源轻量级简洁在线笔记本', 'https://notes.orga.cat/','','https://notes.orga.cat/favicon.svg'],
-        ['note.ms', '可以在各个设备之间传网址和大段文本', 'https://note.ms'],
-        
-    ],
-    ['VPN', 
-        ['Oblivion', '一款基于WARP的优秀源网络工具', 'https://github.com/bepass-org/oblivion-desktop','/2.html'],
-        ['V2Ray', '著名开源网络工具程序', 'https://github.com/2dust/v2rayN'],
-        ['MahsaNG', '来自伊朗的开源免费移动端vpn，全自动更新节点，开箱即用', 'https://github.com/ellonyang/MahsaNG'],
-        ['WARP', 'Cloudflare开发的一项服务,主要用来保护用户的网上隐私', 'https://one.one.one.one/'],
 
-    ],
-    ['博客框架',
-        ['WordPress', 'PHP语言开发的建站系统', 'https://WordPress.org/'],
-        ['Typecho', 'PHP轻量级的博客框架', 'https://typecho.org/','','/medias/logo.png'],
-        ['Hexo', '基于Node.js的开源静态博客框架','https://hexo.io/zh-cn/'],
-        ['Hugo', '用 GO 语言编写的网站构建框架之一', 'https://gohugo.io/'],
-        ['Vitepress', '一个基于 Vite 的静态站点生成器 ', 'https://vitepress.dev/'],
-        ['VuePress', '一个基于 Vue.js 的静态网站生成器', 'https://vuepress.vuejs.org/'],
-        ['Jekyll', '简单的静态站点生成器', 'https://jekyllrb.com/'],
-        ['Halo', '强大易用的开源建站工具', 'https://www.halo.run/'],
-        ['Solo', '是一款基于Java语言有后台管理的博客系统', 'https://b3log.org/solo/'],
-        ['蘑菇博客', '一个基于微服务架构的前后端分离博客系统', 'https://gitee.com/moxi159753/mogu_blog_v2'],
-        
-        
-    ],	
-],
-'电脑软件', 
-[
-    ['效率', 
-        ['Everything', '一个强大的文件搜索工具，帮助您快速定位计算机上的文件和文件夹', 'https://www.voidtools.com/zh-cn/'],
-        ['FileLocator', '高效的无索引全文搜索软件,免费版已够用，收费版Pro更强大', 'https://www.mythicsoft.com/'],
-        ['uTools', '新一代效率工具平台，配合插件使用，个别插件收费', 'https://u.tools/'],
-    ],
-    ['视频', 
-        ['PotPlayer', '万能格式影音视频播放器', 'http://www.potplayercn.com/'],
-        ['蜜蜂剪辑', '简单多功能视频剪辑软件', 'https://beecut.cn/'],
-        ['快剪辑', '一款好用全能的视频剪辑工具', 'https://kuai.360.cn/']
-    ],
-    ['看图软件', 
-        ['Picasa', 'Google的免费图片管理工具，功能强大、简单易用、(已停更)', 'https://picasa.software.informer.com/3.9/', '','https://img.informer.com/icons/png/128/3076/3076731.png'],
-
-    ],
-
-],
-'WEB', 
-[
-    ['AI', 
-        ['SharedChat共享站点', '一些免费的共享ChatGPT账号', 'https://sharedchat.cn/','','/medias/logo.png'],
-        ['AIchatOS', '免费使用GPT3.5,自愿捐助', 'https://chat18.aichatos.xyz/'],
-        ['SoEZGPT小助手', '在线GPT网站，可会员可免费', 'https://www.soezgpt.com/'],
-        ['Moonshot AI', '注册使用，国内人工智能初创公司Moonshot AI（月之暗面）推出的智能对话助手，支持输入长达20万汉字的上下文', 'https://kimi.moonshot.cn/'],
-
-    ],
-    ['生活指引', 
-        ['wikihow', '成事指南，高质量的指导手册', 'https://zh.wikihow.com/'],
-        ['科普中国网', '提供科学、权威、准确的科普信息内容和相关资讯，让科技知识在网上和生活中流行', 'https://www.kepuchina.cn/'],
-        ['Languageguide', '外语学习网，学习各国日常用语', 'https://www.languageguide.org/'],
-        ['报纸在线阅读', '多媒体数字报纸在线阅读', 'http://www.53bk.com/Baokan' ,'','/medias/logo.png'],
-        ['期刊杂志', '收录大部分期刊，更新即时在线查阅', 'https://new-qk.lifves.com/']
-    ],
-    ['OCR', 
-        ['白描OCR', '一款免费的在线OCR文字识别工具,有使用次数限制', 'https://web.baimiaoapp.com/'],
-        ['Convertio ', 'OCR光学字符识别', 'https://convertio.co/zh/ocr/'],
-        ['NewOCR', '免费的在线 OCR 光学字符识别服务', 'https://www.newocr.com/'],
-        ['Onlineocr', '在线免费图文识别工具，支持全球 46 种语言', 'https://www.onlineocr.net/zh_hans'],
-        ['UUtool', '在线 OCR 图片文字识别工具', 'https://uutool.cn/ocr'],
-        ['CatOCR', '易飞文字识别，免费在线图片转文字', 'https://catocr.com/'],
-        ['pearocr', '在线图片转文字', 'https://pearocr.com/'],
-    ],
-    ['格式转换', 
-        ['Cloudconvert', '多功能在线文件格式转换工具网站', 'https://cloudconvert.com/']
-    ],
-
-    ['设计相关', 
-        ['全球知名品牌的 VI 设计规范手册', '注册后可免费下载10次', 'https://brandingstyleguides.com']
-    ],	
-    ['电子书', 
-        ['Z-Library', '世界上最大的电子图书馆(需要魔法)', 'https://zh.z-lib.gs/'],
-        ['Project Gutenberg', '古腾堡工程，最早的数字图书馆。', 'https://www.gutenberg.org/'],
-        ['鸠摩搜书', '电子书搜索引擎，关注公众号可下载', 'https://www.jiumodiary.com/'],
-        ['书格', '自由开放的在线古籍图书馆', 'https://www.shuge.org/'],
-    ],		
-    ['音乐', 
-        ['TuneFree', '一款基于Splayer二开的在线音乐播放器', 'https://pt.sayqz.com','https://github.com/GSQZ/TuneFree'],
-        ['myfreemp3', '刘明野的工具箱音乐播放器', 'https://tool.liumingye.cn/'],
-        ['Listen 1', '全网音乐播放平台', 'https://listen1.github.io/listen1/','','/medias/logo.png'],
-        ['网易云音乐', '一款专注于发现与分享的音乐平台,', 'https://music.163.com'],
-        ['lightplayer', '支持本地和阿里云盘音乐的app', 'https://light-player.com/','','https://light-player.com/img/logo.png'],
-    ],
-    ['手机定位(收费)', 
-        ['GEOfinder', '电话号码跟踪器', 'https://geofinder.mobi/'],
-        ['scannero', ' 手机号码定位器，可以随时随地追踪任何人。', 'https://scannero.io/'],
-        ['Moniterro', '通过手机号码跟踪对方，下载安装', 'https://moniterro.com/'],
-        ['eyezy', '是一款出色的监控系统,', 'https://www.eyezy.com/'],
-    ],
-    
-],
-'办公', 
-[
-    ['PPT模板', 
-        ['PPT汇','关注公众号可下载', 'https://www.ppthui.com/'],
-        ['PPT营','支持在线预览，可直接下载', 'https://www.pptying.com/','','https://img.pptying.com/images/favicon.ico'],
-        ['爱PPT','提供丰富免费的PPT课件模板，可直接下载', 'https://www.2ppt.com/'],
-        ['优品PPT','数量不算多，整体还是不错的', 'https://www.ypppt.com/','','/medias/logo.png'],
-        ['OfficePLUS','OFFICE官方模板网站，需要登录', 'http://www.officeplus.cn'],
-        ['PPT宝藏','下载跳转太多，还要提取密码', 'https://www.bzppt.com'],	
-        ['第1PPT','老牌免费PPT下载网站，模板数量也比较足', 'https://www.1ppt.com/'],	
-        ['51PPT模板','跳转太多，免登录下载', 'https://www.51pptmoban.com/ppt/'],	
-        ['PPT超级市场','完全免费的PPT模板网站，界面设计简洁大方', 'https://www.pptsupermarket.com/ppts'],
-        ['PPT之家','免费又好用的PPT网站', 'https://www.52ppt.com/'],
-    ],
-    ['Excel', 
-        ['方方格子(半收费)','大型的Excel工具箱软件', 'http://www.ffcell.com/index.aspx','','http://www.ffcell.com/home/images/ff.ico'],
-        ['templates','微软excel模板网站', 'https://create.microsoft.com/en-us/excel-templates'],
-        ['Excel Home','全球极具影响力的Excel资源网站之一', 'https://www.excelhome.net/'],
-        ['懒人Excel','提供了近千篇通俗易懂、图文结合的Excel教程', 'https://www.lanrenexcel.com/','','/medias/logo.png'],
-        ['格子Excel','专注于Excel学习交流、求助定制的网站', 'http://www.ffcell.com/School/Base/index.aspx'],
-        ['慧办公&巧办公','增强办公效率的辅助工具', 'https://www.hbgsoft.com/index.php'],
-        ['Excel精灵(半收费)','大型的Excel插件，拥有约270个功能', 'https://www.excelbbx.net/'],
-        ['Excel易用宝','免费循环激后可以使用', 'https://yyb.excelhome.net/'],
-        ['EXCEL必备工具箱','是一个同时支持EXCEL/WPS插件', 'https://www.ahzll.top/','','/medias/logo.png'],
-
-    ],
-    ['PDF', 
-        ['I love PDF','PDF 爱好者的在线工具', 'https://www.ilovepdf.com/zh-cn'],
-        ['Hipdf','一站式 PDF 工具集合', 'https://www.hipdf.cn/'],
-        ['99PDF 在线压缩','一个专门压缩 PDF 文件的网站', 'https://www.99pdf.com/'],
-        ['PDF365','福昕旗下PDF在线转换编辑平台', 'https://www.pdf365.cn/'],
-        ['EasyPDF','是一个质量很高的 PDF 编辑导航网站，功能非常强大。', 'https://easypdf.com/'],
-        ['PDF24','一款简单易用，功能独特的一款 pdf 文件制作工具', 'https://tools.pdf24.org/zh'],	
-        ['PDF 派','一个实用的综合PDF编辑转换导航网站', 'https://www.pdfpai.com/'],	
-        ['smallpdf','免费的在线PDF密码移除软件', 'https://smallpdf.com/cn/pdf-tools'],
-        ['EasePDF','在线定制自己的PDF文件', 'https://www.easepdf.com/cn/edit-pdf/'],
-    ],
-    ['IMG', 
-        ['I love IMG','图像文件在线编辑工具', 'https://www.iloveimg.com/zh-cn'],
-        ['PhotoKit','基于AI人工智能的在线图片编辑器', 'https://photokit.com/?lang=zh','','/medias/logo.png'],
-        ['改图宝','快速、简单的在线修改图片工具', 'https://www.gaitubao.com/'],
-    ],
-    ['在线文档', 
-        ['Excalidraw', '在线画板,画图,书签,笔记', 'https://notes.converts.cn/','','/medias/logo.png'],
-        ['石墨文档','允许多用户同时编辑同一文档，实现实时协作。这对于团队内部的文档创建、编辑和分享非常有用。', 'https://shimo.im/desktop'],
-        ['有道云笔记','网易旗下专注办公提效的笔记软件，支持多端同步，用户可以随时随地对线上资料进行编辑、分享以及协同', 'http://note.youdao.com/'],
-        ['WPS Office','金山办公旗下 WPS Office、金山文档、WPS + 云办公等系列产品服务', 'https://www.wps.cn/'],
-        ['印象笔记','印象笔记可以帮助你简化工作、学习与生活。', 'https://www.yinxiang.com/'],
-        ['飞书','一站式企业沟通与协作平台，整合即时沟通、日历、音视频会议、云文档、工作台等功能于一体', 'https://www.feishu.cn/'],	
-        ['腾讯文档','多人协作的在线文档，支持 Word、Excel 和 PPT 文档', 'https://docs.qq.com/desktop'],	
-
-    ],
-],
-'插件', 
-[
-    ['浏览器插件', 
-        ['插件小屋','谷歌浏览器扩展下载网', 'https://www.chajianxw.com/'],
-        ['crx 搜搜','一个牛X的扩展和应用商店', 'https://www.crxsoso.com/'],
-        ['极简插件','一个优质Chrome插件下载商店', 'https://chrome.zzzmh.cn/'],
-        ['Redbubble Tag Generator','一个Redbubble 标签生成器插件', 'https://www.chajianxw.com/product-tool/31546.html','','https://img.chajianxw.com/chajian/1639810130456.jpg'],
-        ['Greasy Fork','一个提供油猴脚本的网站', 'https://greasyfork.org/zh-CN'],
-        ['Web Scraper','免费且易于使用的网络数据提取工具', 'https://www.crxsoso.com/webstore/detail/jnhgnonknehpejjnehehllkliplmbmhn','','https://lhimg.crxsoso.com/M2K0VbhN1C9reWRv8_65g6q3cPJnhBX9EKsYabhvY7Uu6hPOQyBphx3yrGow_nTsPspCwX69lfJb07Z1bSBbqmKToA=w128-h128-e365-rj-sc0x00ffffff'],
-        ['hamibot','安卓系统的自动化工具，能操控APP实现自动化操作', 'https://hamibot.com/'],
-        ['SingleFile','可将整个页面（包含 CSS、图像、字体、框架等）保存为单个 HTML文件', 'https://microsoftedge.microsoft.com/'],
-        
-    ],
-
-],
-'分析', 
-[
-    ['RedBubble', 
-        ['redbubble-popular-tags','redbubble 热门标签网2023年的数据', 'https://redbubble.dabu.ro/redbubble-popular-tags'],
-    ],
-    ['SEO', 
-        ['ahrefs','关键字生成器,部分功能免费', 'https://ahrefs.com/zh/keyword-generator'],
-        ['谷歌趋势（Google Trends）','谷歌提供的免费分析和比较关键词的搜索趋势工具。', 'https://trends.google.com/trends/'],
-        ['KeywordFX','部分功能免费的关键词生成工具', 'https://www.webfx.com/tools/keywordsfx/'],
-        ['KWfinder','(收费)界面简单、功能全面，是做SEO必不可少的一款关键词工具。', 'https://app.mangools.com/kwfinder/'],
-        ['KeywordMagic Tool','(收费)SEMRush的Keyword Magic Tool也是一款很强大的关键词工具', 'https://zh.semrush.com/analytics/keywordmagic/start'],
-        ['HIX.AI','(收费)一款一体化的人工智能写作助手,创建无剽窃、SEO 友好且基于事实的文章', 'https://hix.ai/'],
-        ['词查查','关键词挖掘工具-长尾关键词库', 'https://www.cichacha.com/','','https://s1.cichacha.com/images/icons/ciku-5c3c716.png'],
-
-    ],
-],
-'学习平台', 
-[
-    ['在线学习', 
-        ['课本大师-口算题', '在线口算题卡生成', 'http://www.kebendashi.com/'],
-        ['口算大屏练习', '在线口算练习', 'https://edui123.com/ks/'],
-        ['淡墨水字帖', '语数英字帖在线生成下载', 'https://danmoshui.com/'],
-        ['英标爱发音', '学习英语音标的助手，有每个音标的发音视频和音频，支持美式音标、英式音标。', 'https://fayin.love/'],
-        ['元素周期表', '高颜值化学必备工具', 'https://pt.ziziyi.com/'],
-        ['国家智慧教育平台', '微课、教材一应俱全', 'https://basic.smartedu.cn/'],
-        ['小学数学教学助手', '电子教材、单元目标等。','https://edui123.com/ebook/xxsx/#/','','https://edui123.com/res/jiaocai.png'],
-        ['Reading Eggs','美国著名的阅读网站', 'https://international.readingeggs.com/'],
-    ],
-    ['外语学习', 
-        ['LingoHut','在线免费学习外语', 'https://www.lingohut.com/'],
-        ['50LANGUAGES','提供50多种语言的在线课程，让您可以自由学习任何世界语言。', 'https://www.50languages.com/'],
-        ['languageguide','一个功能强大的语言学习网站', 'https://www.languageguide.org/'],
-        ['多邻国','7种语言学习平台，包括英语、日语、中文粤语、韩语、法语、西班牙语、意大利语', 'https://www.duolingo.cn/'],
-        ['TED','一个专门分享来自世界各地知名人士演讲的网站', 'https://www.ted.com/'],
-        
-    ],
-],
-
-'其它', 
-[
-    ['网址导航', 
-        ['网盘导航','网盘导航', 'https://pan.hi.cn/'],
-        ['终极导航','一个互联网垂直分类的优质网站网址导航', 'https://www.zjnav.com/'],
-    ],
-    ['视频下载', 
-        ['高清视频下载','支持youtube 等多平台视频下载的站点', 'https://youtube.iiilab.com'],
-        ['TubeDown','支持youtube 等多平台视频解析下载站点', 'https://tubedown.cn/youtube'],
-        ['SaveFrom','免费在线视频下载器', 'https://zh.savefrom.net/226/'],
-        ['YTMP3','不好用，转换完成后也没有显示名称', 'https://ytmp3.cc/'],
-        
-    ],
-    ['其它', 
-        ['缩略图','PC 端、手机端、pad 端、移动端 四合一网站响应式截图生成，网站预览缩略图生成', 'https://toolwa.com/responsive/'],
-    ],
-],
-
-
-
-
-];
-</script>
-<!--WEB&nav-no  标题增加&nav-no 可折叠标题
-['','', ''],
--->
-</article>
-
-
-<script>
- function createTabs(tabData) {
-  let html = '';
-  for (let i = 0; i < tabData.length; i += 2) {
-    const groupName = tabData[i];
-    const groupTabs = tabData[i + 1];
-    const groupClass = groupName ? groupName : `group-${i}`;
-    html += `<div id="${groupClass}-1" class="${groupClass}">`;
-	if (groupName === '') {
-	} 
-	else {
-	html += `<h3><img src="/medias/tag.svg">  ${groupName}</h3>`;
-	}
-
-if (tabs_a) {
-  let tabGroupHtml = ""; // 创建一个变量来存储标签内容
-
-  groupTabs.forEach((tab, index) => {
-    const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-    if (groupTabs.length === 1 && tab[0]) {
-      html += `
-        <div data-tab="${tabId}">
-          <h3><img src="/medias/tag.svg">  ${tab[0]}</h3>
-        </div>
-      `;
-    } else {
-      tabGroupHtml += `
-          <div class="tab${index === 0 ? ' active-tab' : ''}" data-tab="${tabId}" onclick="openTab(event, '${tabId}', '${groupClass}')">
-            ${tab[0]}
-          </div>
-      `;
-    }
-  });
-
-  // 将整个标签组的 HTML 内容放在单独的标签组 div 中
-  if (groupTabs.length > 1) {
-    html += `<div class="tab-group">${tabGroupHtml}</div>`;
-  }
-}
-
-
-    groupTabs.forEach((tab, index) => {
-      const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-	  if (tabs_a) {
-      html += `
-        <div id="${tabId}" class="tab-content" style="display: ${index === 0 ? 'block' : 'none'};">
-      `;
-	  } else {
-      html += `
-			  <div id="${tabId}" class="aaa" data-tab="${tabId}"  style=" margin-top: 20px;">
-				${tab[0]}
-			  </div>
-			  <div  class="tab-content" style="display: block">
-      `;
-	  }
-	  
-html += '<div class="grid-container">';
-tab.forEach((content, contentIndex) => {
-  if (contentIndex > 0) {
-    html += `
-      <div class="grid-item">
-        <div class="grid-item-left">
-          ${
-            content[4] ?
-            `<img src="${content[4]}" class="medium-zoom-image">` :
-            (content[2] ?
-              `<img src="https://api.iowen.cn/favicon/${content[2].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
           }
-        </div>
-        <div class="grid-item-right" >
-          <p><a href="${content[2]}" title="${content[0]}" target="_blank">${content[0]}</a></p>
-          <p><a href="${content[2]}" title="${content[1]}" target="_blank">${content[1]}</a></p>
-        </div>
-        ${content[3] ? `<div title="详情"><a href="${content[3]}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-      </div>
-    `;
-  }
-});
-html += '</div>';
-
-
-      html += '</div>';
-    });
-    html += '</div>';
-  }
-  return html;
-}
-
-
-function createLinks(tabData) {
-    let linksHtml = '';
-    for (let i = 0; i < tabData.length; i += 2) {
-        const groupName = tabData[i];
-        const groupTabs = tabData[i + 1];
-        const groupClass = groupName ? groupName : `group-${i}`;
-
-        if (!groupName) {
-            groupTabs.forEach(tab => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                if (tab[0]) {
-                    linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p class="list">${tab[0]}</p></a> `;
-                }
-            });
-        } else {
-            // 在<i>标签上添加toggle-icon类
-            linksHtml += `<h4 onclick="toggleGroup('${groupClass}')">${groupName}<i class="fa fa-angle-right toggle-icon"></i></h4>`;
-            linksHtml += `<div class="abc" id="${groupClass}">`;
-            groupTabs.forEach((tab, index) => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p>${tab[0]}</p></a>`;
-                if (index < groupTabs.length - 1) {
-                    linksHtml += ' ';
-                }
-            });
-            linksHtml += `</div>`;
-        }
+        })
+      }
     }
-    return linksHtml;
-}
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
 
-
-
-    function openTab(evt, tabName, tabGroup, anchor) {
-        var tabContents = document.querySelectorAll(`.${tabGroup} .tab-content`);
-        for (var i = 0; i < tabContents.length; i++) {
-            tabContents[i].style.display = "none";
-        }
-
-        var tabs = document.querySelectorAll(`.${tabGroup} .tab`);
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active-tab");
-        }
-
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active-tab");
-
-        if (anchor) {
-            var anchorElement = document.getElementById(anchor);
-            if (anchorElement) {
-                anchorElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }
-
-    function showTab(tabGroup, tabName) {
-        var tab = document.querySelector(`.${tabGroup} [data-tab='${tabName}']`);
-        if (tab) {
-            tab.click();
-        }
-    }
-
-function toggleGroup(groupName) {
-    const group = document.getElementById(groupName);
-    if (group) {
-        group.classList.toggle('show');
-        const icon = group.previousElementSibling.querySelector('.toggle-icon');
-        if (icon) {
-            icon.classList.toggle('fa-angle-right');
-            icon.classList.toggle('fa-angle-down');
-        }
-    }
-}
-
-    // Insert the containers into the body 
-    document.querySelector('article').innerHTML += `
-		<div class="webnav-content">
-		<input type="text" id="searchInput-webnav" placeholder="Search...">
-		<div id="tabs-search-content"></div>
-        <div id="tabContainer">${createTabs(tabData)}</div>
-        <div id="linksContainer">${createLinks(tabData)}</div>
-		<div ><i id="toggleButton" class="toggle-icon fas fa-bars"></i></div>
-		</div>	    
-    `;
-	
-
-        var linksContainer = document.getElementById('linksContainer');
-        var toggleButton = document.getElementById('toggleButton');
-        var isHidden = true;
-
-        toggleButton.addEventListener('click', function() {
-            if (isHidden) {
-                linksContainer.style.left = '0'; // 显示 linksContainer
-                isHidden = false;
-            } else {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-        // 点击页面其他位置关闭 linksContainer
-        document.addEventListener('click', function(event) {
-            if (event.target !== toggleButton && !linksContainer.contains(event.target) && !isHidden) {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-/*以下是搜索*/		
-
-
-
-
-document.getElementById('searchInput-webnav').addEventListener('input', function(event) {
-    const searchQuery = this.value.trim().toLowerCase();
-    const tabsContainer = document.getElementById('tabs-search-content');
-    let searchCount = 0; // 初始化搜索数量计数器
-
-    tabsContainer.innerHTML = ''; // 清空容器
-
-    if (searchQuery === '') {
-        // 如果搜索查询为空，则显示隐藏的容器
-
-        document.getElementById('tabContainer').style.display = 'block';
-
-        return;
-    } else {
-        // 如果搜索查询不为空，则隐藏容器
-
-        document.getElementById('tabContainer').style.display = 'none';
-    }
-
-let html = '<div class="grid-container">'; 
-tabData.forEach(tabGroup => {
-    if (Array.isArray(tabGroup)) {
-        tabGroup.forEach(tab => {
-            if (Array.isArray(tab)) {
-                tab.forEach(tabItem => {
-                    if (Array.isArray(tabItem)) {
-                        const [title, content, url, goout,logo] = tabItem;
-                        if (title.toLowerCase().includes(searchQuery) || content.toLowerCase().includes(searchQuery)) {
-                            html += `
-                                <div class="grid-item">
-									<div class="grid-item-left">
-									
-          ${
-            logo ?
-            `<img src="${logo}" class="medium-zoom-image">` :
-            (url ?
-              `<img src="https://api.iowen.cn/favicon/${url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
-          }
-									</div>
-									<div class="grid-item-right" >
-										<p><a href="${url}" title="${title}" target="_blank">${title}</a></p>
-										<p><a href="${url}" title="${content}" target="_blank">${content}</a></p>
-									</div>
-									${goout ? `<div title="详情"><a href="${goout}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-                                </div>
-								
-                            `;
-                            searchCount++;
-                        }
-                    }
-                });
-            }
-        });
-    }
-});
-html += '</div>';
-tabsContainer.innerHTML += html;
-
-
-
-
-    // 创建一个新元素来显示搜索结果数量
-	const searchResultElement = document.createElement('div');
-	searchResultElement.classList.add('search-result');
-	if (searchCount > 0) {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>`;
-	} else {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>，没有符合的结果`;
-	}
-
-
-    // 将搜索结果数量元素插入到tabsContainer的第一个子元素之前
-    const firstChild = tabsContainer.firstChild;
-    tabsContainer.insertBefore(searchResultElement, firstChild);
-});
-
-
-document.getElementById('searchInput-webnav').addEventListener('keydown', function(event) {
-    // 按下 ESC 键时取消清空输入框内容
-    if (event.key === 'Escape') {
-        this.value = ''; // 清空输入框内容
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    }
-});
-
-		
-document.addEventListener('DOMContentLoaded', function() {
-  var listElements = document.querySelectorAll('.list');
-  var abcLinks = document.querySelectorAll('.abc a');
-  var searchInput = document.getElementById('searchInput-webnav');
-
-  listElements.forEach(function(element) {
-    element.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block'; 
-    });
-  });
-
-  abcLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    });
-  });
-});
-
-
-var styleElement = document.createElement('style');
-document.head.appendChild(styleElement);
-
-if (tabs_a === 1) {
-    styleElement.textContent = '#tabContainer div{scroll-margin-top: 115px;}';
-} else {
-    styleElement.textContent = `
-        *:target {
-            background-color: #ededed;
-            color: red;
-            padding: 5px 5px 5px 10px;
-            border-radius: 5px;
-        }
-        #tabContainer div {
-            scroll-margin-top: 75px;
-        }
-    `;
-}
-
-  
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
 </script>
+
 
       </main>
     </div>

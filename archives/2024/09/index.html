@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>网址导航 | </title>
+  <title>归档: 2024/9 | </title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -774,799 +774,106 @@
     
 </header>
         <!-- 内容区域 -->
-        <style>
-	h3, h4{
-		font-weight: 400;
-	}
-	.abc{
-        background-color: #e7e7e7;
-        border-radius: 5px;
-	}
-	
-    .tab-content {
-        display: none;
-		margin-top: 10px;
-    }
-    .tab {
-        cursor: pointer;
-        padding: 5px 10px;
-        background-color: #e7e7e7;
-        margin: 0 5px 5px 0;
-        border-radius: 20px;
-		font-size: 0.9em;
-    }
-    .active-tab {
-        background-color: #c8c8c8;
-        color: #fff;
-    }
-    .tab-group {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-    }
-    .abc {
-        display: none;
-    }
-    .abc.show {
-        display: block;
-    }
-    .toggle-icon {
-        float: right;
-		width: 30px; 
-		height: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 50%;
-    }
-	#linksContainer {
-		position: fixed;
-		top: 60px;
-		left: -170px;
-		width: 150px;
-		z-index: 99;
-		background-color: #f8f8f8;
-		padding: 8px;
-		transition: left 0.3s ease;
-		overflow-y: auto;
-		height: calc(100vh - 76px);
-	}
-	
-#toggleButton {
-    position: fixed;
-    bottom: 140px;
-    right: 28px;
-    z-index: 100;
-    background-color: rgba(66, 185, 133, 0.8) !important;
-    color: white;
-}
-@media (max-width: 551px) {
-    #toggleButton {
-    right: 12px;
-	bottom: 130px;
-	}
-}
+        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
+  <div class="archive-header-title">
+    archive
+  </div>
+  <div class="archive-header-desc">
+  
+  <span class="title" id="archive-header-desc"></span>
+  <script>
+  function typedFn() {
+    const el = '#archive-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
+  
+  </div>
+  <div class="mask-box"></div>
+</div>
 
-	#searchInput-webnav {
-	width: 75%;
-	  margin: 20px auto 0;
-	  display: block;
-	  padding: 10px; 
-	  border: none; 
-	  outline: none;
-	  background-color: #fff;
-	  border-radius: 20px; 	  
-	}
+<div class="archive-video">
+  <video class="full-video" autoplay loop muted>
+      <source style="width: 100%;height: 100vh;" src="/">
+  </video>
+  <div class="video-header-title">
+    archive
+  </div>
+  <div class="video-header-desc">
+  
+      <span class="title" id="archive-video-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#archive-video-header-desc';
+    const type = 'archive';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>
+      
+  </div>
+  <div class="mask-box"></div>
+</div>
 
-	.search-result{
-	text-align: center;
-	margin: 20px auto;
-	}
-	.search-result span {
-		color:red;
-	}
-	
-	#linksContainer h4 {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	#linksContainer h4 i{transform: scale(0.7);}
-
-	
-	#linksContainer .list, 
-	#linksContainer .abc p,
-	#linksContainer h4 {margin: 5px 3px;padding:5px;}
-	
-	#linksContainer .abc p {padding-left:15px;}
-	.aaaB{
-        background-color: #fff0;
-        color: #000;
-		padding: 5px 0px;
-    }
-
-	#linksContainer a :hover,
-	#linksContainer .abc a :hover,
-	#linksContainer h4:hover {
-		background-color: #dedede;
-		border-radius: 8px;
-	}
-	#tabContainer {margin-top: 30px;}
-	#tabContainer h3 {    
-	border-bottom: 1px solid #bfbfbf;
-    padding-bottom: 5px;
-	}
-	.tab-group img ,
-	#tabContainer h3 img {
-		height: 20px;
-	    vertical-align: -0.27em;
-		}
-	#tabContainer .tab:hover{
-		background-color: red;
-		color: #fff;
-	}
-a {text-decoration: none;color: #000;}
-.pagediy {
-    width: 75%;
-    margin: 0px auto;
-	padding: 20px;
-    min-height: calc(100vh - 160px);
-}
-@media (max-width: 992px) {
-    .pagediy {
-    width: calc(100% - 50px);
-	padding: 25px;
-}
-}
-h3 {margin: 1.2rem 0;}
-
-.grid-item .grid-item-right p a {color: #000}
-.grid-item div a {color: #bdbdbd}
-
-/*黑暗模式*/
-.darkModel #linksContainer,
-.darkModel .grid-item-left,
-.darkModel .tab,
-.darkModel #searchInput-webnav,
-.darkModel .grid-item {
-	background-color: rgba(240, 246, 252, 0.149);
-}
-.darkModel .active-tab{
-	background-color: rgb(255 255 255 / 40%);;
-}
-.darkModel .grid-item-left{
-	background-color: rgb(255 255 255 / 0%);;
-}
-.darkModel .grid-item-left {border-radius: 20px;}
-
-.darkModel #linksContainer a :hover,
-.darkModel #linksContainer .abc a :hover,
-.darkModel #linksContainer h4:hover {
-		background-color: rgba(240, 246, 252, 0.149);
-	}
-.darkModel #searchInput-webnav,
-.darkModel .grid-item .grid-item-right p a,
-.darkModel .grid-item a ,
-.darkModel .grid-item-right a {
-	color: #c9d1d9;
-	}
-	
-	
-</style>
+<!-- hash算法 -->
 
 
-
-<div style="height: 60px;"></div>
-<article class=" pagediy">
-	<div class="overlay" onclick="closeSidebar()"></div>
-	<script>
-var tabs_a = 0;
-const tabData = [
-'开源', 
-[
-    ['文档系统', 
-        ['docsift', '一个动态生成文档网站的工具 ', 'https://docsify.js.org/'],
-        ['idoc', '没有搜索功能的快速、简洁且高效的文档生成工具', 'https://wangchujiang.com/idoc/index.html','https://github.com/jaywcjlove/idoc','https://wangchujiang.com/idoc/logo.png'],
-        ['Docusaurus', '创建、维护和部署静态网站的工具', 'https://docusaurus.io/'],
-        ['GitBook', '一个专注文档管理的平台', 'https://docs.gitbook.com/'],
-    ],
-    ['图片管理', 
-        ['Piwigo', 'Piwigo是一款基于Web网页的开源图片管理系统', 'https://cn.piwigo.org/'],
-    ],
-    ['工具', 
-        ['HandBrake', '一款开源的视频转码器', 'https://handbrake.fr/'],
-        ['洋芋田图像工具箱', '一个适用于创意行业从业者的图像工具箱', 'https://www.potatofield.cn/imagetoolkit/', '','https://www.potatofield.cn/favicon.ico'],
-        ['Upscayl', '一款开源的AI图片放大工具', 'https://www.upscayl.org/', '/4.html'],
-        ['Rubick', '开源桌面端效率工具', 'https://rubickcenter.github.io/rubick/', '','https://rubickcenter.github.io/rubick/images/logo.png'],
-        ['stranslate', '即开即用、即用即走的翻译(OCR)工具', 'https://stranslate.zggsong.com/'],
-        ['API For Docker', '免费不限制提供生活常用等公益大数据的平台', 'https://api.isoyu.com/'],
-    ],
-    ['网盘程序', 
-        ['z-file',  '一个支持多种格式在线文件管理和分享平台', 'https://www.zfile.vip/','/7.html'],
-        ['Alist',  '多种网盘目录程序', 'https://alist.nn.ci/zh/'],
-        ['TinyFileManager', '单文件PHP开源文档目录列表 ', 'https://tinyfilemanager.github.io/','/5.html','/medias/logo.png'],
-        ['files-gallery', '单文件PHP开源文档目录列表', 'https://www.files.gallery/','/3.html'],
-        ['onemanager','部署在vercel上的网盘，可惜我这小白了', 'https://scfonedrive.github.io/Vercel/Deploy.html','','/medias/logo.png'],
-        ['cloudreve','快速搭建起公私兼备的网盘系统,实现灵活的文件管理体验。', 'https://cloudreve.org/'],
-        ['showta','类似Alist的网盘', 'https://www.showta.cc/','','https://www.showta.cc/logo.png'],
-    ],
-    ['在线笔记', 
-        ['Minimalist Web Notepad', '一款带API的开源轻量级简洁在线笔记本', 'https://notes.orga.cat/','','https://notes.orga.cat/favicon.svg'],
-        ['note.ms', '可以在各个设备之间传网址和大段文本', 'https://note.ms'],
-        
-    ],
-    ['VPN', 
-        ['Oblivion', '一款基于WARP的优秀源网络工具', 'https://github.com/bepass-org/oblivion-desktop','/2.html'],
-        ['V2Ray', '著名开源网络工具程序', 'https://github.com/2dust/v2rayN'],
-        ['MahsaNG', '来自伊朗的开源免费移动端vpn，全自动更新节点，开箱即用', 'https://github.com/ellonyang/MahsaNG'],
-        ['WARP', 'Cloudflare开发的一项服务,主要用来保护用户的网上隐私', 'https://one.one.one.one/'],
-
-    ],
-    ['博客框架',
-        ['WordPress', 'PHP语言开发的建站系统', 'https://WordPress.org/'],
-        ['Typecho', 'PHP轻量级的博客框架', 'https://typecho.org/','','/medias/logo.png'],
-        ['Hexo', '基于Node.js的开源静态博客框架','https://hexo.io/zh-cn/'],
-        ['Hugo', '用 GO 语言编写的网站构建框架之一', 'https://gohugo.io/'],
-        ['Vitepress', '一个基于 Vite 的静态站点生成器 ', 'https://vitepress.dev/'],
-        ['VuePress', '一个基于 Vue.js 的静态网站生成器', 'https://vuepress.vuejs.org/'],
-        ['Jekyll', '简单的静态站点生成器', 'https://jekyllrb.com/'],
-        ['Halo', '强大易用的开源建站工具', 'https://www.halo.run/'],
-        ['Solo', '是一款基于Java语言有后台管理的博客系统', 'https://b3log.org/solo/'],
-        ['蘑菇博客', '一个基于微服务架构的前后端分离博客系统', 'https://gitee.com/moxi159753/mogu_blog_v2'],
+<div class="archive-main">
+  <section class="archive">
+    <div class="archive-content">
+      <ul class="post-archive">
         
         
-    ],	
-],
-'电脑软件', 
-[
-    ['效率', 
-        ['Everything', '一个强大的文件搜索工具，帮助您快速定位计算机上的文件和文件夹', 'https://www.voidtools.com/zh-cn/'],
-        ['FileLocator', '高效的无索引全文搜索软件,免费版已够用，收费版Pro更强大', 'https://www.mythicsoft.com/'],
-        ['uTools', '新一代效率工具平台，配合插件使用，个别插件收费', 'https://u.tools/'],
-    ],
-    ['视频', 
-        ['PotPlayer', '万能格式影音视频播放器', 'http://www.potplayercn.com/'],
-        ['蜜蜂剪辑', '简单多功能视频剪辑软件', 'https://beecut.cn/'],
-        ['快剪辑', '一款好用全能的视频剪辑工具', 'https://kuai.360.cn/']
-    ],
-    ['看图软件', 
-        ['Picasa', 'Google的免费图片管理工具，功能强大、简单易用、(已停更)', 'https://picasa.software.informer.com/3.9/', '','https://img.informer.com/icons/png/128/3076/3076731.png'],
-
-    ],
-
-],
-'WEB', 
-[
-    ['AI', 
-        ['SharedChat共享站点', '一些免费的共享ChatGPT账号', 'https://sharedchat.cn/','','/medias/logo.png'],
-        ['AIchatOS', '免费使用GPT3.5,自愿捐助', 'https://chat18.aichatos.xyz/'],
-        ['SoEZGPT小助手', '在线GPT网站，可会员可免费', 'https://www.soezgpt.com/'],
-        ['Moonshot AI', '注册使用，国内人工智能初创公司Moonshot AI（月之暗面）推出的智能对话助手，支持输入长达20万汉字的上下文', 'https://kimi.moonshot.cn/'],
-
-    ],
-    ['生活指引', 
-        ['wikihow', '成事指南，高质量的指导手册', 'https://zh.wikihow.com/'],
-        ['科普中国网', '提供科学、权威、准确的科普信息内容和相关资讯，让科技知识在网上和生活中流行', 'https://www.kepuchina.cn/'],
-        ['Languageguide', '外语学习网，学习各国日常用语', 'https://www.languageguide.org/'],
-        ['报纸在线阅读', '多媒体数字报纸在线阅读', 'http://www.53bk.com/Baokan' ,'','/medias/logo.png'],
-        ['期刊杂志', '收录大部分期刊，更新即时在线查阅', 'https://new-qk.lifves.com/']
-    ],
-    ['OCR', 
-        ['白描OCR', '一款免费的在线OCR文字识别工具,有使用次数限制', 'https://web.baimiaoapp.com/'],
-        ['Convertio ', 'OCR光学字符识别', 'https://convertio.co/zh/ocr/'],
-        ['NewOCR', '免费的在线 OCR 光学字符识别服务', 'https://www.newocr.com/'],
-        ['Onlineocr', '在线免费图文识别工具，支持全球 46 种语言', 'https://www.onlineocr.net/zh_hans'],
-        ['UUtool', '在线 OCR 图片文字识别工具', 'https://uutool.cn/ocr'],
-        ['CatOCR', '易飞文字识别，免费在线图片转文字', 'https://catocr.com/'],
-        ['pearocr', '在线图片转文字', 'https://pearocr.com/'],
-    ],
-    ['格式转换', 
-        ['Cloudconvert', '多功能在线文件格式转换工具网站', 'https://cloudconvert.com/']
-    ],
-
-    ['设计相关', 
-        ['全球知名品牌的 VI 设计规范手册', '注册后可免费下载10次', 'https://brandingstyleguides.com']
-    ],	
-    ['电子书', 
-        ['Z-Library', '世界上最大的电子图书馆(需要魔法)', 'https://zh.z-lib.gs/'],
-        ['Project Gutenberg', '古腾堡工程，最早的数字图书馆。', 'https://www.gutenberg.org/'],
-        ['鸠摩搜书', '电子书搜索引擎，关注公众号可下载', 'https://www.jiumodiary.com/'],
-        ['书格', '自由开放的在线古籍图书馆', 'https://www.shuge.org/'],
-    ],		
-    ['音乐', 
-        ['TuneFree', '一款基于Splayer二开的在线音乐播放器', 'https://pt.sayqz.com','https://github.com/GSQZ/TuneFree'],
-        ['myfreemp3', '刘明野的工具箱音乐播放器', 'https://tool.liumingye.cn/'],
-        ['Listen 1', '全网音乐播放平台', 'https://listen1.github.io/listen1/','','/medias/logo.png'],
-        ['网易云音乐', '一款专注于发现与分享的音乐平台,', 'https://music.163.com'],
-        ['lightplayer', '支持本地和阿里云盘音乐的app', 'https://light-player.com/','','https://light-player.com/img/logo.png'],
-    ],
-    ['手机定位(收费)', 
-        ['GEOfinder', '电话号码跟踪器', 'https://geofinder.mobi/'],
-        ['scannero', ' 手机号码定位器，可以随时随地追踪任何人。', 'https://scannero.io/'],
-        ['Moniterro', '通过手机号码跟踪对方，下载安装', 'https://moniterro.com/'],
-        ['eyezy', '是一款出色的监控系统,', 'https://www.eyezy.com/'],
-    ],
+          
+            
+            <div class="year" data-aos="zoom-in-up">
+                <div class="bullet"></div>
+                <a href="/archives/2024">2024</a>
+            </div>
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/11.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+               
+              </div>
+              <a class="post-title" href="/11.html">使用ffmpeg获取音乐中封面和歌词</a>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </section>
+  <div class="w-70">
     
-],
-'办公', 
-[
-    ['PPT模板', 
-        ['PPT汇','关注公众号可下载', 'https://www.ppthui.com/'],
-        ['PPT营','支持在线预览，可直接下载', 'https://www.pptying.com/','','https://img.pptying.com/images/favicon.ico'],
-        ['爱PPT','提供丰富免费的PPT课件模板，可直接下载', 'https://www.2ppt.com/'],
-        ['优品PPT','数量不算多，整体还是不错的', 'https://www.ypppt.com/','','/medias/logo.png'],
-        ['OfficePLUS','OFFICE官方模板网站，需要登录', 'http://www.officeplus.cn'],
-        ['PPT宝藏','下载跳转太多，还要提取密码', 'https://www.bzppt.com'],	
-        ['第1PPT','老牌免费PPT下载网站，模板数量也比较足', 'https://www.1ppt.com/'],	
-        ['51PPT模板','跳转太多，免登录下载', 'https://www.51pptmoban.com/ppt/'],	
-        ['PPT超级市场','完全免费的PPT模板网站，界面设计简洁大方', 'https://www.pptsupermarket.com/ppts'],
-        ['PPT之家','免费又好用的PPT网站', 'https://www.52ppt.com/'],
-    ],
-    ['Excel', 
-        ['方方格子(半收费)','大型的Excel工具箱软件', 'http://www.ffcell.com/index.aspx','','http://www.ffcell.com/home/images/ff.ico'],
-        ['templates','微软excel模板网站', 'https://create.microsoft.com/en-us/excel-templates'],
-        ['Excel Home','全球极具影响力的Excel资源网站之一', 'https://www.excelhome.net/'],
-        ['懒人Excel','提供了近千篇通俗易懂、图文结合的Excel教程', 'https://www.lanrenexcel.com/','','/medias/logo.png'],
-        ['格子Excel','专注于Excel学习交流、求助定制的网站', 'http://www.ffcell.com/School/Base/index.aspx'],
-        ['慧办公&巧办公','增强办公效率的辅助工具', 'https://www.hbgsoft.com/index.php'],
-        ['Excel精灵(半收费)','大型的Excel插件，拥有约270个功能', 'https://www.excelbbx.net/'],
-        ['Excel易用宝','免费循环激后可以使用', 'https://yyb.excelhome.net/'],
-        ['EXCEL必备工具箱','是一个同时支持EXCEL/WPS插件', 'https://www.ahzll.top/','','/medias/logo.png'],
-
-    ],
-    ['PDF', 
-        ['I love PDF','PDF 爱好者的在线工具', 'https://www.ilovepdf.com/zh-cn'],
-        ['Hipdf','一站式 PDF 工具集合', 'https://www.hipdf.cn/'],
-        ['99PDF 在线压缩','一个专门压缩 PDF 文件的网站', 'https://www.99pdf.com/'],
-        ['PDF365','福昕旗下PDF在线转换编辑平台', 'https://www.pdf365.cn/'],
-        ['EasyPDF','是一个质量很高的 PDF 编辑导航网站，功能非常强大。', 'https://easypdf.com/'],
-        ['PDF24','一款简单易用，功能独特的一款 pdf 文件制作工具', 'https://tools.pdf24.org/zh'],	
-        ['PDF 派','一个实用的综合PDF编辑转换导航网站', 'https://www.pdfpai.com/'],	
-        ['smallpdf','免费的在线PDF密码移除软件', 'https://smallpdf.com/cn/pdf-tools'],
-        ['EasePDF','在线定制自己的PDF文件', 'https://www.easepdf.com/cn/edit-pdf/'],
-    ],
-    ['IMG', 
-        ['I love IMG','图像文件在线编辑工具', 'https://www.iloveimg.com/zh-cn'],
-        ['PhotoKit','基于AI人工智能的在线图片编辑器', 'https://photokit.com/?lang=zh','','/medias/logo.png'],
-        ['改图宝','快速、简单的在线修改图片工具', 'https://www.gaitubao.com/'],
-    ],
-    ['在线文档', 
-        ['Excalidraw', '在线画板,画图,书签,笔记', 'https://notes.converts.cn/','','/medias/logo.png'],
-        ['石墨文档','允许多用户同时编辑同一文档，实现实时协作。这对于团队内部的文档创建、编辑和分享非常有用。', 'https://shimo.im/desktop'],
-        ['有道云笔记','网易旗下专注办公提效的笔记软件，支持多端同步，用户可以随时随地对线上资料进行编辑、分享以及协同', 'http://note.youdao.com/'],
-        ['WPS Office','金山办公旗下 WPS Office、金山文档、WPS + 云办公等系列产品服务', 'https://www.wps.cn/'],
-        ['印象笔记','印象笔记可以帮助你简化工作、学习与生活。', 'https://www.yinxiang.com/'],
-        ['飞书','一站式企业沟通与协作平台，整合即时沟通、日历、音视频会议、云文档、工作台等功能于一体', 'https://www.feishu.cn/'],	
-        ['腾讯文档','多人协作的在线文档，支持 Word、Excel 和 PPT 文档', 'https://docs.qq.com/desktop'],	
-
-    ],
-],
-'插件', 
-[
-    ['浏览器插件', 
-        ['插件小屋','谷歌浏览器扩展下载网', 'https://www.chajianxw.com/'],
-        ['crx 搜搜','一个牛X的扩展和应用商店', 'https://www.crxsoso.com/'],
-        ['极简插件','一个优质Chrome插件下载商店', 'https://chrome.zzzmh.cn/'],
-        ['Redbubble Tag Generator','一个Redbubble 标签生成器插件', 'https://www.chajianxw.com/product-tool/31546.html','','https://img.chajianxw.com/chajian/1639810130456.jpg'],
-        ['Greasy Fork','一个提供油猴脚本的网站', 'https://greasyfork.org/zh-CN'],
-        ['Web Scraper','免费且易于使用的网络数据提取工具', 'https://www.crxsoso.com/webstore/detail/jnhgnonknehpejjnehehllkliplmbmhn','','https://lhimg.crxsoso.com/M2K0VbhN1C9reWRv8_65g6q3cPJnhBX9EKsYabhvY7Uu6hPOQyBphx3yrGow_nTsPspCwX69lfJb07Z1bSBbqmKToA=w128-h128-e365-rj-sc0x00ffffff'],
-        ['hamibot','安卓系统的自动化工具，能操控APP实现自动化操作', 'https://hamibot.com/'],
-        ['SingleFile','可将整个页面（包含 CSS、图像、字体、框架等）保存为单个 HTML文件', 'https://microsoftedge.microsoft.com/'],
-        
-    ],
-
-],
-'分析', 
-[
-    ['RedBubble', 
-        ['redbubble-popular-tags','redbubble 热门标签网2023年的数据', 'https://redbubble.dabu.ro/redbubble-popular-tags'],
-    ],
-    ['SEO', 
-        ['ahrefs','关键字生成器,部分功能免费', 'https://ahrefs.com/zh/keyword-generator'],
-        ['谷歌趋势（Google Trends）','谷歌提供的免费分析和比较关键词的搜索趋势工具。', 'https://trends.google.com/trends/'],
-        ['KeywordFX','部分功能免费的关键词生成工具', 'https://www.webfx.com/tools/keywordsfx/'],
-        ['KWfinder','(收费)界面简单、功能全面，是做SEO必不可少的一款关键词工具。', 'https://app.mangools.com/kwfinder/'],
-        ['KeywordMagic Tool','(收费)SEMRush的Keyword Magic Tool也是一款很强大的关键词工具', 'https://zh.semrush.com/analytics/keywordmagic/start'],
-        ['HIX.AI','(收费)一款一体化的人工智能写作助手,创建无剽窃、SEO 友好且基于事实的文章', 'https://hix.ai/'],
-        ['词查查','关键词挖掘工具-长尾关键词库', 'https://www.cichacha.com/','','https://s1.cichacha.com/images/icons/ciku-5c3c716.png'],
-
-    ],
-],
-'学习平台', 
-[
-    ['在线学习', 
-        ['课本大师-口算题', '在线口算题卡生成', 'http://www.kebendashi.com/'],
-        ['口算大屏练习', '在线口算练习', 'https://edui123.com/ks/'],
-        ['淡墨水字帖', '语数英字帖在线生成下载', 'https://danmoshui.com/'],
-        ['英标爱发音', '学习英语音标的助手，有每个音标的发音视频和音频，支持美式音标、英式音标。', 'https://fayin.love/'],
-        ['元素周期表', '高颜值化学必备工具', 'https://pt.ziziyi.com/'],
-        ['国家智慧教育平台', '微课、教材一应俱全', 'https://basic.smartedu.cn/'],
-        ['小学数学教学助手', '电子教材、单元目标等。','https://edui123.com/ebook/xxsx/#/','','https://edui123.com/res/jiaocai.png'],
-        ['Reading Eggs','美国著名的阅读网站', 'https://international.readingeggs.com/'],
-    ],
-    ['外语学习', 
-        ['LingoHut','在线免费学习外语', 'https://www.lingohut.com/'],
-        ['50LANGUAGES','提供50多种语言的在线课程，让您可以自由学习任何世界语言。', 'https://www.50languages.com/'],
-        ['languageguide','一个功能强大的语言学习网站', 'https://www.languageguide.org/'],
-        ['多邻国','7种语言学习平台，包括英语、日语、中文粤语、韩语、法语、西班牙语、意大利语', 'https://www.duolingo.cn/'],
-        ['TED','一个专门分享来自世界各地知名人士演讲的网站', 'https://www.ted.com/'],
-        
-    ],
-],
-
-'其它', 
-[
-    ['网址导航', 
-        ['网盘导航','网盘导航', 'https://pan.hi.cn/'],
-        ['终极导航','一个互联网垂直分类的优质网站网址导航', 'https://www.zjnav.com/'],
-    ],
-    ['视频下载', 
-        ['高清视频下载','支持youtube 等多平台视频下载的站点', 'https://youtube.iiilab.com'],
-        ['TubeDown','支持youtube 等多平台视频解析下载站点', 'https://tubedown.cn/youtube'],
-        ['SaveFrom','免费在线视频下载器', 'https://zh.savefrom.net/226/'],
-        ['YTMP3','不好用，转换完成后也没有显示名称', 'https://ytmp3.cc/'],
-        
-    ],
-    ['其它', 
-        ['缩略图','PC 端、手机端、pad 端、移动端 四合一网站响应式截图生成，网站预览缩略图生成', 'https://toolwa.com/responsive/'],
-    ],
-],
-
-
-
-
-];
-</script>
-<!--WEB&nav-no  标题增加&nav-no 可折叠标题
-['','', ''],
--->
-</article>
-
-
-<script>
- function createTabs(tabData) {
-  let html = '';
-  for (let i = 0; i < tabData.length; i += 2) {
-    const groupName = tabData[i];
-    const groupTabs = tabData[i + 1];
-    const groupClass = groupName ? groupName : `group-${i}`;
-    html += `<div id="${groupClass}-1" class="${groupClass}">`;
-	if (groupName === '') {
-	} 
-	else {
-	html += `<h3><img src="/medias/tag.svg">  ${groupName}</h3>`;
-	}
-
-if (tabs_a) {
-  let tabGroupHtml = ""; // 创建一个变量来存储标签内容
-
-  groupTabs.forEach((tab, index) => {
-    const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-    if (groupTabs.length === 1 && tab[0]) {
-      html += `
-        <div data-tab="${tabId}">
-          <h3><img src="/medias/tag.svg">  ${tab[0]}</h3>
-        </div>
-      `;
-    } else {
-      tabGroupHtml += `
-          <div class="tab${index === 0 ? ' active-tab' : ''}" data-tab="${tabId}" onclick="openTab(event, '${tabId}', '${groupClass}')">
-            ${tab[0]}
-          </div>
-      `;
-    }
-  });
-
-  // 将整个标签组的 HTML 内容放在单独的标签组 div 中
-  if (groupTabs.length > 1) {
-    html += `<div class="tab-group">${tabGroupHtml}</div>`;
-  }
-}
-
-
-    groupTabs.forEach((tab, index) => {
-      const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-	  if (tabs_a) {
-      html += `
-        <div id="${tabId}" class="tab-content" style="display: ${index === 0 ? 'block' : 'none'};">
-      `;
-	  } else {
-      html += `
-			  <div id="${tabId}" class="aaa" data-tab="${tabId}"  style=" margin-top: 20px;">
-				${tab[0]}
-			  </div>
-			  <div  class="tab-content" style="display: block">
-      `;
-	  }
-	  
-html += '<div class="grid-container">';
-tab.forEach((content, contentIndex) => {
-  if (contentIndex > 0) {
-    html += `
-      <div class="grid-item">
-        <div class="grid-item-left">
-          ${
-            content[4] ?
-            `<img src="${content[4]}" class="medium-zoom-image">` :
-            (content[2] ?
-              `<img src="https://api.iowen.cn/favicon/${content[2].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
-          }
-        </div>
-        <div class="grid-item-right" >
-          <p><a href="${content[2]}" title="${content[0]}" target="_blank">${content[0]}</a></p>
-          <p><a href="${content[2]}" title="${content[1]}" target="_blank">${content[1]}</a></p>
-        </div>
-        ${content[3] ? `<div title="详情"><a href="${content[3]}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-      </div>
-    `;
-  }
-});
-html += '</div>';
-
-
-      html += '</div>';
-    });
-    html += '</div>';
-  }
-  return html;
-}
-
-
-function createLinks(tabData) {
-    let linksHtml = '';
-    for (let i = 0; i < tabData.length; i += 2) {
-        const groupName = tabData[i];
-        const groupTabs = tabData[i + 1];
-        const groupClass = groupName ? groupName : `group-${i}`;
-
-        if (!groupName) {
-            groupTabs.forEach(tab => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                if (tab[0]) {
-                    linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p class="list">${tab[0]}</p></a> `;
-                }
-            });
-        } else {
-            // 在<i>标签上添加toggle-icon类
-            linksHtml += `<h4 onclick="toggleGroup('${groupClass}')">${groupName}<i class="fa fa-angle-right toggle-icon"></i></h4>`;
-            linksHtml += `<div class="abc" id="${groupClass}">`;
-            groupTabs.forEach((tab, index) => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p>${tab[0]}</p></a>`;
-                if (index < groupTabs.length - 1) {
-                    linksHtml += ' ';
-                }
-            });
-            linksHtml += `</div>`;
-        }
-    }
-    return linksHtml;
-}
-
-
-
-    function openTab(evt, tabName, tabGroup, anchor) {
-        var tabContents = document.querySelectorAll(`.${tabGroup} .tab-content`);
-        for (var i = 0; i < tabContents.length; i++) {
-            tabContents[i].style.display = "none";
-        }
-
-        var tabs = document.querySelectorAll(`.${tabGroup} .tab`);
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active-tab");
-        }
-
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active-tab");
-
-        if (anchor) {
-            var anchorElement = document.getElementById(anchor);
-            if (anchorElement) {
-                anchorElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }
-
-    function showTab(tabGroup, tabName) {
-        var tab = document.querySelector(`.${tabGroup} [data-tab='${tabName}']`);
-        if (tab) {
-            tab.click();
-        }
-    }
-
-function toggleGroup(groupName) {
-    const group = document.getElementById(groupName);
-    if (group) {
-        group.classList.toggle('show');
-        const icon = group.previousElementSibling.querySelector('.toggle-icon');
-        if (icon) {
-            icon.classList.toggle('fa-angle-right');
-            icon.classList.toggle('fa-angle-down');
-        }
-    }
-}
-
-    // Insert the containers into the body 
-    document.querySelector('article').innerHTML += `
-		<div class="webnav-content">
-		<input type="text" id="searchInput-webnav" placeholder="Search...">
-		<div id="tabs-search-content"></div>
-        <div id="tabContainer">${createTabs(tabData)}</div>
-        <div id="linksContainer">${createLinks(tabData)}</div>
-		<div ><i id="toggleButton" class="toggle-icon fas fa-bars"></i></div>
-		</div>	    
-    `;
-	
-
-        var linksContainer = document.getElementById('linksContainer');
-        var toggleButton = document.getElementById('toggleButton');
-        var isHidden = true;
-
-        toggleButton.addEventListener('click', function() {
-            if (isHidden) {
-                linksContainer.style.left = '0'; // 显示 linksContainer
-                isHidden = false;
-            } else {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-        // 点击页面其他位置关闭 linksContainer
-        document.addEventListener('click', function(event) {
-            if (event.target !== toggleButton && !linksContainer.contains(event.target) && !isHidden) {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-/*以下是搜索*/		
-
-
-
-
-document.getElementById('searchInput-webnav').addEventListener('input', function(event) {
-    const searchQuery = this.value.trim().toLowerCase();
-    const tabsContainer = document.getElementById('tabs-search-content');
-    let searchCount = 0; // 初始化搜索数量计数器
-
-    tabsContainer.innerHTML = ''; // 清空容器
-
-    if (searchQuery === '') {
-        // 如果搜索查询为空，则显示隐藏的容器
-
-        document.getElementById('tabContainer').style.display = 'block';
-
-        return;
-    } else {
-        // 如果搜索查询不为空，则隐藏容器
-
-        document.getElementById('tabContainer').style.display = 'none';
-    }
-
-let html = '<div class="grid-container">'; 
-tabData.forEach(tabGroup => {
-    if (Array.isArray(tabGroup)) {
-        tabGroup.forEach(tab => {
-            if (Array.isArray(tab)) {
-                tab.forEach(tabItem => {
-                    if (Array.isArray(tabItem)) {
-                        const [title, content, url, goout,logo] = tabItem;
-                        if (title.toLowerCase().includes(searchQuery) || content.toLowerCase().includes(searchQuery)) {
-                            html += `
-                                <div class="grid-item">
-									<div class="grid-item-left">
-									
-          ${
-            logo ?
-            `<img src="${logo}" class="medium-zoom-image">` :
-            (url ?
-              `<img src="https://api.iowen.cn/favicon/${url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
-          }
-									</div>
-									<div class="grid-item-right" >
-										<p><a href="${url}" title="${title}" target="_blank">${title}</a></p>
-										<p><a href="${url}" title="${content}" target="_blank">${content}</a></p>
-									</div>
-									${goout ? `<div title="详情"><a href="${goout}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-                                </div>
-								
-                            `;
-                            searchCount++;
-                        }
-                    }
-                });
-            }
-        });
-    }
-});
-html += '</div>';
-tabsContainer.innerHTML += html;
-
-
-
-
-    // 创建一个新元素来显示搜索结果数量
-	const searchResultElement = document.createElement('div');
-	searchResultElement.classList.add('search-result');
-	if (searchCount > 0) {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>`;
-	} else {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>，没有符合的结果`;
-	}
-
-
-    // 将搜索结果数量元素插入到tabsContainer的第一个子元素之前
-    const firstChild = tabsContainer.firstChild;
-    tabsContainer.insertBefore(searchResultElement, firstChild);
-});
-
-
-document.getElementById('searchInput-webnav').addEventListener('keydown', function(event) {
-    // 按下 ESC 键时取消清空输入框内容
-    if (event.key === 'Escape') {
-        this.value = ''; // 清空输入框内容
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    }
-});
-
-		
-document.addEventListener('DOMContentLoaded', function() {
-  var listElements = document.querySelectorAll('.list');
-  var abcLinks = document.querySelectorAll('.abc a');
-  var searchInput = document.getElementById('searchInput-webnav');
-
-  listElements.forEach(function(element) {
-    element.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block'; 
-    });
-  });
-
-  abcLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    });
-  });
-});
-
-
-var styleElement = document.createElement('style');
-document.head.appendChild(styleElement);
-
-if (tabs_a === 1) {
-    styleElement.textContent = '#tabContainer div{scroll-margin-top: 115px;}';
-} else {
-    styleElement.textContent = `
-        *:target {
-            background-color: #ededed;
-            color: red;
-            padding: 5px 5px 5px 10px;
-            border-radius: 5px;
-        }
-        #tabContainer div {
-            scroll-margin-top: 75px;
-        }
-    `;
-}
-
-  
-  
-</script>
+  </div>
+</div>
 
       </main>
     </div>

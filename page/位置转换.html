@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>网址导航 | </title>
+  <title></title>
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.svg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
   <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -774,799 +774,982 @@
     
 </header>
         <!-- 内容区域 -->
-        <style>
-	h3, h4{
-		font-weight: 400;
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        
+      </span>
+    </div>
+    
+    
+  </div>
+  
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>单位转换器</title>
+<style>
+	.input-container {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
 	}
-	.abc{
-        background-color: #e7e7e7;
-        border-radius: 5px;
+
+	label {
+		width: 100px;
+		margin-right: 10px;
+		color: #666;
 	}
-	
-    .tab-content {
-        display: none;
+
+	input {
+		width: calc(100% - 110px);
+		padding: 5px;
+		box-sizing: border-box;
+	}
+
+	.button1 {
 		margin-top: 10px;
-    }
-    .tab {
-        cursor: pointer;
-        padding: 5px 10px;
-        background-color: #e7e7e7;
-        margin: 0 5px 5px 0;
-        border-radius: 20px;
-		font-size: 0.9em;
-    }
-    .active-tab {
-        background-color: #c8c8c8;
-        color: #fff;
-    }
-    .tab-group {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-    }
-    .abc {
-        display: none;
-    }
-    .abc.show {
-        display: block;
-    }
-    .toggle-icon {
-        float: right;
-		width: 30px; 
-		height: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 50%;
-    }
-	#linksContainer {
-		position: fixed;
-		top: 60px;
-		left: -170px;
-		width: 150px;
-		z-index: 99;
-		background-color: #f8f8f8;
 		padding: 8px;
-		transition: left 0.3s ease;
-		overflow-y: auto;
-		height: calc(100vh - 76px);
-	}
-	
-#toggleButton {
-    position: fixed;
-    bottom: 140px;
-    right: 28px;
-    z-index: 100;
-    background-color: rgba(66, 185, 133, 0.8) !important;
-    color: white;
-}
-@media (max-width: 551px) {
-    #toggleButton {
-    right: 12px;
-	bottom: 130px;
-	}
-}
-
-	#searchInput-webnav {
-	width: 75%;
-	  margin: 20px auto 0;
-	  display: block;
-	  padding: 10px; 
-	  border: none; 
-	  outline: none;
-	  background-color: #fff;
-	  border-radius: 20px; 	  
-	}
-
-	.search-result{
-	text-align: center;
-	margin: 20px auto;
-	}
-	.search-result span {
-		color:red;
-	}
-	
-	#linksContainer h4 {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	#linksContainer h4 i{transform: scale(0.7);}
-
-	
-	#linksContainer .list, 
-	#linksContainer .abc p,
-	#linksContainer h4 {margin: 5px 3px;padding:5px;}
-	
-	#linksContainer .abc p {padding-left:15px;}
-	.aaaB{
-        background-color: #fff0;
-        color: #000;
-		padding: 5px 0px;
-    }
-
-	#linksContainer a :hover,
-	#linksContainer .abc a :hover,
-	#linksContainer h4:hover {
-		background-color: #dedede;
-		border-radius: 8px;
-	}
-	#tabContainer {margin-top: 30px;}
-	#tabContainer h3 {    
-	border-bottom: 1px solid #bfbfbf;
-    padding-bottom: 5px;
-	}
-	.tab-group img ,
-	#tabContainer h3 img {
-		height: 20px;
-	    vertical-align: -0.27em;
-		}
-	#tabContainer .tab:hover{
-		background-color: red;
+		background-color: #4CAF50;
 		color: #fff;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		max-width: 1200px;
 	}
-a {text-decoration: none;color: #000;}
-.pagediy {
-    width: 75%;
-    margin: 0px auto;
-	padding: 20px;
-    min-height: calc(100vh - 160px);
-}
-@media (max-width: 992px) {
-    .pagediy {
-    width: calc(100% - 50px);
-	padding: 25px;
-}
-}
-h3 {margin: 1.2rem 0;}
 
-.grid-item .grid-item-right p a {color: #000}
-.grid-item div a {color: #bdbdbd}
-
-/*黑暗模式*/
-.darkModel #linksContainer,
-.darkModel .grid-item-left,
-.darkModel .tab,
-.darkModel #searchInput-webnav,
-.darkModel .grid-item {
-	background-color: rgba(240, 246, 252, 0.149);
-}
-.darkModel .active-tab{
-	background-color: rgb(255 255 255 / 40%);;
-}
-.darkModel .grid-item-left{
-	background-color: rgb(255 255 255 / 0%);;
-}
-.darkModel .grid-item-left {border-radius: 20px;}
-
-.darkModel #linksContainer a :hover,
-.darkModel #linksContainer .abc a :hover,
-.darkModel #linksContainer h4:hover {
-		background-color: rgba(240, 246, 252, 0.149);
+	.button1:hover {
+		background-color: #45a049;
 	}
-.darkModel #searchInput-webnav,
-.darkModel .grid-item .grid-item-right p a,
-.darkModel .grid-item a ,
-.darkModel .grid-item-right a {
-	color: #c9d1d9;
+	.container {
+		display: flex;
+		flex-direction: row;
+		max-width: 1200px;
+		width: 100%;
+		margin: 0 auto; /* 居中 */
+		box-shadow: 0 0 10px #b4b4b450;
 	}
+
+	.box1,
+	.box2 {
+		flex: 1;
+		padding: 20px;
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.container {
+			flex-direction: column;
+		}
+	}
+    </style>	
+
+</head>
+<body>
+	<div style="display: flex;justify-content: center;">
+		<button class="button1" onclick="resetInputs()">清空重置</button>
+	</div>
+	<div class="container">
+		<div class="box1">
+			<h3>重量单位</h3>
+			<div class="input-container">
+				<label for="gInput">克(g)：</label>
+				<input type="number" id="gInput" placeholder="输入克值" step="any" oninput="convertWeight('gInput', 'g')">
+			</div>
+
+			<div class="input-container">
+				<label for="kgInput">千克(kg)：</label>
+				<input type="number" id="kgInput" placeholder="输入千克值" step="any" oninput="convertWeight('kgInput', 'kg')">
+			</div>
+
+			<div class="input-container">
+				<label for="tonInput">吨(ton)：</label>
+				<input type="number" id="tonInput" placeholder="输入吨值" step="any" oninput="convertWeight('tonInput', 'ton')">
+			</div>
+
+			<div class="input-container">
+				<label for="lbInput">磅(lb)：</label>
+				<input type="number" id="lbInput" placeholder="输入磅值" step="any" oninput="convertWeight('lbInput', 'lb')">
+			</div>
+
+			<div class="input-container">
+				<label for="ozInput">盎司(oz)：</label>
+				<input type="number" id="ozInput" placeholder="输入盎司值" step="any" oninput="convertWeight('ozInput', 'oz')">
+			</div>
+
+			<div class="input-container">
+				<label for="jinInput">斤(jin)：</label>
+				<input type="number" id="jinInput" placeholder="输入斤值" step="any" oninput="convertWeight('jinInput', 'jin')">
+			</div>
+		</div>
+		<div class="box2">
+			<h3>长度单位</h3>
+			<div class="input-container">
+				<label for="mmInput">毫米(mm)：</label>
+				<input type="number" id="mmInput" placeholder="输入毫米值" step="any" oninput="convertLength('mmInput', 'mm')">
+			</div>
+
+			<div class="input-container">
+				<label for="cmInput">厘米(cm)：</label>
+				<input type="number" id="cmInput" placeholder="输入厘米值" step="any" oninput="convertLength('cmInput', 'cm')">
+			</div>
+
+			<div class="input-container">
+				<label for="mInput">米(m)：</label>
+				<input type="number" id="mInput" placeholder="输入米值" step="any" oninput="convertLength('mInput', 'm')">
+			</div>
+
+			<div class="input-container">
+				<label for="kmInput">千米(km)：</label>
+				<input type="number" id="kmInput" placeholder="输入千米值" step="any" oninput="convertLength('kmInput', 'km')">
+			</div>
+
+			<div class="input-container">
+				<label for="ftInput">英尺(ft)：</label>
+				<input type="number" id="ftInput" placeholder="输入英尺值" step="any" oninput="convertLength('ftInput', 'ft')">
+			</div>
+
+			<div class="input-container">
+				<label for="inInput">英寸(in)：</label>
+				<input type="number" id="inInput" placeholder="输入英寸值" step="any" oninput="convertLength('inInput', 'in')">
+			</div>
+		</div>
+	</div>
+<script>
+	function convertWeight(inputId, unit) {
+		var inputValue = parseFloat(document.getElementById(inputId).value);
+
+		// 如果输入值不是数字，则清空其他输入框
+		if (isNaN(inputValue)) {
+			document.getElementById("gInput").value = "";
+			document.getElementById("kgInput").value = "";
+			document.getElementById("tonInput").value = "";
+			document.getElementById("lbInput").value = "";
+			document.getElementById("ozInput").value = "";
+			document.getElementById("jinInput").value = "";
+			return;
+		}
+
+		// 根据输入框的ID进行转换
+		switch (unit) {
+			case "g":
+				document.getElementById("kgInput").value = (inputValue / 1000).toFixed(6);
+				document.getElementById("tonInput").value = (inputValue / 1e6).toFixed(9);
+				document.getElementById("lbInput").value = (inputValue * 0.00220462).toFixed(6);
+				document.getElementById("ozInput").value = (inputValue * 0.03527396).toFixed(6);
+				document.getElementById("jinInput").value = (inputValue * 0.002).toFixed(3);
+				break;
+			case "kg":
+			case "公斤":
+				document.getElementById("gInput").value = (inputValue * 1000).toFixed(3);
+				document.getElementById("tonInput").value = (inputValue / 1000).toFixed(6);
+				document.getElementById("lbInput").value = (inputValue * 2.20462).toFixed(6);
+				document.getElementById("ozInput").value = (inputValue * 35.27396).toFixed(6);
+				document.getElementById("jinInput").value = (inputValue * 2).toFixed(3);
+				break;
+			case "ton":
+				document.getElementById("gInput").value = (inputValue * 1e6).toFixed(0);
+				document.getElementById("kgInput").value = (inputValue * 1000).toFixed(3);
+				document.getElementById("lbInput").value = (inputValue * 2204.62).toFixed(2);
+				document.getElementById("ozInput").value = (inputValue * 35273.96).toFixed(2);
+				document.getElementById("jinInput").value = (inputValue * 2000).toFixed(0);
+				break;
+			case "lb":
+				document.getElementById("gInput").value = (inputValue / 0.00220462).toFixed(0);
+				document.getElementById("kgInput").value = (inputValue / 2.20462).toFixed(3);
+				document.getElementById("tonInput").value = (inputValue / 2204.62).toFixed(6);
+				document.getElementById("ozInput").value = (inputValue * 16).toFixed(2);
+				document.getElementById("jinInput").value = (inputValue * 0.453592).toFixed(6);
+				break;
+			case "oz":
+				document.getElementById("gInput").value = (inputValue / 0.03527396).toFixed(0);
+				document.getElementById("kgInput").value = (inputValue / 35.27396).toFixed(3);
+				document.getElementById("tonInput").value = (inputValue / 35273.96).toFixed(9);
+				document.getElementById("lbInput").value = (inputValue / 16).toFixed(6);
+				document.getElementById("jinInput").value = (inputValue * 0.0283495).toFixed(6);
+				break;
+			case "jin":
+				document.getElementById("gInput").value = (inputValue / 0.002).toFixed(0);
+				document.getElementById("kgInput").value = (inputValue / 2).toFixed(3);
+				document.getElementById("tonInput").value = (inputValue / 2000).toFixed(6);
+				document.getElementById("lbInput").value = (inputValue / 0.453592).toFixed(6);
+				document.getElementById("ozInput").value = (inputValue / 0.0283495).toFixed(6);
+				break;
+			default:
+				break;
+		}
+	}
+
+	function convertLength(inputId, unit) {
+		var inputValue = parseFloat(document.getElementById(inputId).value);
+
+		// 如果输入值不是数字，则清空其他输入框
+		if (isNaN(inputValue)) {
+			document.getElementById("mmInput").value = "";
+			document.getElementById("cmInput").value = "";
+			document.getElementById("mInput").value = "";
+			document.getElementById("kmInput").value = "";
+			document.getElementById("ftInput").value = "";
+			document.getElementById("inInput").value = "";
+			return;
+		}
+
+		// 根据输入框的ID进行转换
+		switch (unit) {
+			case "mm":
+				document.getElementById("cmInput").value = (inputValue / 10).toFixed(3);
+				document.getElementById("mInput").value = (inputValue / 1000).toFixed(6);
+				document.getElementById("kmInput").value = (inputValue / 1e6).toFixed(9);
+				document.getElementById("ftInput").value = (inputValue * 0.00328084).toFixed(6);
+				document.getElementById("inInput").value = (inputValue * 0.0393701).toFixed(6);
+				break;
+			case "cm":
+				document.getElementById("mmInput").value = (inputValue * 10).toFixed(0);
+				document.getElementById("mInput").value = (inputValue / 100).toFixed(6);
+				document.getElementById("kmInput").value = (inputValue / 100000).toFixed(9);
+				document.getElementById("ftInput").value = (inputValue * 0.0328084).toFixed(6);
+				document.getElementById("inInput").value = (inputValue * 0.393701).toFixed(6);
+				break;
+			case "m":
+				document.getElementById("mmInput").value = (inputValue * 1000).toFixed(0);
+				document.getElementById("cmInput").value = (inputValue * 100).toFixed(0);
+				document.getElementById("kmInput").value = (inputValue / 1000).toFixed(6);
+				document.getElementById("ftInput").value = (inputValue * 3.28084).toFixed(2);
+				document.getElementById("inInput").value = (inputValue * 39.3701).toFixed(2);
+				break;
+			case "km":
+				document.getElementById("mmInput").value = (inputValue * 1e6).toFixed(0);
+				document.getElementById("cmInput").value = (inputValue * 100000).toFixed(0);
+				document.getElementById("mInput").value = (inputValue * 1000).toFixed(3);
+				document.getElementById("ftInput").value = (inputValue * 3280.84).toFixed(2);
+				document.getElementById("inInput").value = (inputValue * 39370.1).toFixed(2);
+				break;
+			case "ft":
+				document.getElementById("mmInput").value = (inputValue / 0.00328084).toFixed(0);
+				document.getElementById("cmInput").value = (inputValue / 0.0328084).toFixed(0);
+				document.getElementById("mInput").value = (inputValue / 3.28084).toFixed(3);
+				document.getElementById("kmInput").value = (inputValue / 3280.84).toFixed(6);
+				document.getElementById("inInput").value = (inputValue * 12).toFixed(2);
+				break;
+			case "in":
+				document.getElementById("mmInput").value = (inputValue / 0.0393701).toFixed(0);
+				document.getElementById("cmInput").value = (inputValue / 0.393701).toFixed(0);
+				document.getElementById("mInput").value = (inputValue / 39.3701).toFixed(3);
+				document.getElementById("kmInput").value = (inputValue / 39370.1).toFixed(6);
+				document.getElementById("ftInput").value = (inputValue / 12).toFixed(2);
+				break;
+			default:
+				break;
+		}
+	}
+
+	function resetInputs() {
+		var inputs = document.querySelectorAll('input[type="number"]');
+		inputs.forEach(function (input) {
+			input.value = "";
+		});
+	}
+</script>
+</body>
+</html>
+      </div>
+      <div class="post-tags-categories">
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>梦想魔豆</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/page/位置转换.html" target="_blank" title="">https://oaoo.com/page/位置转换.html</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" rel="external nofollow noreferrer" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="/images/logo/zhifubao.png" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="/images/logo/weixin.png" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'WeChatpay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
 	
-	
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>梦想魔豆</h2>
+        
+        
+          <p>绽放绚烂的希望之花</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:526740182@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/myoaoo"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=526740182"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+        
+    <section class="widget side_category">
+      
+  <header>
+    
+      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+      <div class='content'>
+        <ul class="entry navigation">
+          
+            <li><a class="flat-box"
+              title="/categories/wordpress/" href="/categories/wordpress/"
+              id="categorieswordpress"
+              ><div class='name'>wordpress</div><div class='badge'>(3)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/categories/%E5%BC%80%E6%BA%90/" href="/categories/%E5%BC%80%E6%BA%90/"
+              id="categoriesE5BC80E6BA90"
+              ><div class='name'>开源</div><div class='badge'>(4)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/"
+              id="categoriesE794B5E88491E8BDAFE4BBB6"
+              ><div class='name'>电脑软件</div><div class='badge'>(1)</div></a></li>
+          
+            <li><a class="flat-box"
+              title="/categories/%E7%BD%91%E7%9B%98/" href="/categories/%E7%BD%91%E7%9B%98/"
+              id="categoriesE7BD91E79B98"
+              ><div class='name'>网盘</div><div class='badge'>(2)</div></a></li>
+          
+        </ul>
+      </div>
+    </section>
+  
+  
+      
+      
+        
+<section class="widget side_tagcloud">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+    <a href="/tags/%E5%85%8D%E8%B4%B9/" style="font-size: 24px; color: #555">免费</a> <a href="/tags/%E6%8F%92%E4%BB%B6/" style="font-size: 19px; color: #777">插件</a> <a href="/tags/%E7%9B%AE%E5%BD%95/" style="font-size: 14px; color: #999">目录</a>
+    </div>
+</section>
+
+  
+      
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+      <!-- Add button for random display -->
+	  <a class="post-title-link" title="随机文章">
+	  <i class="fas fa-undo-alt" aria-hidden="true"  onclick="randomizeItems()" style=" display: flex; justify-content: flex-end; padding: 10px; margin-top: -25px; font-size: 0.875rem;" ><span style="">随机文章</span></i></a>
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list" id="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/11.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/11.html">使用ffmpeg获取音乐中封面和歌词</a>
+              <div>
+                
+                  <span class="post-date">09-18</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/10.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/10-0.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/10.html">wordpress 菜单输出插件WPS Menu Exporter</a>
+              <div>
+                
+                  <span class="post-date">07-18</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/9.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/9-0.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/9.html">wordpress  Media Sync 同步上传的图片到媒体库</a>
+              <div>
+                
+                  <span class="post-date">07-10</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/8.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/8-1.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/8.html">OneManager  0成本搭建不限速网盘</a>
+              <div>
+                
+                  <span class="post-date">07-08</span>
+                
+              </div>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/7.html" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="/images/7-2.png" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <a class="post-title" href="/7.html">一个适用于个人的在线网盘程序</a>
+              <div>
+                
+                  <span class="post-date">07-05</span>
+                
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  function randomizeItems() {
+    var items = document.querySelectorAll('.aside-list-item');
+    var parent = document.getElementById('aside-list');
+    for (var i = items.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      parent.insertBefore(items[j], items[i]);
+    }
+  }
+</script>
+
+      
+  <section class="widget side_archives">
+    
+    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/06/"><span class="card-archive-list-date">六月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">3</span></a></li></ul></div>
+  </section>
+
+      <section class="widget side_webinfo">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>11 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
+        </div>
+        <script>
+          var BirthDay = new Date(new Date('2024/05/01'));
+          var today = new Date();
+          var timeold = (today.getTime() - BirthDay.getTime());
+          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
+          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
+        </script>
+      
+
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+</section>
+      
+  
+    <div class="widget welcome" id="welcome" style="order: -2;background: #fff">
+      <header>
+        
+          <a style="color: red" target="_blank" rel="noopener external nofollow noreferrer" href='https://www.msn.cn/zh-cn/weather/forecast/'><i class="fa-solid fa-door-open fa-fw" aria-hidden="true"></i><span class='name'>欢迎光临 (点击查看天气)</span></a>
+        
+      </header>
+      <div class="content">
+        <style>p {font-size: 14px;padding: 5px 8px;}</style><div id="visitorInfo"></div><script defer src="/jscss/tianqi.js"></script>
+      </div>
+  </div>
+  
+    <div class="widget test_a" id="test_a" style="order: -1;background: #fff">
+      <header>
+        
+          <i style="color: #d63130" class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i><span class='name'>人生倒计时</span>
+        
+      </header>
+      <div class="content">
+        <div class="aside aside-count"> <div class="content"> <div class="item" id="dayProgress"> <div class="title">今日已经过去<span></span>小时</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-1"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="weekProgress"> <div class="title">这周已经过去<span></span>天</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-2"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="monthProgress"> <div class="title">本月已经过去<span></span>天</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-3"></div> </div> <div class="progress-percentage"></div> </div> </div> <div class="item" id="yearProgress"> <div class="title">今年已经过去<span></span>个月</div> <div class="progress"> <div class="progress-bar"> <div class="progress-inner progress-inner-4"></div> </div> <div class="progress-percentage"></div> </div> </div> </div> </div> <script defer src="/jscss/daojishi.js"></script> <link href="/jscss/daojishi.css" rel="stylesheet"> 
+      </div>
+  </div>
+  
+    <div class="widget weixin" id="weixin" style="order: -3;background: #fff">
+      <header>
+        
+          <i style="color: red" class="fab fa-weixin fa-fw" aria-hidden="true"></i><span class='name'>公众号</span>
+        
+      </header>
+      <div class="content">
+        <div"> <img src="/images/logo/weixingongzonghao.png" style="width: 100%;"> </div> 
+      </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
 </style>
 
 
 
-<div style="height: 60px;"></div>
-<article class=" pagediy">
-	<div class="overlay" onclick="closeSidebar()"></div>
-	<script>
-var tabs_a = 0;
-const tabData = [
-'开源', 
-[
-    ['文档系统', 
-        ['docsift', '一个动态生成文档网站的工具 ', 'https://docsify.js.org/'],
-        ['idoc', '没有搜索功能的快速、简洁且高效的文档生成工具', 'https://wangchujiang.com/idoc/index.html','https://github.com/jaywcjlove/idoc','https://wangchujiang.com/idoc/logo.png'],
-        ['Docusaurus', '创建、维护和部署静态网站的工具', 'https://docusaurus.io/'],
-        ['GitBook', '一个专注文档管理的平台', 'https://docs.gitbook.com/'],
-    ],
-    ['图片管理', 
-        ['Piwigo', 'Piwigo是一款基于Web网页的开源图片管理系统', 'https://cn.piwigo.org/'],
-    ],
-    ['工具', 
-        ['HandBrake', '一款开源的视频转码器', 'https://handbrake.fr/'],
-        ['洋芋田图像工具箱', '一个适用于创意行业从业者的图像工具箱', 'https://www.potatofield.cn/imagetoolkit/', '','https://www.potatofield.cn/favicon.ico'],
-        ['Upscayl', '一款开源的AI图片放大工具', 'https://www.upscayl.org/', '/4.html'],
-        ['Rubick', '开源桌面端效率工具', 'https://rubickcenter.github.io/rubick/', '','https://rubickcenter.github.io/rubick/images/logo.png'],
-        ['stranslate', '即开即用、即用即走的翻译(OCR)工具', 'https://stranslate.zggsong.com/'],
-        ['API For Docker', '免费不限制提供生活常用等公益大数据的平台', 'https://api.isoyu.com/'],
-    ],
-    ['网盘程序', 
-        ['z-file',  '一个支持多种格式在线文件管理和分享平台', 'https://www.zfile.vip/','/7.html'],
-        ['Alist',  '多种网盘目录程序', 'https://alist.nn.ci/zh/'],
-        ['TinyFileManager', '单文件PHP开源文档目录列表 ', 'https://tinyfilemanager.github.io/','/5.html','/medias/logo.png'],
-        ['files-gallery', '单文件PHP开源文档目录列表', 'https://www.files.gallery/','/3.html'],
-        ['onemanager','部署在vercel上的网盘，可惜我这小白了', 'https://scfonedrive.github.io/Vercel/Deploy.html','','/medias/logo.png'],
-        ['cloudreve','快速搭建起公私兼备的网盘系统,实现灵活的文件管理体验。', 'https://cloudreve.org/'],
-        ['showta','类似Alist的网盘', 'https://www.showta.cc/','','https://www.showta.cc/logo.png'],
-    ],
-    ['在线笔记', 
-        ['Minimalist Web Notepad', '一款带API的开源轻量级简洁在线笔记本', 'https://notes.orga.cat/','','https://notes.orga.cat/favicon.svg'],
-        ['note.ms', '可以在各个设备之间传网址和大段文本', 'https://note.ms'],
-        
-    ],
-    ['VPN', 
-        ['Oblivion', '一款基于WARP的优秀源网络工具', 'https://github.com/bepass-org/oblivion-desktop','/2.html'],
-        ['V2Ray', '著名开源网络工具程序', 'https://github.com/2dust/v2rayN'],
-        ['MahsaNG', '来自伊朗的开源免费移动端vpn，全自动更新节点，开箱即用', 'https://github.com/ellonyang/MahsaNG'],
-        ['WARP', 'Cloudflare开发的一项服务,主要用来保护用户的网上隐私', 'https://one.one.one.one/'],
 
-    ],
-    ['博客框架',
-        ['WordPress', 'PHP语言开发的建站系统', 'https://WordPress.org/'],
-        ['Typecho', 'PHP轻量级的博客框架', 'https://typecho.org/','','/medias/logo.png'],
-        ['Hexo', '基于Node.js的开源静态博客框架','https://hexo.io/zh-cn/'],
-        ['Hugo', '用 GO 语言编写的网站构建框架之一', 'https://gohugo.io/'],
-        ['Vitepress', '一个基于 Vite 的静态站点生成器 ', 'https://vitepress.dev/'],
-        ['VuePress', '一个基于 Vue.js 的静态网站生成器', 'https://vuepress.vuejs.org/'],
-        ['Jekyll', '简单的静态站点生成器', 'https://jekyllrb.com/'],
-        ['Halo', '强大易用的开源建站工具', 'https://www.halo.run/'],
-        ['Solo', '是一款基于Java语言有后台管理的博客系统', 'https://b3log.org/solo/'],
-        ['蘑菇博客', '一个基于微服务架构的前后端分离博客系统', 'https://gitee.com/moxi159753/mogu_blog_v2'],
-        
-        
-    ],	
-],
-'电脑软件', 
-[
-    ['效率', 
-        ['Everything', '一个强大的文件搜索工具，帮助您快速定位计算机上的文件和文件夹', 'https://www.voidtools.com/zh-cn/'],
-        ['FileLocator', '高效的无索引全文搜索软件,免费版已够用，收费版Pro更强大', 'https://www.mythicsoft.com/'],
-        ['uTools', '新一代效率工具平台，配合插件使用，个别插件收费', 'https://u.tools/'],
-    ],
-    ['视频', 
-        ['PotPlayer', '万能格式影音视频播放器', 'http://www.potplayercn.com/'],
-        ['蜜蜂剪辑', '简单多功能视频剪辑软件', 'https://beecut.cn/'],
-        ['快剪辑', '一款好用全能的视频剪辑工具', 'https://kuai.360.cn/']
-    ],
-    ['看图软件', 
-        ['Picasa', 'Google的免费图片管理工具，功能强大、简单易用、(已停更)', 'https://picasa.software.informer.com/3.9/', '','https://img.informer.com/icons/png/128/3076/3076731.png'],
-
-    ],
-
-],
-'WEB', 
-[
-    ['AI', 
-        ['SharedChat共享站点', '一些免费的共享ChatGPT账号', 'https://sharedchat.cn/','','/medias/logo.png'],
-        ['AIchatOS', '免费使用GPT3.5,自愿捐助', 'https://chat18.aichatos.xyz/'],
-        ['SoEZGPT小助手', '在线GPT网站，可会员可免费', 'https://www.soezgpt.com/'],
-        ['Moonshot AI', '注册使用，国内人工智能初创公司Moonshot AI（月之暗面）推出的智能对话助手，支持输入长达20万汉字的上下文', 'https://kimi.moonshot.cn/'],
-
-    ],
-    ['生活指引', 
-        ['wikihow', '成事指南，高质量的指导手册', 'https://zh.wikihow.com/'],
-        ['科普中国网', '提供科学、权威、准确的科普信息内容和相关资讯，让科技知识在网上和生活中流行', 'https://www.kepuchina.cn/'],
-        ['Languageguide', '外语学习网，学习各国日常用语', 'https://www.languageguide.org/'],
-        ['报纸在线阅读', '多媒体数字报纸在线阅读', 'http://www.53bk.com/Baokan' ,'','/medias/logo.png'],
-        ['期刊杂志', '收录大部分期刊，更新即时在线查阅', 'https://new-qk.lifves.com/']
-    ],
-    ['OCR', 
-        ['白描OCR', '一款免费的在线OCR文字识别工具,有使用次数限制', 'https://web.baimiaoapp.com/'],
-        ['Convertio ', 'OCR光学字符识别', 'https://convertio.co/zh/ocr/'],
-        ['NewOCR', '免费的在线 OCR 光学字符识别服务', 'https://www.newocr.com/'],
-        ['Onlineocr', '在线免费图文识别工具，支持全球 46 种语言', 'https://www.onlineocr.net/zh_hans'],
-        ['UUtool', '在线 OCR 图片文字识别工具', 'https://uutool.cn/ocr'],
-        ['CatOCR', '易飞文字识别，免费在线图片转文字', 'https://catocr.com/'],
-        ['pearocr', '在线图片转文字', 'https://pearocr.com/'],
-    ],
-    ['格式转换', 
-        ['Cloudconvert', '多功能在线文件格式转换工具网站', 'https://cloudconvert.com/']
-    ],
-
-    ['设计相关', 
-        ['全球知名品牌的 VI 设计规范手册', '注册后可免费下载10次', 'https://brandingstyleguides.com']
-    ],	
-    ['电子书', 
-        ['Z-Library', '世界上最大的电子图书馆(需要魔法)', 'https://zh.z-lib.gs/'],
-        ['Project Gutenberg', '古腾堡工程，最早的数字图书馆。', 'https://www.gutenberg.org/'],
-        ['鸠摩搜书', '电子书搜索引擎，关注公众号可下载', 'https://www.jiumodiary.com/'],
-        ['书格', '自由开放的在线古籍图书馆', 'https://www.shuge.org/'],
-    ],		
-    ['音乐', 
-        ['TuneFree', '一款基于Splayer二开的在线音乐播放器', 'https://pt.sayqz.com','https://github.com/GSQZ/TuneFree'],
-        ['myfreemp3', '刘明野的工具箱音乐播放器', 'https://tool.liumingye.cn/'],
-        ['Listen 1', '全网音乐播放平台', 'https://listen1.github.io/listen1/','','/medias/logo.png'],
-        ['网易云音乐', '一款专注于发现与分享的音乐平台,', 'https://music.163.com'],
-        ['lightplayer', '支持本地和阿里云盘音乐的app', 'https://light-player.com/','','https://light-player.com/img/logo.png'],
-    ],
-    ['手机定位(收费)', 
-        ['GEOfinder', '电话号码跟踪器', 'https://geofinder.mobi/'],
-        ['scannero', ' 手机号码定位器，可以随时随地追踪任何人。', 'https://scannero.io/'],
-        ['Moniterro', '通过手机号码跟踪对方，下载安装', 'https://moniterro.com/'],
-        ['eyezy', '是一款出色的监控系统,', 'https://www.eyezy.com/'],
-    ],
-    
-],
-'办公', 
-[
-    ['PPT模板', 
-        ['PPT汇','关注公众号可下载', 'https://www.ppthui.com/'],
-        ['PPT营','支持在线预览，可直接下载', 'https://www.pptying.com/','','https://img.pptying.com/images/favicon.ico'],
-        ['爱PPT','提供丰富免费的PPT课件模板，可直接下载', 'https://www.2ppt.com/'],
-        ['优品PPT','数量不算多，整体还是不错的', 'https://www.ypppt.com/','','/medias/logo.png'],
-        ['OfficePLUS','OFFICE官方模板网站，需要登录', 'http://www.officeplus.cn'],
-        ['PPT宝藏','下载跳转太多，还要提取密码', 'https://www.bzppt.com'],	
-        ['第1PPT','老牌免费PPT下载网站，模板数量也比较足', 'https://www.1ppt.com/'],	
-        ['51PPT模板','跳转太多，免登录下载', 'https://www.51pptmoban.com/ppt/'],	
-        ['PPT超级市场','完全免费的PPT模板网站，界面设计简洁大方', 'https://www.pptsupermarket.com/ppts'],
-        ['PPT之家','免费又好用的PPT网站', 'https://www.52ppt.com/'],
-    ],
-    ['Excel', 
-        ['方方格子(半收费)','大型的Excel工具箱软件', 'http://www.ffcell.com/index.aspx','','http://www.ffcell.com/home/images/ff.ico'],
-        ['templates','微软excel模板网站', 'https://create.microsoft.com/en-us/excel-templates'],
-        ['Excel Home','全球极具影响力的Excel资源网站之一', 'https://www.excelhome.net/'],
-        ['懒人Excel','提供了近千篇通俗易懂、图文结合的Excel教程', 'https://www.lanrenexcel.com/','','/medias/logo.png'],
-        ['格子Excel','专注于Excel学习交流、求助定制的网站', 'http://www.ffcell.com/School/Base/index.aspx'],
-        ['慧办公&巧办公','增强办公效率的辅助工具', 'https://www.hbgsoft.com/index.php'],
-        ['Excel精灵(半收费)','大型的Excel插件，拥有约270个功能', 'https://www.excelbbx.net/'],
-        ['Excel易用宝','免费循环激后可以使用', 'https://yyb.excelhome.net/'],
-        ['EXCEL必备工具箱','是一个同时支持EXCEL/WPS插件', 'https://www.ahzll.top/','','/medias/logo.png'],
-
-    ],
-    ['PDF', 
-        ['I love PDF','PDF 爱好者的在线工具', 'https://www.ilovepdf.com/zh-cn'],
-        ['Hipdf','一站式 PDF 工具集合', 'https://www.hipdf.cn/'],
-        ['99PDF 在线压缩','一个专门压缩 PDF 文件的网站', 'https://www.99pdf.com/'],
-        ['PDF365','福昕旗下PDF在线转换编辑平台', 'https://www.pdf365.cn/'],
-        ['EasyPDF','是一个质量很高的 PDF 编辑导航网站，功能非常强大。', 'https://easypdf.com/'],
-        ['PDF24','一款简单易用，功能独特的一款 pdf 文件制作工具', 'https://tools.pdf24.org/zh'],	
-        ['PDF 派','一个实用的综合PDF编辑转换导航网站', 'https://www.pdfpai.com/'],	
-        ['smallpdf','免费的在线PDF密码移除软件', 'https://smallpdf.com/cn/pdf-tools'],
-        ['EasePDF','在线定制自己的PDF文件', 'https://www.easepdf.com/cn/edit-pdf/'],
-    ],
-    ['IMG', 
-        ['I love IMG','图像文件在线编辑工具', 'https://www.iloveimg.com/zh-cn'],
-        ['PhotoKit','基于AI人工智能的在线图片编辑器', 'https://photokit.com/?lang=zh','','/medias/logo.png'],
-        ['改图宝','快速、简单的在线修改图片工具', 'https://www.gaitubao.com/'],
-    ],
-    ['在线文档', 
-        ['Excalidraw', '在线画板,画图,书签,笔记', 'https://notes.converts.cn/','','/medias/logo.png'],
-        ['石墨文档','允许多用户同时编辑同一文档，实现实时协作。这对于团队内部的文档创建、编辑和分享非常有用。', 'https://shimo.im/desktop'],
-        ['有道云笔记','网易旗下专注办公提效的笔记软件，支持多端同步，用户可以随时随地对线上资料进行编辑、分享以及协同', 'http://note.youdao.com/'],
-        ['WPS Office','金山办公旗下 WPS Office、金山文档、WPS + 云办公等系列产品服务', 'https://www.wps.cn/'],
-        ['印象笔记','印象笔记可以帮助你简化工作、学习与生活。', 'https://www.yinxiang.com/'],
-        ['飞书','一站式企业沟通与协作平台，整合即时沟通、日历、音视频会议、云文档、工作台等功能于一体', 'https://www.feishu.cn/'],	
-        ['腾讯文档','多人协作的在线文档，支持 Word、Excel 和 PPT 文档', 'https://docs.qq.com/desktop'],	
-
-    ],
-],
-'插件', 
-[
-    ['浏览器插件', 
-        ['插件小屋','谷歌浏览器扩展下载网', 'https://www.chajianxw.com/'],
-        ['crx 搜搜','一个牛X的扩展和应用商店', 'https://www.crxsoso.com/'],
-        ['极简插件','一个优质Chrome插件下载商店', 'https://chrome.zzzmh.cn/'],
-        ['Redbubble Tag Generator','一个Redbubble 标签生成器插件', 'https://www.chajianxw.com/product-tool/31546.html','','https://img.chajianxw.com/chajian/1639810130456.jpg'],
-        ['Greasy Fork','一个提供油猴脚本的网站', 'https://greasyfork.org/zh-CN'],
-        ['Web Scraper','免费且易于使用的网络数据提取工具', 'https://www.crxsoso.com/webstore/detail/jnhgnonknehpejjnehehllkliplmbmhn','','https://lhimg.crxsoso.com/M2K0VbhN1C9reWRv8_65g6q3cPJnhBX9EKsYabhvY7Uu6hPOQyBphx3yrGow_nTsPspCwX69lfJb07Z1bSBbqmKToA=w128-h128-e365-rj-sc0x00ffffff'],
-        ['hamibot','安卓系统的自动化工具，能操控APP实现自动化操作', 'https://hamibot.com/'],
-        ['SingleFile','可将整个页面（包含 CSS、图像、字体、框架等）保存为单个 HTML文件', 'https://microsoftedge.microsoft.com/'],
-        
-    ],
-
-],
-'分析', 
-[
-    ['RedBubble', 
-        ['redbubble-popular-tags','redbubble 热门标签网2023年的数据', 'https://redbubble.dabu.ro/redbubble-popular-tags'],
-    ],
-    ['SEO', 
-        ['ahrefs','关键字生成器,部分功能免费', 'https://ahrefs.com/zh/keyword-generator'],
-        ['谷歌趋势（Google Trends）','谷歌提供的免费分析和比较关键词的搜索趋势工具。', 'https://trends.google.com/trends/'],
-        ['KeywordFX','部分功能免费的关键词生成工具', 'https://www.webfx.com/tools/keywordsfx/'],
-        ['KWfinder','(收费)界面简单、功能全面，是做SEO必不可少的一款关键词工具。', 'https://app.mangools.com/kwfinder/'],
-        ['KeywordMagic Tool','(收费)SEMRush的Keyword Magic Tool也是一款很强大的关键词工具', 'https://zh.semrush.com/analytics/keywordmagic/start'],
-        ['HIX.AI','(收费)一款一体化的人工智能写作助手,创建无剽窃、SEO 友好且基于事实的文章', 'https://hix.ai/'],
-        ['词查查','关键词挖掘工具-长尾关键词库', 'https://www.cichacha.com/','','https://s1.cichacha.com/images/icons/ciku-5c3c716.png'],
-
-    ],
-],
-'学习平台', 
-[
-    ['在线学习', 
-        ['课本大师-口算题', '在线口算题卡生成', 'http://www.kebendashi.com/'],
-        ['口算大屏练习', '在线口算练习', 'https://edui123.com/ks/'],
-        ['淡墨水字帖', '语数英字帖在线生成下载', 'https://danmoshui.com/'],
-        ['英标爱发音', '学习英语音标的助手，有每个音标的发音视频和音频，支持美式音标、英式音标。', 'https://fayin.love/'],
-        ['元素周期表', '高颜值化学必备工具', 'https://pt.ziziyi.com/'],
-        ['国家智慧教育平台', '微课、教材一应俱全', 'https://basic.smartedu.cn/'],
-        ['小学数学教学助手', '电子教材、单元目标等。','https://edui123.com/ebook/xxsx/#/','','https://edui123.com/res/jiaocai.png'],
-        ['Reading Eggs','美国著名的阅读网站', 'https://international.readingeggs.com/'],
-    ],
-    ['外语学习', 
-        ['LingoHut','在线免费学习外语', 'https://www.lingohut.com/'],
-        ['50LANGUAGES','提供50多种语言的在线课程，让您可以自由学习任何世界语言。', 'https://www.50languages.com/'],
-        ['languageguide','一个功能强大的语言学习网站', 'https://www.languageguide.org/'],
-        ['多邻国','7种语言学习平台，包括英语、日语、中文粤语、韩语、法语、西班牙语、意大利语', 'https://www.duolingo.cn/'],
-        ['TED','一个专门分享来自世界各地知名人士演讲的网站', 'https://www.ted.com/'],
-        
-    ],
-],
-
-'其它', 
-[
-    ['网址导航', 
-        ['网盘导航','网盘导航', 'https://pan.hi.cn/'],
-        ['终极导航','一个互联网垂直分类的优质网站网址导航', 'https://www.zjnav.com/'],
-    ],
-    ['视频下载', 
-        ['高清视频下载','支持youtube 等多平台视频下载的站点', 'https://youtube.iiilab.com'],
-        ['TubeDown','支持youtube 等多平台视频解析下载站点', 'https://tubedown.cn/youtube'],
-        ['SaveFrom','免费在线视频下载器', 'https://zh.savefrom.net/226/'],
-        ['YTMP3','不好用，转换完成后也没有显示名称', 'https://ytmp3.cc/'],
-        
-    ],
-    ['其它', 
-        ['缩略图','PC 端、手机端、pad 端、移动端 四合一网站响应式截图生成，网站预览缩略图生成', 'https://toolwa.com/responsive/'],
-    ],
-],
-
-
-
-
-];
-</script>
-<!--WEB&nav-no  标题增加&nav-no 可折叠标题
-['','', ''],
--->
-</article>
-
-
-<script>
- function createTabs(tabData) {
-  let html = '';
-  for (let i = 0; i < tabData.length; i += 2) {
-    const groupName = tabData[i];
-    const groupTabs = tabData[i + 1];
-    const groupClass = groupName ? groupName : `group-${i}`;
-    html += `<div id="${groupClass}-1" class="${groupClass}">`;
-	if (groupName === '') {
-	} 
-	else {
-	html += `<h3><img src="/medias/tag.svg">  ${groupName}</h3>`;
-	}
-
-if (tabs_a) {
-  let tabGroupHtml = ""; // 创建一个变量来存储标签内容
-
-  groupTabs.forEach((tab, index) => {
-    const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-    if (groupTabs.length === 1 && tab[0]) {
-      html += `
-        <div data-tab="${tabId}">
-          <h3><img src="/medias/tag.svg">  ${tab[0]}</h3>
-        </div>
-      `;
-    } else {
-      tabGroupHtml += `
-          <div class="tab${index === 0 ? ' active-tab' : ''}" data-tab="${tabId}" onclick="openTab(event, '${tabId}', '${groupClass}')">
-            ${tab[0]}
-          </div>
-      `;
-    }
-  });
-
-  // 将整个标签组的 HTML 内容放在单独的标签组 div 中
-  if (groupTabs.length > 1) {
-    html += `<div class="tab-group">${tabGroupHtml}</div>`;
-  }
-}
-
-
-    groupTabs.forEach((tab, index) => {
-      const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-	  if (tabs_a) {
-      html += `
-        <div id="${tabId}" class="tab-content" style="display: ${index === 0 ? 'block' : 'none'};">
-      `;
-	  } else {
-      html += `
-			  <div id="${tabId}" class="aaa" data-tab="${tabId}"  style=" margin-top: 20px;">
-				${tab[0]}
-			  </div>
-			  <div  class="tab-content" style="display: block">
-      `;
-	  }
-	  
-html += '<div class="grid-container">';
-tab.forEach((content, contentIndex) => {
-  if (contentIndex > 0) {
-    html += `
-      <div class="grid-item">
-        <div class="grid-item-left">
-          ${
-            content[4] ?
-            `<img src="${content[4]}" class="medium-zoom-image">` :
-            (content[2] ?
-              `<img src="https://api.iowen.cn/favicon/${content[2].replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
           }
-        </div>
-        <div class="grid-item-right" >
-          <p><a href="${content[2]}" title="${content[0]}" target="_blank">${content[0]}</a></p>
-          <p><a href="${content[2]}" title="${content[1]}" target="_blank">${content[1]}</a></p>
-        </div>
-        ${content[3] ? `<div title="详情"><a href="${content[3]}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-      </div>
-    `;
-  }
-});
-html += '</div>';
-
-
-      html += '</div>';
-    });
-    html += '</div>';
-  }
-  return html;
-}
-
-
-function createLinks(tabData) {
-    let linksHtml = '';
-    for (let i = 0; i < tabData.length; i += 2) {
-        const groupName = tabData[i];
-        const groupTabs = tabData[i + 1];
-        const groupClass = groupName ? groupName : `group-${i}`;
-
-        if (!groupName) {
-            groupTabs.forEach(tab => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                if (tab[0]) {
-                    linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p class="list">${tab[0]}</p></a> `;
-                }
-            });
-        } else {
-            // 在<i>标签上添加toggle-icon类
-            linksHtml += `<h4 onclick="toggleGroup('${groupClass}')">${groupName}<i class="fa fa-angle-right toggle-icon"></i></h4>`;
-            linksHtml += `<div class="abc" id="${groupClass}">`;
-            groupTabs.forEach((tab, index) => {
-                const tabId = `${groupClass}-${tab[0].replace(/\s+/g, '-').toLowerCase()}`;
-                linksHtml += `<a href="#${tabId}" onclick="showTab('${groupClass}', '${tabId}')"><p>${tab[0]}</p></a>`;
-                if (index < groupTabs.length - 1) {
-                    linksHtml += ' ';
-                }
-            });
-            linksHtml += `</div>`;
-        }
+        })
+      }
     }
-    return linksHtml;
-}
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
 
-
-
-    function openTab(evt, tabName, tabGroup, anchor) {
-        var tabContents = document.querySelectorAll(`.${tabGroup} .tab-content`);
-        for (var i = 0; i < tabContents.length; i++) {
-            tabContents[i].style.display = "none";
-        }
-
-        var tabs = document.querySelectorAll(`.${tabGroup} .tab`);
-        for (var i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active-tab");
-        }
-
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active-tab");
-
-        if (anchor) {
-            var anchorElement = document.getElementById(anchor);
-            if (anchorElement) {
-                anchorElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }
-
-    function showTab(tabGroup, tabName) {
-        var tab = document.querySelector(`.${tabGroup} [data-tab='${tabName}']`);
-        if (tab) {
-            tab.click();
-        }
-    }
-
-function toggleGroup(groupName) {
-    const group = document.getElementById(groupName);
-    if (group) {
-        group.classList.toggle('show');
-        const icon = group.previousElementSibling.querySelector('.toggle-icon');
-        if (icon) {
-            icon.classList.toggle('fa-angle-right');
-            icon.classList.toggle('fa-angle-down');
-        }
-    }
-}
-
-    // Insert the containers into the body 
-    document.querySelector('article').innerHTML += `
-		<div class="webnav-content">
-		<input type="text" id="searchInput-webnav" placeholder="Search...">
-		<div id="tabs-search-content"></div>
-        <div id="tabContainer">${createTabs(tabData)}</div>
-        <div id="linksContainer">${createLinks(tabData)}</div>
-		<div ><i id="toggleButton" class="toggle-icon fas fa-bars"></i></div>
-		</div>	    
-    `;
-	
-
-        var linksContainer = document.getElementById('linksContainer');
-        var toggleButton = document.getElementById('toggleButton');
-        var isHidden = true;
-
-        toggleButton.addEventListener('click', function() {
-            if (isHidden) {
-                linksContainer.style.left = '0'; // 显示 linksContainer
-                isHidden = false;
-            } else {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-        // 点击页面其他位置关闭 linksContainer
-        document.addEventListener('click', function(event) {
-            if (event.target !== toggleButton && !linksContainer.contains(event.target) && !isHidden) {
-                linksContainer.style.left = '-170px'; // 隐藏 linksContainer
-                isHidden = true;
-            }
-        });
-
-/*以下是搜索*/		
-
-
-
-
-document.getElementById('searchInput-webnav').addEventListener('input', function(event) {
-    const searchQuery = this.value.trim().toLowerCase();
-    const tabsContainer = document.getElementById('tabs-search-content');
-    let searchCount = 0; // 初始化搜索数量计数器
-
-    tabsContainer.innerHTML = ''; // 清空容器
-
-    if (searchQuery === '') {
-        // 如果搜索查询为空，则显示隐藏的容器
-
-        document.getElementById('tabContainer').style.display = 'block';
-
-        return;
-    } else {
-        // 如果搜索查询不为空，则隐藏容器
-
-        document.getElementById('tabContainer').style.display = 'none';
-    }
-
-let html = '<div class="grid-container">'; 
-tabData.forEach(tabGroup => {
-    if (Array.isArray(tabGroup)) {
-        tabGroup.forEach(tab => {
-            if (Array.isArray(tab)) {
-                tab.forEach(tabItem => {
-                    if (Array.isArray(tabItem)) {
-                        const [title, content, url, goout,logo] = tabItem;
-                        if (title.toLowerCase().includes(searchQuery) || content.toLowerCase().includes(searchQuery)) {
-                            html += `
-                                <div class="grid-item">
-									<div class="grid-item-left">
-									
-          ${
-            logo ?
-            `<img src="${logo}" class="medium-zoom-image">` :
-            (url ?
-              `<img src="https://api.iowen.cn/favicon/${url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')}.png" class="medium-zoom-image">` :
-              `<img src="/medias/logo.png" class="medium-zoom-image">`
-            )
-          }
-									</div>
-									<div class="grid-item-right" >
-										<p><a href="${url}" title="${title}" target="_blank">${title}</a></p>
-										<p><a href="${url}" title="${content}" target="_blank">${content}</a></p>
-									</div>
-									${goout ? `<div title="详情"><a href="${goout}" target="_blank"><i class="fas fa-chevron-circle-right"></i></a></div>` : ``}
-                                </div>
-								
-                            `;
-                            searchCount++;
-                        }
-                    }
-                });
-            }
-        });
-    }
-});
-html += '</div>';
-tabsContainer.innerHTML += html;
-
-
-
-
-    // 创建一个新元素来显示搜索结果数量
-	const searchResultElement = document.createElement('div');
-	searchResultElement.classList.add('search-result');
-	if (searchCount > 0) {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>`;
-	} else {
-		searchResultElement.innerHTML = `搜索结果: <span>${searchCount}</span>，没有符合的结果`;
-	}
-
-
-    // 将搜索结果数量元素插入到tabsContainer的第一个子元素之前
-    const firstChild = tabsContainer.firstChild;
-    tabsContainer.insertBefore(searchResultElement, firstChild);
-});
-
-
-document.getElementById('searchInput-webnav').addEventListener('keydown', function(event) {
-    // 按下 ESC 键时取消清空输入框内容
-    if (event.key === 'Escape') {
-        this.value = ''; // 清空输入框内容
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    }
-});
-
-		
-document.addEventListener('DOMContentLoaded', function() {
-  var listElements = document.querySelectorAll('.list');
-  var abcLinks = document.querySelectorAll('.abc a');
-  var searchInput = document.getElementById('searchInput-webnav');
-
-  listElements.forEach(function(element) {
-    element.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block'; 
-    });
-  });
-
-  abcLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
-      searchInput.value = '';
-        const tabsContainer = document.getElementById('tabs-search-content');
-        tabsContainer.innerHTML = ''; // 清空容器
-        // 显示隐藏的容器
-        document.getElementById('tabContainer').style.display = 'block';
-    });
-  });
-});
-
-
-var styleElement = document.createElement('style');
-document.head.appendChild(styleElement);
-
-if (tabs_a === 1) {
-    styleElement.textContent = '#tabContainer div{scroll-margin-top: 115px;}';
-} else {
-    styleElement.textContent = `
-        *:target {
-            background-color: #ededed;
-            color: red;
-            padding: 5px 5px 5px 10px;
-            border-radius: 5px;
-        }
-        #tabContainer div {
-            scroll-margin-top: 75px;
-        }
-    `;
-}
-
-  
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
   
 </script>
+
 
       </main>
     </div>
