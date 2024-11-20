@@ -299,6 +299,15 @@
                     </a>
                   </li>
                   
+                  <li>
+                    <a href="/dh/wubanquan.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>无版权</span>
+                    </a>
+                  </li>
+                  
                 </ul>
               
             </li>
@@ -393,6 +402,15 @@
                       <i class="fas fa-feather" style="margin-top: -20px;"></i>
                       
                       <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/cp.html">
+                      
+                      <i class="fas fa-trophy" style="margin-top: -20px;"></i>
+                      
+                      <span>彩票</span>
                     </a>
                   </li>
                   
@@ -556,6 +574,15 @@
                     </a>
                   </li>
                   
+                  <li>
+                    <a href="/dh/wubanquan.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>无版权</span>
+                    </a>
+                  </li>
+                  
                 </ul>
               
             </li>
@@ -646,6 +673,15 @@
                       <i class="fas fa-feather" style="margin-top: -20px;"></i>
                       
                       <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/cp.html">
+                      
+                      <i class="fas fa-trophy" style="margin-top: -20px;"></i>
+                      
+                      <span>彩票</span>
                     </a>
                   </li>
                   
@@ -815,7 +851,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <div id="readmore-container"><h1 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h1><p>博主: yuang01 | 性别: 男 | 邮箱: <a href="mailto:&#x78;&#x78;&#x78;&#120;&#64;&#97;&#x61;&#46;&#99;&#111;&#x6d;" rel="external nofollow noreferrer">&#x78;&#x78;&#x78;&#120;&#64;&#97;&#x61;&#46;&#99;&#111;&#x6d;</a></p>
+        <div id="readmore-container"><h1 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h1><p>博主: yuang01 | 性别: 男 | 邮箱: <a href="mailto:&#x78;&#x78;&#120;&#120;&#64;&#97;&#x61;&#x2e;&#99;&#x6f;&#109;" rel="external nofollow noreferrer">&#x78;&#x78;&#120;&#120;&#64;&#97;&#x61;&#x2e;&#99;&#x6f;&#109;</a></p>
 <h2 id="我的书籍"><a href="#我的书籍" class="headerlink" title="我的书籍"></a>我的书籍</h2><div class="site-card-group"><a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg"/></div><div class="info"><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
 <a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="https://yuang01.gitee.io/"><div class="img"><img src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg"/></div><div class="info"><img src="https://pic3.zhimg.com/80/v2-8bb491487280587026cd576b224ca91e_1440w.jpg"/><span class="title">yuang01</span><span class="desc">这是描述哦</span></div></a>
 <a class="site-card" target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com"><div class="img"><img src="https://pic4.zhimg.com/v2-7fcb0d73e1d90788ccf136e22ba7b1bd_r.jpg"/></div><div class="info"><img src="https://pic4.zhimg.com/80/v2-45eb5749949e7f90a5c788f9bc5721ef_1440w.jpg"/><span class="title">木兮</span><span class="desc">这是描述</span></div></a>
@@ -1630,6 +1666,56 @@
 </script>
 
     
+	<!-- 右下角打赏 -->
+	    <button class="show-image-button" onclick="showImage()">赏</button>
+
+    <div class="overlay" id="overlay" onclick="closeImage()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <!-- 选项卡按钮 -->
+            <div class="tab-buttons">
+                <button onclick="openTab('tab1')" id="btn-tab1" class="active">微信</button>
+                <button onclick="openTab('tab2')" id="btn-tab2">支付宝</button>
+            </div>
+
+            <!-- 选项卡内容 -->
+            <div id="tab1" class="tab-content active">
+                <img src="/images/logo/weixin.png" alt="打赏" class="popup-image">
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <img src="/images/logo/zhifubao.png" alt="打赏" class="popup-image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 显示 overlay 的函数
+        function showImage() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        // 关闭 overlay 的函数
+        function closeImage() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // 打开选项卡内容的函数
+        function openTab(tabId) {
+            // 隐藏所有选项卡内容
+            document.querySelectorAll(".tab-content").forEach(tab => {
+                tab.classList.remove("active");
+            });
+
+            // 移除所有按钮的活动状态
+            document.querySelectorAll(".tab-buttons button").forEach(button => {
+                button.classList.remove("active");
+            });
+
+            // 显示选中的选项卡内容，并激活相应的按钮
+            document.getElementById(tabId).classList.add("active");
+            document.getElementById('btn-' + tabId).classList.add("active");
+        }
+    </script>
     <!-- 渲染回到顶部按钮 -->
     
       <div class="goTop top-btn-color" pointer>

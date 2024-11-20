@@ -299,6 +299,15 @@
                     </a>
                   </li>
                   
+                  <li>
+                    <a href="/dh/wubanquan.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>无版权</span>
+                    </a>
+                  </li>
+                  
                 </ul>
               
             </li>
@@ -393,6 +402,15 @@
                       <i class="fas fa-feather" style="margin-top: -20px;"></i>
                       
                       <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/cp.html">
+                      
+                      <i class="fas fa-trophy" style="margin-top: -20px;"></i>
+                      
+                      <span>彩票</span>
                     </a>
                   </li>
                   
@@ -556,6 +574,15 @@
                     </a>
                   </li>
                   
+                  <li>
+                    <a href="/dh/wubanquan.html">
+                      
+                      <i class="fas fa-diagnoses" style="margin-top: -20px;"></i>
+                      
+                      <span>无版权</span>
+                    </a>
+                  </li>
+                  
                 </ul>
               
             </li>
@@ -646,6 +673,15 @@
                       <i class="fas fa-feather" style="margin-top: -20px;"></i>
                       
                       <span>符号</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/page/cp.html">
+                      
+                      <i class="fas fa-trophy" style="margin-top: -20px;"></i>
+                      
+                      <span>彩票</span>
                     </a>
                   </li>
                   
@@ -2030,6 +2066,56 @@ document.write('<div class="click-area"></div>');
 </script>
 
     
+	<!-- 右下角打赏 -->
+	    <button class="show-image-button" onclick="showImage()">赏</button>
+
+    <div class="overlay" id="overlay" onclick="closeImage()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <!-- 选项卡按钮 -->
+            <div class="tab-buttons">
+                <button onclick="openTab('tab1')" id="btn-tab1" class="active">微信</button>
+                <button onclick="openTab('tab2')" id="btn-tab2">支付宝</button>
+            </div>
+
+            <!-- 选项卡内容 -->
+            <div id="tab1" class="tab-content active">
+                <img src="/images/logo/weixin.png" alt="打赏" class="popup-image">
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <img src="/images/logo/zhifubao.png" alt="打赏" class="popup-image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 显示 overlay 的函数
+        function showImage() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        // 关闭 overlay 的函数
+        function closeImage() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // 打开选项卡内容的函数
+        function openTab(tabId) {
+            // 隐藏所有选项卡内容
+            document.querySelectorAll(".tab-content").forEach(tab => {
+                tab.classList.remove("active");
+            });
+
+            // 移除所有按钮的活动状态
+            document.querySelectorAll(".tab-buttons button").forEach(button => {
+                button.classList.remove("active");
+            });
+
+            // 显示选中的选项卡内容，并激活相应的按钮
+            document.getElementById(tabId).classList.add("active");
+            document.getElementById('btn-' + tabId).classList.add("active");
+        }
+    </script>
     <!-- 渲染回到顶部按钮 -->
     
       <div class="goTop top-btn-color" pointer>

@@ -384,3 +384,83 @@ button:disabled {
   min-height: 120px; /* 确保图片至少 120px 高 */
   transform: translate(-50%, -50%); /* 调整位置 */
 }
+/*打赏*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none; /* 初始隐藏 */
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+}
+/* 内部内容容器 */
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+/* 按钮区域 */
+.tab-buttons {
+  margin-bottom: 15px;
+}
+/* 按钮样式 */
+.tab-buttons button {
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+/* 活动状态按钮样式 */
+.tab-buttons button.active {
+  background-color: #007bff; /* 活动状态浅蓝色背景 */
+  font-weight: bold;
+}
+/* 选项卡内容样式 */
+.tab-content {
+  display: none;
+}
+/* 默认显示的选项卡内容 */
+.tab-content.active {
+  display: block;
+}
+/* 标题样式 */
+.tab-content h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+/* 图片样式 */
+.popup-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+/* 按钮样式 */
+.show-image-button {
+  color: #fff;
+  background-color: rgba(66,185,133,0.8) !important;
+  position: fixed;
+  bottom: 140px;
+  right: 17px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 999;
+}
+@media (max-width: 551px) {
+  .show-image-button {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 130px;
+    right: 0;
+  }
+}
