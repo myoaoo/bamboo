@@ -853,6 +853,14 @@
             <div class="category-chips">
                 
                 
+                <a href="/categories/wordpress/" title="wordpress: 3">
+                    <span class="category-content"
+                        title="wordpress" style="background-color: #82E0AA;">wordpress
+                        <span class="category-length">3</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" title="电脑软件: 1">
                     <span class="category-content"
                         title="电脑软件" style="background-color: #A3E4D7;">电脑软件
@@ -865,14 +873,6 @@
                     <span class="category-content"
                         title="开源" style="background-color: #F5EEF8;">开源
                         <span class="category-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/wordpress/" title="wordpress: 3">
-                    <span class="category-content"
-                        title="wordpress" style="background-color: #82E0AA;">wordpress
-                        <span class="category-length">3</span>
                     </span>
                 </a>
                 
@@ -1589,84 +1589,6 @@
     
 
 <!-- pjax -->
-
-
-  <script src="/js/pjax@0.2.8/index.js"></script>
-  
-    <div class="pjax-animate">
-  
-    <div class="loading-circle"><div id="loader-circle"></div></div>
-    <script>
-      window.ShowLoading = function() {
-        $(".loading-circle").css("display", "block");
-      };
-      window.HideLoading = function() {
-        $(".loading-circle").css("display", "none");
-      }
-    </script>
-  
-	<script>
-    document.addEventListener('pjax:complete', function () {
-      window.HideLoading();
-    })
-    document.addEventListener('pjax:send', function () {
-      window.ShowLoading();
-    })
-    document.addEventListener('pjax:error', function () {
-      window.HideLoading();
-    })
-	</script>
-</div>
-
-  
-
-  <script>
-    var pjax = new Pjax({
-      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
-      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
-      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-      timeout: 5000
-    });
-
-    document.addEventListener('pjax:send', function (e) {
-
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-
-    })
-    
-    document.addEventListener('pjax:complete', function () {
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-      window.location.href = e.triggerElement.href;
-    })
-    
-    // 刷新不从顶部开始
-    document.addEventListener("DOMContentLoaded", function () {
-      history.scrollRestoration = 'auto';
-    })
-  </script>
-
 
 
   </body>
